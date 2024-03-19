@@ -1,5 +1,15 @@
 {
-  "users": [
-    { "id": 123, "name": "melker", "admin": true, "comments": [], "likes": 12 }
-  ]
+	"users": [
+		{
+			"id": 123,
+			"name": "melker",
+			"password": "password1234",
+			"image": "asdf",
+			"admin": true,
+			"comments": [
+				{ "id": 1234, "comment": "hejhej", "likes": 21, "category": "game1" },
+				{ "id": 145, "comment": "ayooo", "likes": 23, "category": "game1" }
+			]
+		}
+	]
 }
