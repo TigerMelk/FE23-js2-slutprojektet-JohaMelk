@@ -1,0 +1,43 @@
+:root{
+    font-size: 16px;
+    --primeryprimary-color: #FFE6C7;
+    --secondary-color: #FFA559;
+    --hover-color: #FF6000
+    --color: #454545
+}
+
+body{
+    background-color: var(--primeryprimary-color);
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+}
+.navBar {
+    background-color: var(--secondary-color);
+    color: var(--color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.logInBtn {
+    background-color: var(--primeryprimary-color);
+    color: #454545;
+    padding: 8px 20px; 
+    border-radius: 5px; 
+    text-decoration: none;
+}
+
+.logInBtn:hover {
+    background-color: var(--hover-color);
+}
