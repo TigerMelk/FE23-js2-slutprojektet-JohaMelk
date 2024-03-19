@@ -1,8 +1,6 @@
-console.log("ayooo");
 import express from "express";
 import cors from "cors";
 import * as db from "./handledatabase.js";
-console.log("hejhej");
 const app = express();
 app.use(express.json());
 app.use(cors());
