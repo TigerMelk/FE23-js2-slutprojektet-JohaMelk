@@ -1,15 +1,50 @@
 {
-	"users": [
-		{
-			"id": 123,
-			"name": "melker",
-			"password": "password1234",
-			"image": "asdf",
-			"admin": true,
-			"comments": [
-				{ "id": 1234, "comment": "hejhej", "likes": 21, "category": "game1" },
-				{ "id": 145, "comment": "ayooo", "likes": 23, "category": "game2" }
-			]
-		}
-	]
+  "users": [
+    {
+      "id": 123,
+      "name": "melker",
+      "password": "password1234",
+      "image": "asdf",
+      "admin": true,
+      "comments": [
+        { "userId": 123, "comment": "hejhej", "likes": 21 },
+        { "userId": 123, "comment": "ayooo", "likes": 23 }
+      ],
+      "posts": [
+        {
+          "userId": 123,
+          "title": "something in h1",
+          "bread": "breadtext",
+          "category": "game2",
+          "comments": [
+            { "userId": 123, "comment": "hejhej", "likes": 21 },
+            { "userId": 123, "comment": "ayooo", "likes": 23 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 123333,
+      "name": "javad",
+      "password": "password121234",
+      "image": "adfasdff",
+      "admin": true,
+      "comments": [
+        { "userId": 123333, "comment": "hejhej", "likes": 21 },
+        { "userId": 123333, "comment": "ayooo", "likes": 23 }
+      ],
+      "posts": [
+        {
+          "userId": 123333,
+          "title": "something in h1",
+          "bread": "breadtext",
+          "category": "game2",
+          "comments": [
+            { "userId": 123, "comment": "hejhej", "likes": 21 },
+            { "userId": 123, "comment": "ayooo", "likes": 23 }
+          ]
+        }
+      ]
+    }
+  ]
 }

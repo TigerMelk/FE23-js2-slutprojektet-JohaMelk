@@ -1,19 +1,21 @@
 export type User = {
-	id: number;
-	name: string;
-	password: string;
-	image: string;
-	admin: boolean;
-	comments: Array<Comment>;
-	posts: Array<Post>;
+  id: string;
+  name: string;
+  password: string;
+  image: string;
+  admin: boolean;
+  comments: Array<Comment>;
+  posts: Array<Post>;
 };
 export type Comment = {
-	id: number;
-	comment: string;
-	likes: number;
+  userId: string;
+  comment: string;
+  likes: number;
 };
 export type Post = {
-	post: string;
-	category: ["game1", "game2", "game3"];
-	likes: number;
+  userId: string;
+  post: string;
+  category: ["game1", "game2", "game3"];
+  comments: Array<Comment>;
+  likes: number;
 };
