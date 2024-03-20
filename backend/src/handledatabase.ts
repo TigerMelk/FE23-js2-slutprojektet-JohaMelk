@@ -1,15 +1,23 @@
 import fs from "fs/promises";
 import { User, Comment, Post } from "./userType.js";
+import crypto from "crypto";
+import { error } from "console";
 //database read and write
 async function readDatabase() {
   const rawDbBuffer: Buffer = await fs.readFile("./src/db.json");
   const rawDb: string = rawDbBuffer.toString("utf-8");
   return JSON.parse(rawDb);
 }
-async function writeDatabase(users: User) {
+async function writeDatabase(users: User[]): Promise<void> {
   const db = { users };
-  const done = await fs.writeFile("./src/db.json", JSON.stringify(db, null, 2));
-  return done;
+  await fs
+    .writeFile("./src/db.json", JSON.stringify(db, null, 2))
+    .then(() => {
+      console.log("database updated correctly");
+    })
+    .catch((error) => {
+      console.error("error writing database", error);
+    });
 }
 //
 // get functions
@@ -17,14 +25,13 @@ async function getUsers(): Promise<User[]> {
   const db = await readDatabase();
   return db.users;
 }
-//! promise type fel
 async function getUser(id: string): Promise<User | { message: string }> {
   const users = await getUsers();
   const user = users.find((user: User) => user.id == id);
   if (user) return user;
   else return { message: "user not found" };
 }
-// get comments eller posts
+// get comments eller posts //! behöver testas
 async function getUserData(
   user: User,
   data: "comments" | "posts"
@@ -37,25 +44,70 @@ async function getUserData(
 
 //
 // Post functions
-async function addUser(user: Omit<User, "id">): Promise<User> {
-  const newUser: User = { id: crypto.randomUUID(), ...user };
+// ! denna funkar som den ska
+async function addUser(user: User): Promise<User> {
   const users = await getUsers();
-  //! if users.name existerar redan skit i detta
+
+  const existingName = users.find(
+    (existingName) => existingName.name === user.name
+  );
+  if (existingName) {
+    throw new Error("User with that name already exists");
+  }
+
+  const id = crypto.randomUUID();
+  const newUser: User = {
+    id,
+    name: user.name,
+    password: user.password,
+    image: user.image,
+    admin: false,
+    comments: [],
+    posts: [],
+  };
   users.push(newUser);
-  await writeDatabase(users[0]);
+  await writeDatabase(users);
   return newUser;
 }
-//
+
 // Patch functions
-async function addComment(userId: string, comment: Comment): Promise<Comment> {
-  const newComment: Comment = { userId, ...comment };
+//! borde funka men gör inte det??? kolla console så förstår ni :/
+async function addPost(userId: string, post: Post): Promise<Post> {
   const user = await getUser(userId);
-  user.comments.push(newComment);
-  await writeDatabase(user);
-  return newComment;
+  //   console.log(user);
+  const newPost: Post = { id: crypto.randomUUID(), userId, ...post };
+
+  if ("posts" in user) {
+    user.posts.push(newPost);
+    console.log(user);
+    // console.log(newPost);
+
+    await writeDatabase(await getUsers());
+    return newPost;
+  } else throw new Error("posts in user not found");
+}
+//! denna borde funka men kan inte testa riktigt utan addPost function
+async function addComment(
+  userId: string,
+  postId: string,
+  comment: Comment
+): Promise<Comment> {
+  const user = await getUser(userId);
+  if (!("id" in user && "comments" in user && "posts" in user)) {
+    throw new Error("User not found");
+  }
+  const userComment: Comment = { userId, ...comment };
+  const post = user.posts.find((post) => post.id === postId);
+  if (!post) {
+    throw new Error("Post not found");
+  }
+  user.comments.push(userComment);
+  post.comments.push(userComment);
+  await writeDatabase(await getUsers());
+  return userComment;
 }
 
-async function addPost(id: number, post: Post) {}
+//? delete functions
 
 export {
   readDatabase,

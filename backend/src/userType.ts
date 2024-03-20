@@ -10,12 +10,14 @@ export type User = {
 export type Comment = {
   userId: string;
   comment: string;
-  likes: number;
+  //   likes: number
 };
 export type Post = {
+  id: string;
   userId: string;
-  post: string;
+  title: string;
+  bread: string;
   category: ["game1", "game2", "game3"];
   comments: Array<Comment>;
-  likes: number;
+  //   likes: number;
 };

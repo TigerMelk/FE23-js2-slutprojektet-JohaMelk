@@ -1,50 +1,40 @@
 {
   "users": [
     {
-      "id": 123,
-      "name": "melker",
-      "password": "password1234",
-      "image": "asdf",
-      "admin": true,
-      "comments": [
-        { "userId": 123, "comment": "hejhej", "likes": 21 },
-        { "userId": 123, "comment": "ayooo", "likes": 23 }
-      ],
-      "posts": [
-        {
-          "userId": 123,
-          "title": "something in h1",
-          "bread": "breadtext",
-          "category": "game2",
-          "comments": [
-            { "userId": 123, "comment": "hejhej", "likes": 21 },
-            { "userId": 123, "comment": "ayooo", "likes": 23 }
-          ]
-        }
-      ]
+      "id": "189b76eb-ab3b-45bc-ad27-ecf68195480c",
+      "name": "Melker",
+      "password": "testingpassword",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
     },
     {
-      "id": 123333,
-      "name": "javad",
-      "password": "password121234",
-      "image": "adfasdff",
-      "admin": true,
-      "comments": [
-        { "userId": 123333, "comment": "hejhej", "likes": 21 },
-        { "userId": 123333, "comment": "ayooo", "likes": 23 }
-      ],
-      "posts": [
-        {
-          "userId": 123333,
-          "title": "something in h1",
-          "bread": "breadtext",
-          "category": "game2",
-          "comments": [
-            { "userId": 123, "comment": "hejhej", "likes": 21 },
-            { "userId": 123, "comment": "ayooo", "likes": 23 }
-          ]
-        }
-      ]
+      "id": "2c175723-74ba-4ffc-9fa8-e66372e9311d",
+      "name": "Javad",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
+      "name": "Johanna",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "d48b53e4-35cf-43c8-b39d-df8449b74aaf",
+      "name": "Clara",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
     }
   ]
 }
