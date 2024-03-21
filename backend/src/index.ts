@@ -10,6 +10,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// getUser eller Users
 app.get("/api/:id?", (req, res) => {
   console.log("get req recieved");
 
@@ -23,7 +24,21 @@ app.get("/api/:id?", (req, res) => {
     });
   }
 });
+//! funkar
+// login
+app.get("/api/login/ayo", (req, res) => {
+  const { name, password } = req.body;
+  console.log(req.body);
+  if (!name || !password) {
+    throw new Error("Name and password required");
+  }
+  db.logIn(name, password).then((user) => {
+    if (user) res.json(user);
+    else throw new Error("user not found");
+  });
+});
 //! denna funkar :)
+// addUser
 app.post("/api/users", (req, res) => {
   const { name, password, image } = req.body;
   const newUser = {
@@ -38,6 +53,7 @@ app.post("/api/users", (req, res) => {
   const addedUser = db.addUser(newUser).then(() => res.json(addedUser));
 });
 // app.put()
+// addPost
 //! denna är dogshit :)) (men funkar egentligen)
 app.patch("/api/:id?/post/", (req, res) => {
   console.log("patch req recieved for post");
@@ -48,6 +64,7 @@ app.patch("/api/:id?/post/", (req, res) => {
   }
 });
 //! borde funka..
+// addComment
 app.patch("/api/:id?/post/comment", (req, res) => {
   console.log("patch req recieved for comment");
   const { id: postId } = req.params;
@@ -56,7 +73,12 @@ app.patch("/api/:id?/post/comment", (req, res) => {
     .addComment(userId, postId, comment)
     .then(() => res.json(addedComment));
 });
-// app.delete()
+
+// delete user
+app.delete("/api/users/:id", (req, res) => {
+  const userId = req.params.id;
+  db.deleteUser(userId).then(() => res.json({ message: "User Deleted" }));
+});
 
 app.listen(3000, () => {
   console.log("listening to port 3000");

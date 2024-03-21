@@ -8,12 +8,14 @@ export type User = {
   posts: Array<Post>;
 };
 export type Comment = {
+  commentId: string;
+  postId: string;
   userId: string;
   comment: string;
   //   likes: number
 };
 export type Post = {
-  id: string;
+  postId: string;
   userId: string;
   title: string;
   bread: string;
