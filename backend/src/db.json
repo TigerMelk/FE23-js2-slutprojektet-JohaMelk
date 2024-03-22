@@ -16,7 +16,22 @@
       "image": "thisprofile.jpg",
       "admin": false,
       "comments": [],
-      "posts": []
+      "posts": [
+        {
+          "postId": "55ffffe1-26de-43c8-9f66-055d6d8ac78f",
+          "userId": "2c175723-74ba-4ffc-9fa8-e66372e9311d",
+          "title": "testing post",
+          "bread": "this is post testing",
+          "comments": []
+        },
+        {
+          "postId": "94b8b36c-d4cc-4a6e-956c-ffa5133a2e99",
+          "userId": "2c175723-74ba-4ffc-9fa8-e66372e9311d",
+          "title": "testing post2",
+          "bread": "this is post testing",
+          "comments": []
+        }
+      ]
     },
     {
       "id": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
@@ -32,6 +47,24 @@
       "name": "Clara",
       "password": "testingpasswords",
       "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "82258754-3eb3-4651-a86b-cefdbf9f7611",
+      "name": "Tobias",
+      "password": "testingpassword",
+      "image": "thispic.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "6f415255-3318-41ed-9d0c-aa267eff3ca1",
+      "name": "Melinda",
+      "password": "testingpassword",
+      "image": "thispic.jpg",
       "admin": false,
       "comments": [],
       "posts": []
