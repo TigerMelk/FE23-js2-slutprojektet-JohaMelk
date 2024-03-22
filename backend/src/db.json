@@ -22,7 +22,14 @@
           "userId": "2c175723-74ba-4ffc-9fa8-e66372e9311d",
           "title": "testing post",
           "bread": "this is post testing",
-          "comments": []
+          "comments": [
+            {
+              "commentId": "525e6e55-e7d5-4ffa-940a-5e9b3511d4ac",
+              "userId": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
+              "postId": "55ffffe1-26de-43c8-9f66-055d6d8ac78f",
+              "comment": "Comment text test"
+            }
+          ]
         },
         {
           "postId": "94b8b36c-d4cc-4a6e-956c-ffa5133a2e99",
@@ -39,7 +46,14 @@
       "password": "testingpasswords",
       "image": "thisprofile.jpg",
       "admin": false,
-      "comments": [],
+      "comments": [
+        {
+          "commentId": "525e6e55-e7d5-4ffa-940a-5e9b3511d4ac",
+          "userId": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
+          "postId": "55ffffe1-26de-43c8-9f66-055d6d8ac78f",
+          "comment": "Comment text test"
+        }
+      ],
       "posts": []
     },
     {
