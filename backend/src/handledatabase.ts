@@ -159,7 +159,7 @@ async function addPost(userId: string, post: Post): Promise<Post> {
 	await writeDatabase(users);
 	return newPost;
 }
-//add new comment to post. comments array and user.comments array
+//add new comment to post. comments array and user.comments array //!funkar
 // json format for this is:
 // {
 //	"userId": "user.id", //?user who comments
@@ -191,7 +191,7 @@ async function addComment(
 }
 
 // delete functions
-// delete user from database
+// delete user from database //! funkar
 // url id is user.id
 async function deleteUser(id: string): Promise<void> {
 	const user = await getUser(id);
