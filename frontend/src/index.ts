@@ -1,8 +1,8 @@
 import { fetchData } from "./modules/fetch.ts";
-import { displayUser } from "./modules/displayusers.ts";
+import { displayUsers } from "./modules/displayusers.ts";
 import { displayPosts } from "./modules/displayposts.ts";
 import { displayComments } from "./modules/displaycomments.ts";
-
+// import { displayLoggedin } from "./modules/displaylogin.ts"
 //submit from form
 // formEl.addEventListener("submit", handleform);
 // async function handleform(event: Event) {
@@ -17,9 +17,12 @@ import { displayComments } from "./modules/displaycomments.ts";
 
 fetchData()
 // .then((data)=> console.log(data))
-.then(displayUser)
+.then(displayUsers)
+// .then(displayLoggedin)
 
 
+
+//Pushing post button
 const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement
 
 postsBtn.addEventListener('click', () =>{
@@ -27,9 +30,12 @@ fetchData()
 .then(displayPosts)
 })
 
+
+//Pushing comments button
 const commentsBtn = document.querySelector("#commentsBtn") as HTMLButtonElement
 
 commentsBtn.addEventListener('click', () =>{
     fetchData()
     .then(displayComments)
     })
+

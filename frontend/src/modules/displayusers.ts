@@ -11,7 +11,7 @@ type User = {
 
 const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
 
-async function displayUser(data:Array<User>) {
+async function displayUsers(data:Array<User>) {
  
   for(const user of data){
 
@@ -35,4 +35,4 @@ const userBox = document.createElement("div");
   usersDiv.append(userBox);
 }
 }
-export { displayUser };
+export { displayUsers };
