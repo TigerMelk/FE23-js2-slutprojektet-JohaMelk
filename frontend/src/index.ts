@@ -1,5 +1,5 @@
 import { fetchData } from "./modules/fetch.ts";
-import { displayUser } from "./modules/displayuser.ts";
+import { displayUser } from "./modules/displayusers.ts";
 
 //submit from form
 // formEl.addEventListener("submit", handleform);
@@ -12,3 +12,8 @@ import { displayUser } from "./modules/displayuser.ts";
 //   console.log(userinput);
 //   return userinput
 // }
+
+fetchData()
+// .then((data)=> console.log(data))
+.then(displayUser)
+
