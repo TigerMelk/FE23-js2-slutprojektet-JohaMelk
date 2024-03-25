@@ -14,7 +14,6 @@ const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
 async function displayUser(data:Array<User>) {
  
   for(const user of data){
-  console.log(data) 
 
   const {id, name} = user;
 
