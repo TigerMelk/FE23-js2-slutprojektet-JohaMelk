@@ -1,3 +1,49 @@
 {
-	"users": []
+  "users": [
+    {
+      "id": "e59570cb-a59c-4e96-bb95-eec23f295c88",
+      "name": "Melker",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": [
+        {
+          "postId": "87e56a34-5cf4-4eff-bc82-6e5e68d7f39d",
+          "userId": "e59570cb-a59c-4e96-bb95-eec23f295c88",
+          "title": "testing post",
+          "bread": "testtest test test",
+          "category": "game1",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "id": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+      "name": "johanna",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
+      "name": "javad",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+      "name": "clara",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    }
+  ]
 }
