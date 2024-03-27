@@ -23,9 +23,43 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 2rem;
 }
 
 .logo {
+    max-width: 35px;
+    height: 35px;
+    z-index: 1000;
+} 
+
+
+.webName {
+    display: grid;
+    align-items: center;
+    margin-left: 15%;
+    font-size: 2rem;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: #454545;
+}
+
+.menu li {
+    margin-left: 10px;
+    color: #454545;
+}
+
+.menu li:first-child {
+    margin-left: 0; 
+}
+
+.borderRight {
+    border-right: 1px solid white; 
+    padding-right: 10px; 
     width: 40px;
     height: 40px;
 }
