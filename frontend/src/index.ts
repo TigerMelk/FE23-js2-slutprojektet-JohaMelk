@@ -35,7 +35,7 @@ commentsBtn.addEventListener('click', () =>{
 // Function to handle page transition from Login to Signup
 function goToSignup(): void {
     const login = document.getElementById('login');
-    const signup = document.getElementById('signup');
+    const signup = document.getElementById('signup'); 
 
     if (login && signup) {
         login.style.display = 'none';
@@ -46,7 +46,7 @@ function goToSignup(): void {
 // Function to handle page transition from Signup to Login
 function goToLogin(): void {
     const login = document.getElementById('login');
-    const signup = document.getElementById('signup');
+    const signup = document.getElementById('signup'); 
 
     if (login && signup) {
         login.style.display = 'block';
@@ -56,6 +56,9 @@ function goToLogin(): void {
 
 // Event listeners to trigger page transitions
 document.getElementById('goToSignup')?.addEventListener('click', goToSignup);
+
+document.getElementById('goToLogin')?.addEventListener('click', goToLogin); 
+
 document.getElementById('goTologin')?.addEventListener('click', goToLogin);
 // submit from form
 const formEl = document.querySelector("form") as HTMLFormElement
