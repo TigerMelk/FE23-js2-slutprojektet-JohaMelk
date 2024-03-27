@@ -15,13 +15,11 @@ async function displayUsers(data:Array<User>) {
  
   for(const user of data){
 
-  const {id, name} = user;
+  const {name} = user;
 
   const idEl= document.createElement('p')
   const nameEl = document.createElement("h2");
 
-
-  idEl.innerText = user.id;
   nameEl.innerText = user.name;
 
 
@@ -29,7 +27,6 @@ const userBox = document.createElement("div");
 
   userBox.append(
     nameEl,
-    idEl
   );
 
   usersDiv.append(userBox);

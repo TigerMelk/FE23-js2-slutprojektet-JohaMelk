@@ -28,6 +28,12 @@
               "userId": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
               "postId": "55ffffe1-26de-43c8-9f66-055d6d8ac78f",
               "comment": "Comment text test"
+            },
+            {
+              "commentId": "9175fc6a-07f6-46bd-beec-1e8affeef87a",
+              "userId": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
+              "postId": "55ffffe1-26de-43c8-9f66-055d6d8ac78f",
+              "comment": "phone"
             }
           ]
         },
@@ -52,6 +58,12 @@
           "userId": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
           "postId": "55ffffe1-26de-43c8-9f66-055d6d8ac78f",
           "comment": "Comment text test"
+        },
+        {
+          "commentId": "9175fc6a-07f6-46bd-beec-1e8affeef87a",
+          "userId": "f7a07e47-5b45-49cd-b419-aa75248c6bee",
+          "postId": "55ffffe1-26de-43c8-9f66-055d6d8ac78f",
+          "comment": "phone"
         }
       ],
       "posts": []

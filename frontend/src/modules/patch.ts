@@ -1,10 +1,10 @@
 async function patcher(user) {
-  const baseUrl: string = "https://example.com";
+  const baseUrl: string = 'http://localhost:3000/api/';
 
   const header = {
     "Content-type": "application/json; charset=UTF-8",
   };
-  const url = baseUrl + user + ".json";
+  const url = baseUrl + user;
 
   const content = {};
 
