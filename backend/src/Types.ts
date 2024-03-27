@@ -21,7 +21,7 @@ export type Post = {
   userId: string;
   title: string;
   bread: string;
-  category: ["game1", "game2", "game3"];
+  category: ["League of Legends", "Bloodborne", "Palworld"];
   comments: Array<Comment>;
   //   likes: number;
 };

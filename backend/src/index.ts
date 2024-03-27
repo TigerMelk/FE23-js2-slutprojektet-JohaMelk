@@ -1,119 +1,17 @@
 import express from "express";
 import cors from "cors";
-import * as db from "./handledatabase.js";
-import { error } from "console";
+import usersRouter from "./usersRouter.js";
+import postsRouter from "./postsRouter.js";
+import commentsRouter from "./commentsRouter.js";
+
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use((req, res, next) => {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Content-Type");
-	next();
-});
 
-// getUser eller Users
-app.get("/api/:id?", (req, res) => {
-	console.log("get req recieved");
+app.use("/api/users", usersRouter);
+app.use("/api/posts", postsRouter);
+app.use("/api/comments", commentsRouter);
 
-	if (req.params.id) {
-		db.getUser(req.params.id).then((user) => {
-			if (user) res.json(user);
-		});
-	} else {
-		db.getUsers().then((users) => {
-			if (users) res.json(users);
-		});
-	}
-});
-//! funkar
-// login
-app.get("/api/login/user", (req, res) => {
-	const { name, password } = req.body;
-	console.log(req.body);
-	if (!name || !password) {
-		throw new Error("Name and password required");
-	}
-	db.logIn(name, password).then((user) => {
-		if (user) res.json(user);
-		else throw new Error("user not found");
-	});
-});
-// getPost //! funkar
-app.get("/api/user/post", (req, res) => {
-	const { userId, postId } = req.body;
-	db.getPost(userId, postId).then((post) => res.json(post));
-});
-
-// get all comments or posts from user //!funkar
-app.get("/api/user/data/", (req, res) => {
-	const { userId, dataType } = req.body;
-	console.log(userId, dataType);
-	db.getUserData(userId, dataType).then((userData) => {
-		res.json(userData);
-	});
-});
-// get categories //! funkar
-app.get("/api/post/category", (req, res) => {
-	const { category } = req.body;
-	db.getCategory(category).then((matchingCategory) =>
-		res.json(matchingCategory)
-	);
-});
-
-// addUser //! funkar
-app.post("/api/users", (req, res) => {
-	const { name, password, image } = req.body;
-	const newUser = {
-		id: "",
-		name,
-		password,
-		image,
-		admin: false,
-		comments: [],
-		posts: [],
-	};
-	const addedUser = db.addUser(newUser).then(() => res.json(addedUser));
-});
-// app.put()
-// addPost //! funkar
-app.patch("/api/:id?/post/", (req, res) => {
-	console.log("patch req recieved for post");
-	if (req.params.id) {
-		db.addPost(req.params.id, req.body).then((post) => {
-			res.json(post);
-		});
-	}
-});
-
-// addComment //! funkar
-app.patch("/api/post/comment", (req, res) => {
-	console.log("patch req recieved for comment");
-	const { userId, postId, commentText } = req.body;
-	db.addComment(userId, postId, commentText).then((newComment) =>
-		res.json(newComment)
-	);
-});
-//
-// delete user //!funkar
-app.delete("/api/users/:id", (req, res) => {
-	const userId = req.params.id;
-	db.deleteUser(userId).then(() => res.json({ message: "User Deleted" }));
-});
-// delete post from user.posts array //! funkar
-app.delete("/api/user/post", (req, res) => {
-	console.log("delete post req recieved");
-	const { userId, postId } = req.body;
-	db.deletePost(userId, postId).then(() => {
-		res.json({ message: "Post Deleted" });
-	});
-});
-// delete comment from post and user.comments //! funkar
-app.delete("/api/user/post/comment", (req, res) => {
-	const { commentId } = req.body;
-	db.deleteComment(commentId).then(() => {
-		res.json({ message: "Comment deleted" });
-	});
-});
 app.listen(3000, () => {
-	console.log("listening to port 3000");
+  console.log("Listening to port 3000");
 });
