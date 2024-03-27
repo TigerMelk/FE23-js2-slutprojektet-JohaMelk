@@ -70,41 +70,23 @@
 			<span></span>
 
 			<form class="signin">
-
 				<div class="content">
-
 					<h2>Log In</h2>
-
 					<div class="form">
-
 						<div class="inputBox">
-
 							<input type="text" required> <i>Username</i>
-
 						</div>
-
 						<div class="inputBox">
-
 							<input type="password" required> <i>Password</i>
-
 						</div>
-
 						<div class="links" id="goToSignup"> <a href=""> </a><a href="#">Signup</a>
-
 						</div>
-
 						<div class="inputBox">
-
-							<input type="submit" value="Login">
-
+							<input type="submit" id="GoToFrontpage" value="Login">
 						</div>
-
 					</div>
-
 				</div>
-
 			</form>
-
 		</section>
 		<!-----------Sign up form---------->
 
@@ -148,57 +130,36 @@
 			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
 			<span></span>
 
-			<form class="signin">
-
+			<form class="signup">
 				<div class="content">
-
-					<h2>Log In</h2>
-
+					<h2>Sign Up</h2>
 					<div class="form">
-
+						<div class="inputBox"><input type="text" required> <i>Username</i>
+						</div>
+						<div class="inputBox"><input type="password" required> <i>Password</i>
+						</div>
+						<div class="links" id="goToLogin"> <a href=""> </a><a href="#">Login</a>
+						</div>
 						<div class="inputBox">
-
-							<input type="text" required> <i>Username</i>
-
+							<input type="submit" id="GoToFrontpage" value="Signup">
 						</div>
-
-						<div class="inputBox">
-
-							<input type="password" required> <i>Password</i>
-
-						</div>
-
-						<div class="links" id="goToLogin"> <a href=""> </a><a href="#">Signup</a>
-
-						</div>
-
-						<div class="inputBox">
-
-							<input type="submit" value="Login">
-
-						</div>
-
 					</div>
-
 				</div>
-
 			</form>
-
 		</section>
 
-
-		<section>
-		<div class="categories"></div>	
-		<div id="usersDiv"></div>
-		<button id="postsBtn">Posts</button>
-		<div id="posters"></div>
-		<button id="commentsBtn">Comments</button>
-		<div id="commentsDiv"></div>
-		<form>
-			<input type="text" id="userinput" placeholder="Comment" />
-			<button id="button">Submit</button>
-		  </form>
-	</section>
+		<section id="frontpage">
+			<div class="categories"></div>
+			<div id="usersDiv"></div>
+			<button id="postsBtn">Posts</button>
+			<div id="posters"></div>
+			<button id="commentsBtn">Comments</button>
+			<div id="commentsDiv"></div>
+			<form>
+				<input type="text" id="userinput" placeholder="Comment" />
+				<button id="button">Submit</button>
+			</form>
+		</section>
 	</main>
 </body>
 
