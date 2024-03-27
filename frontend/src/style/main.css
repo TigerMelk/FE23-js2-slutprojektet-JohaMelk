@@ -6,6 +6,12 @@
     --color: #454545
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
 body{
     background-color: var(--primeryprimary-color);
     margin: 0;
@@ -14,30 +20,51 @@ body{
 
 .header {
     background-color: var(--secondary-color);
-    padding: 10px 20px;
+    color: #454545;
 }
+
 .navBar {
-    background-color: var(--secondary-color);
-    color: var(--color);
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
+    max-width: 35px;
+    height: 35px;
+    z-index: 1000;
+} /* Adjust size and styling as needed */
+
+
+.webName {
+    display: grid;
+    align-items: center;
+    margin-left: 10%; /* Adjust styling for the website name */
 }
 
-.logInBtn {
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: #454545;
+}
+
+.menu li {
+    margin-left: 10px; /* Add spacing between list items */
+    color: #454545;
+}
+
+.menu li:first-child {
+    margin-left: 0; /* Remove margin from the first list item */
+}
+
+.borderRight {
+    border-right: 1px solid white; /* Add border between menu items */
+    padding-right: 10px; /* Add padding between border and text */
     background-color: var(--primeryprimary-color);
     color: #454545;
     padding: 8px 20px; 
     border-radius: 5px; 
-    text-decoration: none;
-}
-
-.logInBtn:hover {
-    background-color: var(--hover-color);
 }

@@ -43,3 +43,4 @@ async function displayUser(data:User) {
     userDiv.append(userBox)
 
 }
+
