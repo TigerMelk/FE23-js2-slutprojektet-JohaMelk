@@ -5,7 +5,7 @@ async function post() {
   const content = {};
   console.log(content);
 
-  const baseUrl: string = "https://example.com";
+  const baseUrl: string = 'http://localhost:3000/api/user/post';
 
   const options = {
     method: "POST",
