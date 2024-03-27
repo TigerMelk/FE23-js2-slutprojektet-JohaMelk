@@ -1,74 +1,67 @@
 import { fetchData } from "./modules/fetch.ts";
-import { displayUsers } from "./modules/displayusers.ts";
-import { displayPosts } from "./modules/displayposts.ts";
-import { displayComments } from "./modules/displaycomments.ts";
-import { addcomment } from "./modules/addcomment.ts";
-// import { displayLoggedin } from "./modules/displaylogin.ts"
+        import { displayUsers } from "./modules/displayusers.ts";
+        import { displayPosts } from "./modules/displayposts.ts";
+        import { displayComments } from "./modules/displaycomments.ts";
 
+        fetchData().then(displayUsers);
 
+        const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
+        postsBtn.addEventListener('click', () => {
+            fetchData().then(displayPosts);
+        });
 
-fetchData()
-// .then((data)=> console.log(data))
-.then(displayUsers)
-// .then(displayLoggedin)
+        const commentsBtn = document.querySelector("#commentsBtn") as HTMLButtonElement;
+        commentsBtn.addEventListener('click', () => {
+            fetchData().then(displayComments);
+        });
 
+        function goToSignup(): void {
+            const login = document.getElementById('login');
+            const signup = document.getElementById('signup');
+            const frontpage = document.getElementById('frontpage');
 
+            if (login && signup && frontpage) {
+                login.style.display = 'none';
+                signup.style.display = 'block';
+                frontpage.style.display = 'block';
+            }
+        }
 
-//Pushing post button
-const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement
+        function goToLogin(): void {
+            const login = document.getElementById('login');
+            const signup = document.getElementById('signup');
+            const frontpage = document.getElementById('frontpage');
 
-postsBtn.addEventListener('click', () =>{
-fetchData()
-.then(displayPosts)
-})
+            if (login && signup && frontpage) {
+                login.style.display = 'block';
+                signup.style.display = 'none';
+                frontpage.style.display = 'block';
+            }
+        }
 
+        function goToFrontpage(): void {
+            const login = document.getElementById('login');
+            const signup = document.getElementById('signup');
+            const frontpage = document.getElementById('frontpage');
 
-//Pushing comments button
-const commentsBtn = document.querySelector("#commentsBtn") as HTMLButtonElement
+            if (login && signup && frontpage) {
+                login.style.display = 'none';
+                signup.style.display = 'none';
+                frontpage.style.display = 'block';
+            }
+        }
 
-commentsBtn.addEventListener('click', () =>{
-    fetchData()
-    .then(displayComments)
-    })
+        document.getElementById('goToSignup')?.addEventListener('click', goToSignup);
+        document.getElementById('goToLogin')?.addEventListener('click', goToLogin);
+        document.getElementById('goToFrontpage')?.addEventListener('click', goToFrontpage);
 
-//From
-// Function to handle page transition from Login to Signup
-function goToSignup(): void {
-    const login = document.getElementById('login');
-    const signup = document.getElementById('signup'); 
+        const formEl = document.querySelector("form") as HTMLFormElement;
 
-    if (login && signup) {
-        login.style.display = 'none';
-        signup.style.display = 'block';
-    }
-}
+        formEl.addEventListener("submit", handleForm);
 
-// Function to handle page transition from Signup to Login
-function goToLogin(): void {
-    const login = document.getElementById('login');
-    const signup = document.getElementById('signup'); 
-
-    if (login && signup) {
-        login.style.display = 'block';
-        signup.style.display = 'none';
-    }
-}
-
-// Event listeners to trigger page transitions
-document.getElementById('goToSignup')?.addEventListener('click', goToSignup);
-
-document.getElementById('goToLogin')?.addEventListener('click', goToLogin); 
-
-document.getElementById('goTologin')?.addEventListener('click', goToLogin);
-// submit from form
-const formEl = document.querySelector("form") as HTMLFormElement
-
-formEl.addEventListener("submit", handleform);
-async function handleform(event: Event) {
-  event.preventDefault();
-  const userinput: string = (
-    document.querySelector("input") as HTMLInputElement
-  ).value;
-  addcomment(userinput)
-  return userinput
-}
+        async function handleForm(event: Event) {
+            event.preventDefault();
+            const userInput: string = (document.querySelector("input") as HTMLInputElement).value;
+            // Call a function to handle the form submission (e.g., addcomment(userInput))
+            // Ensure that addcomment function is defined to handle the user input appropriately.
+        }
