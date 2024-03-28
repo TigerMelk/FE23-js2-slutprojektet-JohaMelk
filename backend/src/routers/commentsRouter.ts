@@ -1,5 +1,5 @@
 import express from "express";
-import { addComment, deleteComment } from "./comments.js";
+import { addComment, deleteComment } from "../modules/comments.js";
 const router = express.Router();
 router.patch("/", (req, res) => {
   console.log("patch req recieved for comment");

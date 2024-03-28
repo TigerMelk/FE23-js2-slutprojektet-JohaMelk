@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import usersRouter from "./usersRouter.js";
-import postsRouter from "./postsRouter.js";
-import commentsRouter from "./commentsRouter.js";
+import usersRouter from "./routers/usersRouter.js";
+import postsRouter from "./routers/postsRouter.js";
+import commentsRouter from "./routers/commentsRouter.js";
 
 const app = express();
 app.use(express.json());

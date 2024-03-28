@@ -1,5 +1,5 @@
 import express from "express";
-import { getPost, getCategory, addPost, deletePost } from "./posts.js";
+import { getPost, getCategory, addPost, deletePost } from "../modules/posts.js";
 const router = express.Router();
 router.get("/category", (req, res) => {
   const { category } = req.body;

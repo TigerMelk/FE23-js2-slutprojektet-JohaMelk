@@ -33,7 +33,16 @@
       "image": "thisprofile.jpg",
       "admin": false,
       "comments": [],
-      "posts": []
+      "posts": [
+        {
+          "postId": "e0f5870f-17da-484f-b735-6ab1899934a4",
+          "userId": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
+          "title": "testing post",
+          "bread": "testtest test test",
+          "category": "Bloodborne",
+          "comments": []
+        }
+      ]
     },
     {
       "id": "e97eeb0d-a878-445e-9206-49f2bb70185b",

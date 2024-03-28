@@ -6,7 +6,7 @@ import {
   logIn,
   addUser,
   deleteUser,
-} from "./users.js";
+} from "../modules/users.js";
 
 const router = express.Router();
 router.get("/login", (req, res) => {
