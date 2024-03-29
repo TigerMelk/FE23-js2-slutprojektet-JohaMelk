@@ -1,19 +1,18 @@
 import { fetchData } from "./modules/fetch.ts";
-        import { displayUsers } from "./modules/displayusers.ts";
-        import { displayPosts } from "./modules/displayposts.ts";
-        import { displayComments } from "./modules/displaycomments.ts";
+import { displayUsers } from "./modules/displayusers.ts";
+import { displayPosts } from "./modules/displayposts.ts";
 
-        fetchData().then(displayUsers);
+const userBtn = document.querySelector('#userBtn') as HTMLButtonElement
+userBtn.addEventListener('click', () => {
+fetchData().then(displayUsers);
+});
 
-        const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
-        postsBtn.addEventListener('click', () => {
-            fetchData().then(displayPosts);
-        });
 
-        const commentsBtn = document.querySelector("#commentsBtn") as HTMLButtonElement;
-        commentsBtn.addEventListener('click', () => {
-            fetchData().then(displayComments);
-        });
+const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
+postsBtn.addEventListener("click", () => {
+  fetchData().then(displayPosts);
+});
+
 
         function goToSignup(): void {
             const login = document.getElementById('login');
@@ -55,13 +54,13 @@ import { fetchData } from "./modules/fetch.ts";
         document.getElementById('goToLogin')?.addEventListener('click', goToLogin);
         document.getElementById('goToFrontpage')?.addEventListener('click', goToFrontpage);
 
-        const formEl = document.querySelector("form") as HTMLFormElement;
+        // const formEl = document.querySelector("form") as HTMLFormElement;
 
-        formEl.addEventListener("submit", handleForm);
+        // formEl.addEventListener("submit", handleForm);
 
-        async function handleForm(event: Event) {
-            event.preventDefault();
-            const userInput: string = (document.querySelector("input") as HTMLInputElement).value;
-            // Call a function to handle the form submission (e.g., addcomment(userInput))
-            // Ensure that addcomment function is defined to handle the user input appropriately.
-        }
+        // async function handleForm(event: Event) {
+        //     event.preventDefault();
+        //     const userInput: string = (document.querySelector("input") as HTMLInputElement).value;
+        //     // Call a function to handle the form submission (e.g., addcomment(userInput))
+        //     // Ensure that addcomment function is defined to handle the user input appropriately.
+        // }
