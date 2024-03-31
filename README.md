@@ -44,20 +44,20 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
  #### logIn(userName, userPassword)
     
  > Loops over getUsers() and returns a single userWithoutPassword if user.name and user.password matches the parameters
-    >
-    > **json format for this is:**_{"name": "username","password":"password"}_
+ >
+ > **json format for this is:**_{"name": "username","password":"password"}_
     
  #### getUserData(userId,dataType)
     
-   > Uses getUser(userId) and returns either the user.comments array or the user.posts array depending on the dataType paramater (either "comments" or "posts")
-    >
-    > **json format for this is:**_{"userId": "user.id","dataType":"comments"|"posts"}_
+ > Uses getUser(userId) and returns either the user.comments array or the user.posts array depending on the dataType paramater (either "comments" or "posts")
+ >
+ > **json format for this is:**_{"userId": "user.id","dataType":"comments"|"posts"}_
     
  #### addUser(user)
     
-  > Creates a new user and adds it to the users array if the user.name is unique. user.id is randomly generated with crypto.randomUUID(). returns the user excluding the password
-    >
-    > **json format for this is:**_{"name":"name","password":"password","image":"src for img"}_
+ > Creates a new user and adds it to the users array if the user.name is unique. user.id is randomly generated with crypto.randomUUID(). returns the user excluding the password
+ >
+ > **json format for this is:**_{"name":"name","password":"password","image":"src for img"}_
     
  #### deleteUser(id)
     
@@ -71,27 +71,27 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
     
  #### getPost(userId,postId)
     
-   > Uses getUser(userid) and returns the post if post.id matches the postId provided in the paramater
-    >
-    > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId"}_
+ > Uses getUser(userid) and returns the post if post.id matches the postId provided in the paramater
+ >
+ > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId"}_
     
   #### getCategory(category)
     
-> Returns an array with all posts that matches post.category to the category provided in the paramater
-    >
-    > **json format for this is:**_{"category":"League of Legends" | "Bloodborne" | "Palworld"}_
+ > Returns an array with all posts that matches post.category to the category provided in the paramater
+ >
+ > **json format for this is:**_{"category":"League of Legends" | "Bloodborne" | "Palworld"}_
     
  #### addPost(userId, post)
     
  > Creates a new post object and pushes it into user.posts array in the user whose user.id matches the userId provided in the paramater
-    >
-    > **json format for this is:**_{ "title": "post title","bread": "post content","category":"League of Legends" | "Bloodborne" | "Palworld", "comments":[]}_
+ >
+ > **json format for this is:**_{ "title": "post title","bread": "post content","category":"League of Legends" | "Bloodborne" | "Palworld", "comments":[]}_
     
  #### deletePost(userId, postId)
     
  > Deletes a post object if the user.id and posts.postId matches the userId and postId provided in the paramaters
-    >
-    > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId"}_
+ >
+ > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId"}_
 </details>
 <details>
     
@@ -102,14 +102,14 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
  #### addComment(userId,postId,commentText)
     
  > Creates a new comment and pushes it into the posts.post.comments array as well as the user.comments array of the user who made the request.
-    >
-    > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId","commentText":"the comment"}_
+ >
+ > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId","commentText":"the comment"}_
     
   #### deleteComment(commentId)
     
  > Deletes the comment that matches the user.comments.commentId with the commentId provided in the paramater.
-    >
-    > **json format for this is:**_{"commentId":"user.comments.comment.commentId"}_
+ >
+ > **json format for this is:**_{"commentId":"user.comments.comment.commentId"}_
 </details>
 
 </details>
