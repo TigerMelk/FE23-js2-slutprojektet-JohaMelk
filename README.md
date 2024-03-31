@@ -7,7 +7,7 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
 - Johanna Östling
 - Javad Jananeh
 <details>
-<summary>### Backend functions</summary>
+<summary><h1>Backend functions</h1></summary>
 
 ### functions found in handledatabase.ts
 
@@ -17,7 +17,6 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
 
 #### writeDatabase()
 
-</details>
 > Rewrites db.json with new additions to the users array
 
 ### functions found in users.ts
@@ -95,3 +94,5 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
 > Deletes the comment that matches the user.comments.commentId with the commentId provided in the paramater.
 >
 > **json format for this is:**_{"commentId":"user.comments.comment.commentId"}_
+
+</details>
