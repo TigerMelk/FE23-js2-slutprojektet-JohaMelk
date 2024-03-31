@@ -94,7 +94,7 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
 </details>
 <details>
     
-    <summary>
+<summary>
         <h3>functions found in comments.ts</h3>
     </summary>
     
