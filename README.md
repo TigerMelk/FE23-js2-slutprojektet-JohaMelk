@@ -28,39 +28,39 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
         <h3>functions found in users.ts</h3>
     </summary>
     
-    #### getUsers()
+ #### getUsers()
     
-    > Uses readDatabase() and returns the users array in db.json
+ > Uses readDatabase() and returns the users array in db.json
     
-    #### getUsersWithoutPassword
+ #### getUsersWithoutPassword
     
-    > Same as getUsers() but without the user.password property
+ > Same as getUsers() but without the user.password property
     
-    #### getUser(id)
+ #### getUser(id)
     
-    > Returns a single user by using find() to match the user.id provided in the paramater
+  > Returns a single user by using find() to match the user.id provided in the paramater
     
-    #### logIn(userName, userPassword)
+ #### logIn(userName, userPassword)
     
-    > Loops over getUsers() and returns a single userWithoutPassword if user.name and user.password matches the parameters
+ > Loops over getUsers() and returns a single userWithoutPassword if user.name and user.password matches the parameters
     >
     > **json format for this is:**_{"name": "username","password":"password"}_
     
-    #### getUserData(userId,dataType)
+ #### getUserData(userId,dataType)
     
-    > Uses getUser(userId) and returns either the user.comments array or the user.posts array depending on the dataType paramater (either "comments" or "posts")
+   > Uses getUser(userId) and returns either the user.comments array or the user.posts array depending on the dataType paramater (either "comments" or "posts")
     >
     > **json format for this is:**_{"userId": "user.id","dataType":"comments"|"posts"}_
     
-    #### addUser(user)
+ #### addUser(user)
     
-    > Creates a new user and adds it to the users array if the user.name is unique. user.id is randomly generated with crypto.randomUUID(). returns the user excluding the password
+  > Creates a new user and adds it to the users array if the user.name is unique. user.id is randomly generated with crypto.randomUUID(). returns the user excluding the password
     >
     > **json format for this is:**_{"name":"name","password":"password","image":"src for img"}_
     
-    #### deleteUser(id)
+ #### deleteUser(id)
     
-    > Deletes the user whose user.id matches the id provided in the paramater
+  > Deletes the user whose user.id matches the id provided in the paramater
 </details>
 
 <details>
@@ -68,27 +68,27 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
         <h3>functions found in posts.ts</h3>
     </summary>
     
-    #### getPost(userId,postId)
+ #### getPost(userId,postId)
     
-    > Uses getUser(userid) and returns the post if post.id matches the postId provided in the paramater
+   > Uses getUser(userid) and returns the post if post.id matches the postId provided in the paramater
     >
     > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId"}_
     
-    #### getCategory(category)
+  #### getCategory(category)
     
-    > Returns an array with all posts that matches post.category to the category provided in the paramater
+> Returns an array with all posts that matches post.category to the category provided in the paramater
     >
     > **json format for this is:**_{"category":"League of Legends" | "Bloodborne" | "Palworld"}_
     
-    #### addPost(userId, post)
+ #### addPost(userId, post)
     
-    > Creates a new post object and pushes it into user.posts array in the user whose user.id matches the userId provided in the paramater
+ > Creates a new post object and pushes it into user.posts array in the user whose user.id matches the userId provided in the paramater
     >
     > **json format for this is:**_{ "title": "post title","bread": "post content","category":"League of Legends" | "Bloodborne" | "Palworld", "comments":[]}_
     
-    #### deletePost(userId, postId)
+ #### deletePost(userId, postId)
     
-    > Deletes a post object if the user.id and posts.postId matches the userId and postId provided in the paramaters
+ > Deletes a post object if the user.id and posts.postId matches the userId and postId provided in the paramaters
     >
     > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId"}_
 </details>
@@ -98,15 +98,15 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
         <h3>functions found in comments.ts</h3>
     </summary>
     
-    #### addComment(userId,postId,commentText)
+ #### addComment(userId,postId,commentText)
     
-    > Creates a new comment and pushes it into the posts.post.comments array as well as the user.comments array of the user who made the request.
+ > Creates a new comment and pushes it into the posts.post.comments array as well as the user.comments array of the user who made the request.
     >
     > **json format for this is:**_{"userId":"user.id","postId":"user.posts.postId","commentText":"the comment"}_
     
-    #### deleteComment(commentId)
+  #### deleteComment(commentId)
     
-    > Deletes the comment that matches the user.comments.commentId with the commentId provided in the paramater.
+ > Deletes the comment that matches the user.comments.commentId with the commentId provided in the paramater.
     >
     > **json format for this is:**_{"commentId":"user.comments.comment.commentId"}_
 </details>
