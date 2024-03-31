@@ -1,4 +1,5 @@
-#fe23-js2-slutprojekt-JaJoMe
+# fe23-js2-slutprojekt-JaJoMe
+
 Final assignment - course Javascript 2 (FE23 Grit Academy)
 
 ## Group: JaJoMe
