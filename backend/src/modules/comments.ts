@@ -24,12 +24,6 @@ async function addComment(
   await writeDatabase(users);
   return newComment;
 }
-
-// delete functions
-
-// delete comment from post.comments array and user.comments array //! funkar
-// json format for this is:
-// {"commentId":"commentId"}
 async function deleteComment(commentId: string): Promise<void> {
   const users = await getUsers();
   let commentDeleted = false;

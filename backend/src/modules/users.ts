@@ -1,6 +1,6 @@
 import { readDatabase, writeDatabase } from "./handledatabase.js";
 import { User, UserWithoutPassword, Post, Comment } from "./Types.js";
-// get all users
+
 async function getUsers(): Promise<User[]> {
   const db = await readDatabase();
   return db.users;
@@ -14,8 +14,7 @@ async function getUsersWithoutPassword(): Promise<UserWithoutPassword[]> {
   }
   return usersWithoutPasswords;
 }
-// get individuel user
-// url id is user.id
+
 async function getUser(
   id: string
 ): Promise<UserWithoutPassword | { message: string }> {
@@ -24,12 +23,7 @@ async function getUser(
   if (user) return user;
   else return { message: "user not found" };
 }
-// get login
-// json format for this is
-// {
-//     "name": "username",
-//     "password": "password"
-// }
+
 async function logIn(
   userName: string,
   userPassword: string
@@ -49,14 +43,6 @@ async function logIn(
   }
   return { message: "user not found" };
 }
-// dont return user.password
-
-// get comments eller posts //! funkar
-// json format for this is:
-// {
-//     "userId": "user.id",
-//     "dataType": "posts"| "comments"
-// }
 async function getUserData(
   userId: string,
   dataType: string
@@ -71,14 +57,6 @@ async function getUserData(
   }
 }
 
-// add new user
-//! funkar
-// json format for this is:
-// {
-//     "name":"name",
-//     "password":"password",
-//     "image":"src for img"
-// }
 async function addUser(user: User): Promise<UserWithoutPassword> {
   const users = await getUsers();
 
@@ -107,8 +85,6 @@ async function addUser(user: User): Promise<UserWithoutPassword> {
   return userWithoutPassword;
 }
 
-// delete user from database //! funkar
-// url id is user.id
 async function deleteUser(id: string): Promise<void> {
   const user = await getUser(id);
   if (!user) throw new Error("User not found");

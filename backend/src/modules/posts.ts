@@ -1,16 +1,10 @@
 import { writeDatabase } from "./handledatabase.js";
 import { getUser, getUsers } from "./users.js";
 import { Post } from "./Types.js";
-
-// get individuell post //!funkar
-// json format for this is:
-// {"userId":"user.id or userId",
-// "postId":"posts.postId"}
 async function getPost(
   userId: string,
   postId: string
 ): Promise<Post | { message: string }> {
-  //!fixa return
   const user = await getUser(userId);
   if ("posts" in user) {
     for (const post of user.posts) {
@@ -22,9 +16,6 @@ async function getPost(
   return { message: "post not found in user " };
 }
 
-// get posts by category //! funkar
-// json format for this is:
-// {"category":"League of Legends" | "Bloodborne" | "Palworld"}
 async function getCategory(
   category: Array<"League of Legends" | "Bloodborne" | "Palworld">
 ): Promise<Post[]> {
@@ -39,19 +30,6 @@ async function getCategory(
   }
   return matchingPosts;
 }
-// Post functions
-
-// Patch functions
-//! funkar
-// add new post
-// json format for this is:
-// id in url should be user.id
-// {
-//     "title": "post title",
-//     "bread": "post content",
-//     "category": "League of Legends" | "Bloodborne" | "Palworld",
-//     "comments": []
-// }
 async function addPost(userId: string, post: Post): Promise<Post> {
   const newPost: Post = { postId: crypto.randomUUID(), userId, ...post };
   const users = await getUsers();
@@ -64,18 +42,6 @@ async function addPost(userId: string, post: Post): Promise<Post> {
   await writeDatabase(users);
   return newPost;
 }
-//add new comment to post. comments array and user.comments array //!funkar
-// json format for this is:
-// {
-//	"userId": "user.id", //?user who comments
-//	"postId": "postId",
-//	"commentText": "the comment"
-//}
-
-// delete post from user.posts array // ! funkar
-// json format for this is:
-// {"userId":"user.id",
-// "postId":"postId"}
 async function deletePost(userId: string, postId: string): Promise<void> {
   const users = await getUsers();
   const userIndex = users.findIndex((user) => user.id === userId);

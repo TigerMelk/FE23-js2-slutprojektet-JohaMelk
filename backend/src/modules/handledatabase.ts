@@ -1,9 +1,5 @@
 import fs from "fs/promises";
 import { User } from "./Types.js";
-
-//database read and write
-
-// readme file
 async function readDatabase() {
   const rawDbBuffer: Buffer = await fs.readFile("./src/storage/db.json");
   const rawDb: string = rawDbBuffer.toString("utf-8");
