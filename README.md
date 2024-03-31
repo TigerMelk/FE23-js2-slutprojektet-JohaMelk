@@ -6,8 +6,8 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
 - Melker Dahl
 - Johanna Östling
 - Javad Jananeh
-
-### Backend functions
+<details>
+<summary>### Backend functions</summary>
 
 ### functions found in handledatabase.ts
 
@@ -17,6 +17,7 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
 
 #### writeDatabase()
 
+</details>
 > Rewrites db.json with new additions to the users array
 
 ### functions found in users.ts
