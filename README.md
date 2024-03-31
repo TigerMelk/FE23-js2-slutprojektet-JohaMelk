@@ -84,4 +84,5 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
 #### deleteComment(commentId)
 
 > Deletes the comment that matches the user.comments.commentId with the commentId provided in the paramater.
+>
 > **json format for this is:**_{"commentId":"user.comments.comment.commentId"}_
