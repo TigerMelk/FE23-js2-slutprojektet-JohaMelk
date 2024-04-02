@@ -5,6 +5,7 @@ import { displayPosts } from "./modules/displayposts.ts";
 const userBtn = document.querySelector('#userBtn') as HTMLButtonElement
 userBtn.addEventListener('click', () => {
 fetchData().then(displayUsers);
+
 });
 
 

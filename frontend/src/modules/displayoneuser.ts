@@ -1,33 +1,45 @@
 import { User, Comment, Post } from "./types.ts";
-import { fetchData } from "./fetch.ts";
   
 
 
-async function displayoneuser(nameid: string) {
-  console.log(nameid, 'in displey person');
+async function displayoneuser(nameidInnertext, data) {
+  console.log(nameidInnertext, 'in displey person');
+  console.log(data, 'in displey person');
 
- 
-  //     if (user.id === ){
+  const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
 
-  //   const {id, name, image, comments} = user;
+  for(const user of data){
+    if (nameidInnertext === user.name){
 
-  //   const idEl= document.createElement('p')
-  //   const nameEl = document.createElement("h2");
-  //   const imageEl = document.createElement('img')
+    const {name, image, comments} = user;
 
-  //   imageEl.src = user.image;
-  //   idEl.innerText = user.id;
-  //   nameEl.innerText = user.name;
-
-  // const userclicked= document.createElement("div");
-
-  //   userclicked.append(
-  //     nameEl,
-  //     idEl,
-  //     imageEl
-  //   );
-
-  //   }
-}
+    const imageEl = document.createElement("img");
+    const nameEl = document.createElement("h2");
+    
+    // for (const comment of user.comments) {
+    //   const commentsEl = document.createElement("p");
+    //   commentsEl.innerText = comment.comment;
+    // }
+  
+    imageEl.src = user.image
+    nameEl.innerText = user.name;
+  
+  
+  
+  
+  const userBox = document.createElement("div");
+  
+    userBox.append(
+      nameEl,
+      imageEl,
+      // Comment
+    );
+  
+    usersDiv.append(userBox);
+    console.log(name, imageEl, )
+    
+  }
+  }
+  }
 
 export { displayoneuser };
