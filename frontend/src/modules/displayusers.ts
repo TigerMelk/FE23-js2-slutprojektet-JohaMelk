@@ -3,6 +3,7 @@ import { displayoneuser } from "./displayoneuser.ts";
 import { fetchData } from "./fetch.ts";
 
 
+
 const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
 
 
@@ -35,9 +36,11 @@ const userBox = document.createElement("div");
   console.log(name, id)
 
   nameEl.addEventListener('click', (event)=>{
-  const nameid = event.currentTarget;
-  console.log(nameid)
-  // fetchData().then(displayoneuser(nameid))
+  let nameid = event.currentTarget;
+  let nameidInnertext = nameid.innerText
+  console.log(nameid, nameidInnertext)
+  displayoneuser(nameidInnertext, data)
+  
 })
 
 }
