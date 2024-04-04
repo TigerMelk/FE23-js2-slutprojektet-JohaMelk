@@ -15,11 +15,17 @@ async function displayoneuser(nameidInnertext, data) {
 
     const imageEl = document.createElement("img");
     const nameEl = document.createElement("h2");
+
     
-    // for (const comment of user.comments) {
-    //   const commentsEl = document.createElement("p");
-    //   commentsEl.innerText = comment.comment;
-    // }
+    for (let i = 0; i < 3; i++) {
+
+      console.log(user.posts)
+      // const commentsEl = document.createElement("p");
+      // commentsEl.innerText = user.posts.comments.comment;
+      if (!user.posts[i]){
+      break;
+      }
+    }
   
     imageEl.src = user.image
     nameEl.innerText = user.name;
