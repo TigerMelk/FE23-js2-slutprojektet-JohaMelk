@@ -40,7 +40,14 @@
           "title": "testing post",
           "bread": "testtest test test",
           "category": "Bloodborne",
-          "comments": []
+          "comments": [
+            {
+              "commentId": "9df6b324-ec66-4091-907a-0a0cf27bf246",
+              "userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+              "postId": "e0f5870f-17da-484f-b735-6ab1899934a4",
+              "comment": "the comment"
+            }
+          ]
         }
       ]
     },
@@ -50,7 +57,14 @@
       "password": "testingpasswords",
       "image": "thisprofile.jpg",
       "admin": false,
-      "comments": [],
+      "comments": [
+        {
+          "commentId": "9df6b324-ec66-4091-907a-0a0cf27bf246",
+          "userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+          "postId": "e0f5870f-17da-484f-b735-6ab1899934a4",
+          "comment": "the comment"
+        }
+      ],
       "posts": []
     },
     {
