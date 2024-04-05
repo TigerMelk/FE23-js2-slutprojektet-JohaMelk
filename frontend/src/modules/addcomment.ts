@@ -5,7 +5,10 @@ async function addcomment(userinput) {
     "Content-type": "application/json; charset=UTF-8",
   };
   const content = {
-      commentText: userinput,
+    commentId: "testarcomments",
+    userId: "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
+    postId: "14506121-37a4-49e9-97f9-63920a5326f0",
+    commentText: userinput,
   };
   console.log(content);
 

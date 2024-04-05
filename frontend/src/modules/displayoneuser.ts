@@ -7,6 +7,8 @@ async function displayoneuser(nameidInnertext, data) {
   console.log(data, 'in displey person');
 
   const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
+  const userBox = document.createElement("div");
+  const userposts = document.createElement("div")
 
   for(const user of data){
     if (nameidInnertext === user.name){
@@ -15,28 +17,30 @@ async function displayoneuser(nameidInnertext, data) {
 
     const imageEl = document.createElement("img");
     const nameEl = document.createElement("h2");
-    
-    // for (const comment of user.comments) {
-    //   const commentsEl = document.createElement("p");
-    //   commentsEl.innerText = comment.comment;
-    // }
-  
+
     imageEl.src = user.image
     nameEl.innerText = user.name;
-  
-  
-  
-  
-  const userBox = document.createElement("div");
+
+
+    for (let i = 0; i < 3; i++) {
+      if (!user.posts[i]){
+        break;
+        }
+      console.log(user.posts[i])
+      const commentsEl = document.createElement("p");
+      commentsEl.innerText = user.posts[i].bread;
+      userposts.append(commentsEl)
+      
+    }
   
     userBox.append(
       nameEl,
       imageEl,
-      // Comment
+      userposts
     );
   
     usersDiv.append(userBox);
-    console.log(name, imageEl, )
+    console.log(name, imageEl)
     
   }
   }
