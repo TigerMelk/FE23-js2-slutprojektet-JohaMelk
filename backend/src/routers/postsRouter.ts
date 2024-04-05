@@ -1,7 +1,7 @@
 import express from "express";
 import { getPost, getCategory, addPost, deletePost } from "../modules/posts.js";
 const router = express.Router();
-router.get("/category", (req, res) => {
+router.post("/category", (req, res) => {
   const { category } = req.body;
   getCategory(category).then((matchingCategory) => res.json(matchingCategory));
 });

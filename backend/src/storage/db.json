@@ -1,40 +1,140 @@
 {
-	"users": [
-		{
-			"id": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
-			"name": "johanna",
-			"password": "testingpasswords",
-			"image": "thisprofile.jpg",
-			"admin": false,
-			"comments": [],
-			"posts": []
-		},
-		{
-			"id": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
-			"name": "javad",
-			"password": "testingpasswords",
-			"image": "thisprofile.jpg",
-			"admin": false,
-			"comments": [],
-			"posts": []
-		},
-		{
-			"id": "e97eeb0d-a878-445e-9206-49f2bb70185b",
-			"name": "clara",
-			"password": "testingpasswords",
-			"image": "thisprofile.jpg",
-			"admin": false,
-			"comments": [],
-			"posts": []
-		},
-		{
-			"id": "02f5092f-f75f-4fc5-9835-b58c8a8328fa",
-			"name": "melker",
-			"password": "testingpasswords",
-			"image": "thisprofile.jpg",
-			"admin": false,
-			"comments": [],
-			"posts": []
-		}
-	]
+  "users": [
+    {
+      "id": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+      "name": "johanna",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": [
+        {
+          "postId": "eb06e2b8-d2ed-4e40-9bf3-a0f4ac53c7f8",
+          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+          "timestamp": 1712326899771,
+          "title": "testing post",
+          "bread": "testtest test test",
+          "category": "Bloodborne",
+          "comments": [],
+          "name": "johanna"
+        },
+        {
+          "postId": "932b490b-1eb0-47ad-a8f8-0163afad3b3b",
+          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+          "timestamp": 1712326905615,
+          "title": "testing post",
+          "bread": "testtest test test",
+          "category": "Bloodborne",
+          "comments": [],
+          "name": "johanna"
+        },
+        {
+          "postId": "840a3482-b0b1-4288-9643-fb4fdafa1297",
+          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+          "timestamp": 1712350705114,
+          "title": "ayo",
+          "bread": "tjajja",
+          "category": "League of Legends",
+          "comments": [],
+          "name": "johanna"
+        },
+        {
+          "postId": "9c486319-50ae-47cf-bc96-c8ec1abb96f1",
+          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+          "timestamp": 1712350793900,
+          "title": "ayoasdasd",
+          "bread": "tjajjaasdasd",
+          "category": "Palworld",
+          "comments": [],
+          "name": "johanna"
+        },
+        {
+          "postId": "7439d7bf-0400-43ff-99f7-76f268b3fbe1",
+          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+          "timestamp": 1712351014317,
+          "title": "asdf",
+          "bread": "yoyooyo",
+          "category": "League of Legends",
+          "comments": [],
+          "name": "johanna"
+        }
+      ]
+    },
+    {
+      "id": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
+      "name": "javad",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": [
+        {
+          "postId": "d3695721-c7bd-4495-b656-ab013dfe21a9",
+          "userId": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
+          "timestamp": 1712326914036,
+          "title": "testing post",
+          "bread": "testtest test test",
+          "category": "Bloodborne",
+          "comments": [],
+          "name": "javad"
+        }
+      ]
+    },
+    {
+      "id": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+      "name": "clara",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": [
+        {
+          "postId": "63fb33ec-514d-4860-a31a-f2dd7a2b4978",
+          "userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+          "timestamp": 1712326944842,
+          "title": "testing post",
+          "bread": "testtest test test",
+          "category": "Palworld",
+          "comments": [],
+          "name": "clara"
+        }
+      ]
+    },
+    {
+      "id": "02f5092f-f75f-4fc5-9835-b58c8a8328fa",
+      "name": "melker",
+      "password": "testingpasswords",
+      "image": "thisprofile.jpg",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "30af9030-f815-47c4-b9bb-b59dde8b6cb4",
+      "name": "martin",
+      "password": "martin123",
+      "image": null,
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "141a26f9-4735-44e1-bb6c-68e721135149",
+      "name": "martin2",
+      "password": "martin123",
+      "image": null,
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "dc3774e1-13f9-48a1-8cfa-88bdf819fbf2",
+      "name": "martin3",
+      "password": "martin123",
+      "image": "./images/orange-3177693_640.png",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    }
+  ]
 }

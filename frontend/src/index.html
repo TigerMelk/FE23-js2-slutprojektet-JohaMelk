@@ -1,96 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <script type="module" src="index.ts"></script>
+    <title>gamestop</title>
+  </head>
+  <body>
+    <!-- loginform -->
+    <form id="loginForm">
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="name"
+        required
+      />
+      <input
+        type="text"
+        name="password"
+        id="password"
+        placeholder="password"
+        required
+      />
+      <button type="submit">login</button>
+      <button id="createBtn">Create Account</button>
+    </form>
+    <!-- create user -->
+    <form id="newUser" class="hide">
+      <input
+        type="text"
+        name="username"
+        id="createUsername"
+        placeholder="name"
+        required
+      />
+      <input
+        type="text"
+        name="password"
+        id="createPassword"
+        placeholder="password"
+        required
+      />
+      <input
+        type="text"
+        name="password"
+        id="confirmPassword"
+        placeholder="confirm password"
+        required
+      />
+      <label for="bild">
+        <input
+          type="radio"
+          name="bild"
+          id="bild1"
+          value="./images/apple-3177692_640.png"
+        />
+        <!-- <img src="./images/apple-3177692_640.png" alt="apple" /> -->
+      </label>
+      <label for="bild">
+        <input
+          type="radio"
+          name="bild"
+          id="bild2"
+          value="./images/orange-3177693_640.png"
+        />
+        <!-- <img src="./images/orange-3177693_640.png" alt="orange" /> -->
+      </label>
+      <label for="bild">
+        <input
+          type="radio"
+          name="bild"
+          id="bild3"
+          value="./images/strawberry-3177709_640.png"
+        />
+        <!-- <img src="./images/strawberry-3177709_640.png" alt="strawberry" /> -->
+      </label>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<script src="./index.ts" type="module"></script>
-	<link rel="shortcut icon" href="#" type="image/x-icon" />
-	<link rel="stylesheet" href="./style/main.css" />
-	<title>Newbies</title>
-</head>
-
-<body>
-	<div id="userDiv"></div>
-	<!-----------Header---------->
-	<div class="header">
-		<div class="navBar">
-			<img src="./pics/Logo.png" alt="Logo" class="logo">
-			<p id="webName" class="webName">Newbies</p>
-			<nav id="nav" class="nav">
-				<ul class="menu">
-					<li><a href="#" id="aboutUsNav" class="borderRight">About Us</a></li>
-					<li><a href="#" id="contactNav" class="borderRight">Contact</a></li>
-					<li><a href="#" id="logoutNav" class="borderRight">Logout</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-	<!--------- frontpage --------->
-	<div id="frontPage" class="frontPage">
-		<form id="loginForm">
-			<label for="username" class="frontPageLabel">Username</label>
-			<input type="text" id="loginFormUsername" class="frontPageInput" />
-			<label for="password" class="frontPageLabel">Password</label>
-			<input type="password" id="logInFormPassword" class="frontPageInput" />
-			<button type="submit" id="logInButton" class="frontPageButton">Log in</button>
-		</form>
-		<form id="registerForm" class="hide">
-			<label for="registerUsername" class="frontPageLabel">Username</label>
-			<input type="text" id="registerUsername" class="frontPageInput" />
-			<label for="registerPassword" class="frontPageLabel">Password</label>
-			<input type="password" id="registerPassword" class="frontPageInput" />
-			<div class="imageOption">
-				<input type="radio" id="./image1" class="image" value="image1">
-				<label for="image1"><img class="imgg" src="./pics/Profile1.jpg" alt="Image 2"></label>
-				<input type="radio" id="./image2" class="image" value="image2">
-				<label for="image2"><img class="imgg" src="./pics/Profile2.jpg" alt="Image 2"></label>
-				<input type="radio" id="./image3" class="image" value="image3">
-				<label for="image3"><img class="imgg" src="./pics/Profile3.jpg" alt="Image 2"></label>
-			</div>
-			<button type="submit" id="registerButton" class="frontPageButton">Register</button>
-		</form>
-		<div id="switchFrontPage">
-			<!--------- login --------->
-			<div id="logIn">
-				<p>
-					Make an account?
-					<span id="switchToRegister" class="blueText">click here!</span>
-				</p>
-			</div>
-
-		</div>
-	</div>
-	<!--------- main --------->
-	<main id="main" class="hide">
-		<section id="homePage">
-			<div class="categories">
-				<h2 class="categoriesH2">Categories</h2>
-				<ul class="categoriesPics">
-					<li><button type="button">
-							<img src="./pics/Bloodborne.jpg" alt="Bloodborne" id="categoriesBloodborne"
-								class="categoriesName">
-						</button></li>
-					<li><button type="button">
-							<img src="./pics/Palworld.jpg" alt="Palworld" id="categoriesPalworld"
-								class="categoriesName">
-						</button></li>
-					<li><button type="button">
-							<img src="./pics/leagueoflegends.jpg" alt="LeagueOfLegends" id="categoriesLeagueOfLegends"
-								class="categoriesName">
-						</button></li>
-				</ul>
-			</div>
-			<div id="usersDiv"><button id="userBtn" class="userBtnGet">Users</button>
-				<button id="postsBtn" class="postBtnGet">Posts</button>
-				<div id="posters"></div>
-				<div id="commentsDiv"></div>
-			</div>
-		</section>
-		<section id="LeagueOfLegends" class="hide"></section>
-		<section id="Bloodborne" class="hide"></section>
-		<section id="Palworld" class="hide"></section>
-	</main>
-</body>
-
+      <button type="submit">create account</button>
+    </form>
+    <!-- categories -->
+    <div id="categoryDiv" class="hide">
+      <button id="category1" value="Bloodborne">Bloodborne</button>
+      <button id="category2" value="League of Legends">
+        Leauge of Legends
+      </button>
+      <button id="category3" value="Palworld">Palworld</button>
+    </div>
+    <!-- addpost -->
+    <form id="addPost" class="hide">
+      <input type="text" placeholder="Title" id="title" required />
+      <input type="text" placeholder="Content text" id="bread" required />
+      <button type="submit">Post</button>
+    </form>
+    <!-- addComment -->
+    <form id="addComment" class="hide">
+      <input
+        type="text"
+        placeholder="Content text"
+        id="commentBread"
+        required
+      />
+      <button type="submit">Comment</button>
+    </form>
+    <!-- profile -->
+    <div id="profileDiv" class="hide">
+      <h3 id="profileName"></h3>
+      <button id="posts" value="posts">Posts</button>
+      <button id="comments" value="comments">Comments</button>
+    </div>
+    <main id="mainContainer"></main>
+    <aside id="aside" class="hide">
+      <button id="usersAside">Users</button>
+      <div id="usersDiv"></div>
+    </aside>
+  </body>
 </html>
