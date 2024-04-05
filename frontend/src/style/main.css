@@ -126,8 +126,102 @@ body{
     justify-content: center;
     padding: 10px;
   }
-  .blueText {
+.blueText {
     color: blue;
     padding: 4px;
+}
+.categoriesPics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.categoriesH2{
+  align-items: center;
+  display: grid;
+  font-size: 2rem;
+}
+.categoriesPics li {
+  margin: 10px;
+}
+
+.categoriesPics button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.categoriesName {
+  width: 300px;
+  height: 150px;
+  transition: transform 0.3s ease;
+}
+
+.categoriesPics button:hover .categoriesName {
+  transform: scale(1.1);
+}
+
+.categoriesPics button:active .categoriesName {
+  transform: scale(0.9);
+}
+
+#usersDiv {
+    margin-bottom: 20px;
+}
+
+#postsBtn, .userBtnGet {
+  display: inline-block; 
+  margin-right: 10px; 
+}
+
+  
+#userBtn {
+    background-color: #5E5CE6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
   }
   
+#userBtn:hover {
+    background-color: #4F49E0;
+}
+  
+#postsBtn {
+    background-color: #E65E5C;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 43%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+#postsBtn:hover {
+    background-color: #E04F49;
+}
+
+.imageOption{
+    flex-flow:row;
+    justify-content:center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 7px;
+    display: flex;
+}
+.imgg{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  transition: transform 0.3s ease; 
+}

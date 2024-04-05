@@ -70,3 +70,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.getElementById('categoriesLeagueOfLegends')?.addEventListener('click', () => {
+    // Hide all sections same for other rows
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('hide');
+    });
+  
+    // Show the LeagueOfLegends section same for other rows
+    document.getElementById('LeagueOfLegends')?.classList.remove('hide');
+  });
+
+  document.getElementById('categoriesBloodborne')?.addEventListener('click', () => {
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('hide');
+    });
+  
+    document.getElementById('Bloodborne')?.classList.remove('hide');
+  });
+
+  document.getElementById('categoriesPalworld')?.addEventListener('click', () => {
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('hide');
+    });
+  
+    document.getElementById('Palworld')?.classList.remove('hide');
+  });
+

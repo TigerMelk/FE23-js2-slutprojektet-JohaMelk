@@ -28,11 +28,11 @@
 	</div>
 	<!--------- frontpage --------->
 	<div id="frontPage" class="frontPage">
-		<form id="logInForm">
+		<form id="loginForm">
 			<label for="username" class="frontPageLabel">Username</label>
-			<input type="text" id="username" class="frontPageInput" />
+			<input type="text" id="loginFormUsername" class="frontPageInput" />
 			<label for="password" class="frontPageLabel">Password</label>
-			<input type="password" id="password" class="frontPageInput" />
+			<input type="password" id="logInFormPassword" class="frontPageInput" />
 			<button type="submit" id="logInButton" class="frontPageButton">Log in</button>
 		</form>
 		<form id="registerForm" class="hide">
@@ -40,8 +40,14 @@
 			<input type="text" id="registerUsername" class="frontPageInput" />
 			<label for="registerPassword" class="frontPageLabel">Password</label>
 			<input type="password" id="registerPassword" class="frontPageInput" />
-			<label for="profilePic" class="frontPageLabel">Profile Pic</label>
-			<input type="file" id="confirmRegisterPassword" class="frontPageInput" />
+			<div class="imageOption">
+				<input type="radio" id="./image1" class="image" value="image1">
+				<label for="image1"><img class="imgg" src="./pics/Profile1.jpg" alt="Image 2"></label>
+				<input type="radio" id="./image2" class="image" value="image2">
+				<label for="image2"><img class="imgg" src="./pics/Profile2.jpg" alt="Image 2"></label>
+				<input type="radio" id="./image3" class="image" value="image3">
+				<label for="image3"><img class="imgg" src="./pics/Profile3.jpg" alt="Image 2"></label>
+			</div>
 			<button type="submit" id="registerButton" class="frontPageButton">Register</button>
 		</form>
 		<div id="switchFrontPage">
@@ -53,28 +59,37 @@
 				</p>
 			</div>
 
-			<!--------- create account --------->
-			<div id="createAccount" class="hide">
-				<p>
-					Already have an account?
-					<span id="switchToLogIn" class="blueText">click here!</span>
-				</p>
-			</div>
 		</div>
 	</div>
 	<!--------- main --------->
 	<main id="main" class="hide">
 		<section id="homePage">
-			<div class="categories"></div>
-
-			<div id="usersDiv">
-				<button id="userBtn">Get all users</button>
+			<div class="categories">
+				<h2 class="categoriesH2">Categories</h2>
+				<ul class="categoriesPics">
+					<li><button type="button">
+							<img src="./pics/Bloodborne.jpg" alt="Bloodborne" id="categoriesBloodborne"
+								class="categoriesName">
+						</button></li>
+					<li><button type="button">
+							<img src="./pics/Palworld.jpg" alt="Palworld" id="categoriesPalworld"
+								class="categoriesName">
+						</button></li>
+					<li><button type="button">
+							<img src="./pics/leagueoflegends.jpg" alt="LeagueOfLegends" id="categoriesLeagueOfLegends"
+								class="categoriesName">
+						</button></li>
+				</ul>
 			</div>
-
-			<button id="postsBtn">Posts</button>
-			<div id="posters"></div>
-			<div id="commentsDiv"></div>
+			<div id="usersDiv"><button id="userBtn" class="userBtnGet">Users</button>
+				<button id="postsBtn" class="postBtnGet">Posts</button>
+				<div id="posters"></div>
+				<div id="commentsDiv"></div>
+			</div>
 		</section>
+		<section id="LeagueOfLegends" class="hide"></section>
+		<section id="Bloodborne" class="hide"></section>
+		<section id="Palworld" class="hide"></section>
 	</main>
 </body>
 
