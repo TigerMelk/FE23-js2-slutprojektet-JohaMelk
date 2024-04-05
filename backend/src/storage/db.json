@@ -1,80 +1,68 @@
 {
-  "users": [
-    {
-      "id": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
-      "name": "johanna",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [],
-      "posts": [
-        {
-          "postId": "14506121-37a4-49e9-97f9-63920a5326f0",
-          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
-          "title": "testing post",
-          "bread": "testtest test test",
-          "category": "League of Legends",
-          "comments": []
-        },
-        {
-          "postId": "c275d228-15f5-4845-be63-089771cf64b6",
-          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
-          "title": "testing post",
-          "bread": "testtest test test",
-          "category": "Bloodborne",
-          "comments": []
-        }
-      ]
-    },
-    {
-      "id": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
-      "name": "javad",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [],
-      "posts": [
-        {
-          "postId": "e0f5870f-17da-484f-b735-6ab1899934a4",
-          "userId": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
-          "title": "testing post",
-          "bread": "testtest test test",
-          "category": "Bloodborne",
-          "comments": [
-            {
-              "commentId": "9df6b324-ec66-4091-907a-0a0cf27bf246",
-              "userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
-              "postId": "e0f5870f-17da-484f-b735-6ab1899934a4",
-              "comment": "the comment"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "e97eeb0d-a878-445e-9206-49f2bb70185b",
-      "name": "clara",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [
-        {
-          "commentId": "9df6b324-ec66-4091-907a-0a0cf27bf246",
-          "userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
-          "postId": "e0f5870f-17da-484f-b735-6ab1899934a4",
-          "comment": "the comment"
-        }
-      ],
-      "posts": []
-    },
-    {
-      "id": "02f5092f-f75f-4fc5-9835-b58c8a8328fa",
-      "name": "melker",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [],
-      "posts": []
-    }
-  ]
+	"users": [
+		{
+			"id": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+			"name": "johanna",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
+			"name": "javad",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+
+		{
+			"id": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+			"name": "clara",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [
+				{
+					"commentId": "9df6b324-ec66-4091-907a-0a0cf27bf246",
+					"userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+					"postId": "e0f5870f-17da-484f-b735-6ab1899934a4",
+					"comment": "the comment"
+				}
+			],
+			"posts": [
+				{
+					"postId": "27fef537-3db2-4015-add7-064cac073570",
+					"userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+					"timestamp": 1712314877236,
+					"title": "post title",
+					"bread": "post content",
+					"category": "League of Legends",
+					"comments": []
+				}
+			]
+		},
+		{
+			"id": "02f5092f-f75f-4fc5-9835-b58c8a8328fa",
+			"name": "melker",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [],
+			"posts": [
+				{
+					"postId": "3894dd51-5824-4c44-b2b7-de211e451300",
+					"userId": "02f5092f-f75f-4fc5-9835-b58c8a8328fa",
+					"timestamp": 1712313836602,
+					"title": "post title",
+					"bread": "post content",
+					"category": "League of Legends",
+					"comments": []
+				}
+			]
+		}
+	]
 }
