@@ -139,6 +139,11 @@ body{
   flex-wrap: wrap;
 }
 
+.categoriesH2{
+  align-items: center;
+  display: grid;
+  font-size: 2rem;
+}
 .categoriesPics li {
   margin: 10px;
 }
@@ -191,7 +196,7 @@ body{
     background-color: #E65E5C;
     color: white;
     padding: 10px 20px;
-    margin-left: 45%;
+    margin-left: 43%;
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -201,3 +206,22 @@ body{
     background-color: #E04F49;
 }
 
+.imageOption{
+    flex-flow:row;
+    justify-content:center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 7px;
+    display: flex;
+}
+.imgg{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  transition: transform 0.3s ease; 
+}

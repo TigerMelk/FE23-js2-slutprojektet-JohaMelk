@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById('categoriesLeagueOfLegends')?.addEventListener('click', () => {
-    // Hide all sections
+    // Hide all sections same for other rows
     document.querySelectorAll('section').forEach(section => {
       section.classList.add('hide');
     });
