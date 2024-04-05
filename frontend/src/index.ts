@@ -119,13 +119,16 @@ document.getElementById("categoriesPalworld")?.addEventListener("click", () => {
 const loginButton = document.getElementById("logInButton") as HTMLButtonElement;
 loginButton.addEventListener("submit", (event) => {
 	event.preventDefault();
-	const name = (
-		document.getElementById("loginFormUsername") as HTMLInputElement
-	).value;
-	const password = (
-		document.getElementById("loginFormPassword") as HTMLInputElement
-	).value;
+	const nameInput = document.getElementById(
+		"loginFormUsername"
+	) as HTMLInputElement;
 
+	const passwordInput = document.getElementById(
+		"loginFormPassword"
+	) as HTMLInputElement;
+
+	const name = nameInput.value;
+	const password = passwordInput.value;
 	const data = {
 		name: name,
 		password: password,

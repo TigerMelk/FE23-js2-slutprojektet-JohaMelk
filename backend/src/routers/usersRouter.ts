@@ -9,7 +9,7 @@ import {
 } from "../modules/users.js";
 
 const router = express.Router();
-router.get("/login", (req, res) => {
+router.post("/login", (req, res) => {
 	const { name, password } = req.body;
 	console.log(req.body);
 	if (!name || !password) {

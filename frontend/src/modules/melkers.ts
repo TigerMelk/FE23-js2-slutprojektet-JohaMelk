@@ -1,7 +1,7 @@
 async function login(data: any) {
 	const url = "http://localhost:3000/users/login";
 	const options = {
-		method: "GET",
+		method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify(data),
 	};

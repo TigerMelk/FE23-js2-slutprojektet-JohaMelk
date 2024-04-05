@@ -17,14 +17,12 @@ async function fetchData() {
 	}
 }
 async function fetchPerson(id) {
-    
-    const url = `http://localhost:3000/api/users/${id}`
-    const res = await fetch(url);
-    const dataPerson = await res.json();
-    console.log(dataPerson);
-    return dataPerson
+	const url = `http://localhost:3000/api/users/${id}`;
+	const res = await fetch(url);
+	const dataPerson = await res.json();
+	console.log(dataPerson);
+	return dataPerson;
 }
-
 
 async function fetchUserData(
 	userId: string,
@@ -66,31 +64,26 @@ async function fetchUserData(
 // 	}
 // }
 
-async function fetchPerson(id: any) {
-	const url = `http://localhost:3000/api/users/${id}`;
-	const res = await fetch(url);
-	const dataPerson = await res.json();
-	console.log(dataPerson);
-	return dataPerson;
-}
+// async function fetchPerson(id: any) {
+// 	const url = `http://localhost:3000/api/users/${id}`;
+// 	const res = await fetch(url);
+// 	const dataPerson = await res.json();
+// 	console.log(dataPerson);
+// 	return dataPerson;
+// }
 
-<<<<<<< Updated upstream
 async function fetchDeleteUser(userId: string): Promise<void> {
-    try {
-        const response = await fetch(`${apiUrl}/${userId}`, {
-            method: 'DELETE'
-        });
-        if (!response.ok) {
-            throw new Error('Failed to delete user');
-        }
-    } catch (error) {
-        console.error('Error deleting user:', error);
-        throw error;
-    }
+	try {
+		const response = await fetch(`${apiUrl}/${userId}`, {
+			method: "DELETE",
+		});
+		if (!response.ok) {
+			throw new Error("Failed to delete user");
+		}
+	} catch (error) {
+		console.error("Error deleting user:", error);
+		throw error;
+	}
 }
 
-export { fetchData, fetchUserData, fetchAddUser, fetchDeleteUser, fetchPerson };
-
-=======
-export { fetchData, fetchPerson };
->>>>>>> Stashed changes
+export { fetchData, fetchUserData, fetchDeleteUser, fetchPerson };
