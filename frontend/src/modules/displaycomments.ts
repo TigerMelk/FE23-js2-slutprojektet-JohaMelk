@@ -1,6 +1,6 @@
 import { User, Comment, Post } from "./types.ts";
 
-
+//displays comments
 async function displayComments(post: Post) {
   const commentsBox = document.querySelector("#commentsDiv") as HTMLDivElement;
 

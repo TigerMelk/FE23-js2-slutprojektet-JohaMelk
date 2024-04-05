@@ -225,3 +225,20 @@ body{
   height: 75px;
   transition: transform 0.3s ease; 
 }
+
+#usersDiv{
+  border-style: dotted;
+  display: flex;
+  flex-direction: column;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+#userBtn{
+  width: 100px;
+  height: 70px;
+  
+}

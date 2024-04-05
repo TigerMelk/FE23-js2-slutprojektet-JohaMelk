@@ -1,3 +1,4 @@
+//used to add comments, currently not working
 async function addcomment(userinput) {
   console.log("in comment :" + userinput)
  

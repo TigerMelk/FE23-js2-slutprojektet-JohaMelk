@@ -32,7 +32,7 @@ const createAccount = document.querySelector(
 //button that displays all posts
 const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
 postsBtn.addEventListener("click", () => {
-	fetchData().then(displayPosts);
+  fetchData().then(displayPosts);
 });
 
 ///Form
@@ -86,17 +86,15 @@ const navigateToHomePage = () => {
 // 	});
 // });
 
-document
-	.getElementById("categoriesLeagueOfLegends")
-	?.addEventListener("click", () => {
-		// Hide all sections same for other rows
-		document.querySelectorAll("section").forEach((section) => {
-			section.classList.add("hide");
-		});
-
-		// Show the LeagueOfLegends section same for other rows
-		document.getElementById("LeagueOfLegends")?.classList.remove("hide");
-	});
+document.getElementById('categoriesLeagueOfLegends')?.addEventListener('click', () => {
+    // Hide all sections same for other rows
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('hide');
+    });
+  
+    // Show the LeagueOfLegends section same for other rows
+    document.getElementById('LeagueOfLegends')?.classList.remove('hide');
+  });
 
 document
 	.getElementById("categoriesBloodborne")

@@ -2,7 +2,7 @@ import { User, Comment, Post } from "./types.ts";
 import { displayoneuser } from "./displayoneuser.ts";
 import { fetchData } from "./fetch.ts";
 
-
+//displays all users when pressed users-button
 
 const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
 
@@ -34,7 +34,7 @@ const userBox = document.createElement("div");
 
   usersDiv.append(userBox);
   console.log(name, id)
-
+  userBox.classList
   nameEl.addEventListener('click', (event)=>{
   let nameid = event.currentTarget;
   let nameidInnertext = nameid.innerText
