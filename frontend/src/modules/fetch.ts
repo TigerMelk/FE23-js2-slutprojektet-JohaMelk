@@ -2,6 +2,7 @@ import { Post, User } from "./types";
 
 const apiUrl = 'http://localhost:3000/api/users';
 
+//Fetch for the data
 async function fetchData() {
     try {
         const response = await fetch(apiUrl);
@@ -16,6 +17,8 @@ async function fetchData() {
         throw error;
     }
 }
+
+//fetch a person by id
 async function fetchPerson(id) {
     
     const url = `http://localhost:3000/api/users/${id}`
@@ -72,6 +75,7 @@ async function fetchDeleteUser(userId: string): Promise<void> {
         throw error;
     }
 }
+
 
 export { fetchData, fetchUserData, fetchAddUser, fetchDeleteUser, fetchPerson };
 

@@ -1,11 +1,11 @@
 import { displayComments } from "./displaycomments.ts";
 import { addcomment } from "./addcomment.ts";
-import { User, Comment, Post } from "./types.ts";
+import { User} from "./types.ts";
 
 
 
 
-
+//Displays posts
 
 async function displayPosts(data: User[]) {
     const postsBox = document.querySelector("#posters") as HTMLDivElement;
@@ -25,7 +25,7 @@ async function displayPosts(data: User[]) {
 
 
 
-
+      //Form that would give users input to be added as an comment
         const formGiveComment = document.createElement('form')
 
 
@@ -54,7 +54,7 @@ async function displayPosts(data: User[]) {
             displayComments(post)
         });
 
-
+          //when working this funktion would let you add a coment to a post
         giveCommentsBtn.addEventListener('click', (event) => {
         event.preventDefault();
         console.log(userComment.value)
@@ -66,9 +66,8 @@ async function displayPosts(data: User[]) {
 
     }
 }
-
-
 }
+
 
 
 export { displayPosts }

@@ -4,7 +4,7 @@ import { displayPosts } from "./modules/displayposts.ts";
 import { displayPerson } from "./modules/displayPerson.ts";
 
 //this is an example of use of one id, the one logged in
-fetchPerson("4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a").then(displayPerson)
+// fetchPerson("4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a").then(displayPerson)
 
 //Button that shows all users
 const userBtn = document.querySelector('#userBtn') as HTMLButtonElement
@@ -22,10 +22,10 @@ const logIn = document.querySelector("#logIn") as HTMLInputElement | null;
 const createAccount = document.querySelector("#createAccount") as HTMLInputElement | null; 
 
 //button that displays all posts
-const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
-postsBtn.addEventListener("click", () => {
-  fetchData().then(displayPosts);
-});
+// const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
+// postsBtn.addEventListener("click", () => {
+//   fetchData().then(displayPosts);
+// });
 
 ///Form
 if (loginSwitch) {
@@ -86,6 +86,7 @@ document.getElementById('categoriesLeagueOfLegends')?.addEventListener('click', 
   
     // Show the LeagueOfLegends section same for other rows
     document.getElementById('LeagueOfLegends')?.classList.remove('hide');
+    
   });
 
   document.getElementById('categoriesBloodborne')?.addEventListener('click', () => {
