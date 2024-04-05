@@ -1,90 +1,85 @@
+import { readDatabase, writeDatabase } from "./handledatabase.js";
+import { User, UserWithoutPassword, Post, Comment } from "./Types.js";
 
-const logInForm = document.getElementById("logInForm") as HTMLFormElement;
-const registerForm = document.getElementById("registerForm") as HTMLFormElement;
-const switchToRegister = document.getElementById("switchToRegister")!;
-const switchToLogIn = document.getElementById("switchToLogIn")!;
-const logIn = document.getElementById("logIn")!;
-const createAccount = document.getElementById("createAccount")!;
-const logInButton = document.getElementById("logInButton") as HTMLButtonElement;
-const registerButton = document.getElementById("registerButton") as HTMLButtonElement;
+import { generateProfil, generateCategories } from "./generat.ts";
 
-const showRegisterForm = () => {
-    logInForm.classList.add("hide");
-    registerForm.classList.remove("hide");
-    logIn.classList.add("hide");
-    createAccount.classList.remove("hide");
-};
+const databaseLinkLogIn = "http://localhost:3000/auth/login";
 
-const showLoginForm = () => {
-    logInForm.classList.remove("hide");
-    registerForm.classList.add("hide");
-    logIn.classList.remove("hide");
-    createAccount.classList.add("hide");
-};
+const userNameElement = document.querySelector(
+  "#loginFormUsername"
+) as HTMLInputElement;
+const passwordElement = document.querySelector(
+  "#logInFormPassword"
+) as HTMLInputElement;
 
-switchToRegister.addEventListener("click", (event) => {
-    event.preventDefault();
-    showRegisterForm();
-});
+const loginForm = document.querySelector("#loginForm") as HTMLElement;
+const errorMessageElement = document.createElement("p");
+loginForm.append(errorMessageElement);
 
-switchToLogIn.addEventListener("click", (event) => {
-    event.preventDefault();
-    showLoginForm();
-});
+export interface UserData {
+  username: string;
+  profile_pic: string;
+}
 
-logInForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const username = (document.getElementById("username") as HTMLInputElement).value;
-    const password = (document.getElementById("password") as HTMLInputElement).value;
-    
- 
-    console.log("Logging in with", username, password);
+export let userData: UserData = JSON.parse(
+  window.localStorage.getItem("forum_userdata") || "null"
+);
 
+export function logInUser() {
+  const userNameInput = userNameElement.value;
+  const passwordInput = passwordElement.value;
 
-    logInForm.reset();
+  // console.log(passwordInput, userNameInput);
+  interface User {
+    username: string;
+    password: string;
+  }
 
-});
+  function checkUserExists(user: User): Promise<void> {
+    const requestData: RequestInit = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(user),
+    };
 
-registerForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const username = (document.getElementById("registerUsername") as HTMLInputElement).value;
-    const password = (document.getElementById("registerPassword") as HTMLInputElement).value;
-    const profilePic = (document.getElementById("confirmRegisterPassword") as HTMLInputElement).files![0];
-    
-    console.log("Registering with", username, password, profilePic.name);
+    return fetch(databaseLinkLogIn, requestData).then((response) => {
+      response.json().then((data) => {
+        console.log(data);
+        if (
+          data.error === "Wrong Password" ||
+          data.error === "User not found"
+        ) {
+          errorMessageElement.innerText = "";
+          const errorMessage = "Wrong Username or Password";
+          errorMessageElement.innerText = errorMessage;
+          errorMessageElement.style.color = "red";
+        } else {
+          const logOutButton = document.querySelector("#logOutButton") as HTMLButtonElement;
+          logOutButton.style.visibility = "visible";
 
-    registerForm.reset();
+          const logInButton = document.querySelector("#idBu") as HTMLButtonElement;
+          logInButton.style.visibility = "hidden";
 
-    showLoginForm();
-});
-
-
-const showMainContent = () => {
-    const frontPage = document.getElementById("frontPage") as HTMLElement;
-    const mainContent = document.getElementById("main") as HTMLElement;
-
-    frontPage.classList.add("hide");
-
-
-    mainContent.classList.remove("hide");
-};
+          const SignUpButton = document.querySelector("#signupButton") as HTMLButtonElement;
+          SignUpButton.style.visibility = "hidden";
 
 
-logInForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+          const profileDeleteButton = document.querySelector("#deleteAccountButtonContainer") as HTMLButtonElement;
+          profileDeleteButton.value = "";
+          profileDeleteButton.value = data.username;
+          userData = data;
+          window.localStorage.setItem("forum_userdata", JSON.stringify(data));
+          generateProfil(data);
+          generateCategories();
+        }
+      });
+    });
+  }
 
-    showMainContent();
+  checkUserExists({ username: userNameInput, password: passwordInput });
+}
 
-
-    logInForm.reset();
-});
-
-
-registerForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    showMainContent();
-
-    registerForm.reset();
-});
 

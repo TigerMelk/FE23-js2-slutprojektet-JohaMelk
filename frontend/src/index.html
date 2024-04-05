@@ -65,16 +65,29 @@
 	<!--------- main --------->
 	<main id="main" class="hide">
 		<section id="homePage">
-			<div class="categories"></div>
-
-			<div id="usersDiv">
-				<button id="userBtn">Get all users</button>
+			<div class="categories">
+				<h2 class="categoriesH2">categories</h2>
+				<ul class="categoriesPics">
+					<li><button type="button">
+						<img src="./pics/Bloodborne.jpg" alt="Bloodborne" id="categoriesBloodborne" class="categoriesName">
+					  </button></li>
+					<li><button type="button">
+						<img src="./pics/Palworld.jpg" alt="Bloodborne" id="categoriesPalworld" class="categoriesName">
+					</button></li>
+					<li><button type="button">
+						<img src="./pics/leagueoflegends.jpg" alt="Bloodborne" id="categoriesLeagueOfLegends" class="categoriesName">
+					</button></li>	
+				</ul>
 			</div>
-
-			<button id="postsBtn">Posts</button>
+			<div id="usersDiv"><button id="userBtn" class="userBtnGet">Users</button>
+			<button id="postsBtn" class="postBtnGet">Posts</button>
 			<div id="posters"></div>
 			<div id="commentsDiv"></div>
+			</div>
 		</section>
+		<section id="LeagueOfLegends" class="hide"></section>
+		<section id="Bloodborne" class="hide"></section>
+		<section id="Palworld" class="hide"></section>
 	</main>
 </body>
 
