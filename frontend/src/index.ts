@@ -2,11 +2,16 @@ import { fetchData } from "./modules/fetch.ts";
 import { displayUsers } from "./modules/displayusers.ts";
 import { displayPosts } from "./modules/displayposts.ts";
 
-const userBtn = document.querySelector('#userBtn') as HTMLButtonElement
-userBtn.addEventListener('click', () => {
-fetchData().then(displayUsers);
 
-});
+        fetchData().then(displayUsers);
+
+        
+const loginForm = document.querySelector("#logInForm") as HTMLFormElement | null;
+const registerForm = document.querySelector("#registerForm") as HTMLFormElement | null;
+const loginSwitch = document.querySelector("#switchToLogIn") as HTMLElement | null;
+const registerSwitch = document.querySelector("#switchToRegister") as HTMLElement | null
+const logIn = document.querySelector("#logIn") as HTMLInputElement | null; 
+const createAccount = document.querySelector("#createAccount") as HTMLInputElement | null; 
 
 
 const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
@@ -14,54 +19,54 @@ postsBtn.addEventListener("click", () => {
   fetchData().then(displayPosts);
 });
 
-
-        function goToSignup(): void {
-            const login = document.getElementById('login');
-            const signup = document.getElementById('signup');
-            const frontpage = document.getElementById('frontpage');
-
-            if (login && signup && frontpage) {
-                login.style.display = 'none';
-                signup.style.display = 'block';
-                frontpage.style.display = 'block';
-            }
+///Form
+if (loginSwitch) {
+    loginSwitch.addEventListener('click', () => {
+        if (loginForm && registerForm) {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
         }
+    });
+}
 
-        function goToLogin(): void {
-            const login = document.getElementById('login');
-            const signup = document.getElementById('signup');
-            const frontpage = document.getElementById('frontpage');
-
-            if (login && signup && frontpage) {
-                login.style.display = 'block';
-                signup.style.display = 'none';
-                frontpage.style.display = 'block';
-            }
+if (registerSwitch) {
+    registerSwitch.addEventListener('click', () => {
+        if (loginForm && registerForm) {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
         }
+    });
+}
 
-        function goToFrontpage(): void {
-            const login = document.getElementById('login');
-            const signup = document.getElementById('signup');
-            const frontpage = document.getElementById('frontpage');
+//go to home page
 
-            if (login && signup && frontpage) {
-                login.style.display = 'none';
-                signup.style.display = 'none';
-                frontpage.style.display = 'block';
-            }
-        }
+const navigateToHomePage = () => {
+    const mainPage = document.getElementById("main") as HTMLElement;
+    const frontPage = document.getElementById("frontPage") as HTMLElement;
 
-        document.getElementById('goToSignup')?.addEventListener('click', goToSignup);
-        document.getElementById('goToLogin')?.addEventListener('click', goToLogin);
-        document.getElementById('goToFrontpage')?.addEventListener('click', goToFrontpage);
+    if (mainPage && frontPage) {
+        
+        frontPage.style.display = "none";
 
-        // const formEl = document.querySelector("form") as HTMLFormElement;
+       
+        mainPage.style.display = "block"; 
+    }
+};
 
-        // formEl.addEventListener("submit", handleForm);
+document.addEventListener("DOMContentLoaded", () => {
+    const loginButton = document.getElementById("logInButton") as HTMLButtonElement;
+    const registerButton = document.getElementById("registerButton") as HTMLButtonElement;
 
-        // async function handleForm(event: Event) {
-        //     event.preventDefault();
-        //     const userInput: string = (document.querySelector("input") as HTMLInputElement).value;
-        //     // Call a function to handle the form submission (e.g., addcomment(userInput))
-        //     // Ensure that addcomment function is defined to handle the user input appropriately.
-        // }
+   
+    loginButton.addEventListener("click", (event) => {
+        event.preventDefault(); 
+        navigateToHomePage();
+    });
+
+  
+    registerButton.addEventListener("click", (event) => {
+        event.preventDefault(); 
+        navigateToHomePage();
+    });
+});
+

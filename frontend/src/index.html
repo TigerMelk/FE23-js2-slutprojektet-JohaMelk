@@ -11,154 +11,69 @@
 </head>
 
 <body>
-	<main>
-		<div id="userDiv"></div>
-		<!-----------Header---------->
-		<div class="header">
-			<div class="navBar">
-				<img src="./pics/Logo.png" alt="Logo" class="logo">
-				<p id="webName" class="webName">Newbies</p>
-				<nav id="nav" class="nav">
-					<ul class="menu">
-						<li><a href="#" id="aboutUsNav" class="borderRight">About Us</a></li>
-						<li><a href="#" id="contactNav" class="borderRight">Contact</a></li>
-						<li><a href="#" id="logoutNav" class="borderRight">Logout</a></li>
-					</ul>
-				</nav>
+	<div id="userDiv"></div>
+	<!-----------Header---------->
+	<div class="header">
+		<div class="navBar">
+			<img src="./pics/Logo.png" alt="Logo" class="logo">
+			<p id="webName" class="webName">Newbies</p>
+			<nav id="nav" class="nav">
+				<ul class="menu">
+					<li><a href="#" id="aboutUsNav" class="borderRight">About Us</a></li>
+					<li><a href="#" id="contactNav" class="borderRight">Contact</a></li>
+					<li><a href="#" id="logoutNav" class="borderRight">Logout</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!--------- frontpage --------->
+	<div id="frontPage" class="frontPage">
+		<form id="logInForm">
+			<label for="username" class="frontPageLabel">Username</label>
+			<input type="text" id="username" class="frontPageInput" />
+			<label for="password" class="frontPageLabel">Password</label>
+			<input type="password" id="password" class="frontPageInput" />
+			<button type="submit" id="logInButton" class="frontPageButton">Log in</button>
+		</form>
+		<form id="registerForm" class="hide">
+			<label for="registerUsername" class="frontPageLabel">Username</label>
+			<input type="text" id="registerUsername" class="frontPageInput" />
+			<label for="registerPassword" class="frontPageLabel">Password</label>
+			<input type="password" id="registerPassword" class="frontPageInput" />
+			<label for="profilePic" class="frontPageLabel">Profile Pic</label>
+			<input type="file" id="confirmRegisterPassword" class="frontPageInput" />
+			<button type="submit" id="registerButton" class="frontPageButton">Register</button>
+		</form>
+		<div id="switchFrontPage">
+			<!--------- login --------->
+			<div id="logIn">
+				<p>
+					Make an account?
+					<span id="switchToRegister" class="blueText">click here!</span>
+				</p>
+			</div>
+
+			<!--------- create account --------->
+			<div id="createAccount" class="hide">
+				<p>
+					Already have an account?
+					<span id="switchToLogIn" class="blueText">click here!</span>
+				</p>
 			</div>
 		</div>
-		<!-----------Log in form---------->
-
-		<section id="login" class="page">
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span>
-
-			<form class="signin">
-				<div class="content">
-					<h2>Log In</h2>
-					<div class="form">
-						<div class="inputBox">
-							<input type="text" required> <i>Username</i>
-						</div>
-						<div class="inputBox">
-							<input type="password" required> <i>Password</i>
-						</div>
-						<div class="links" id="goToSignup"> <a href=""> </a><a href="#">Signup</a>
-						</div>
-						<div class="inputBox">
-							<input type="submit" id="GoToFrontpage" value="Login">
-						</div>
-					</div>
-				</div>
-			</form>
-		</section>
-		<!-----------Sign up form---------->
-
-		<section id="signup" class="page">
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span>
-
-			<form class="signup">
-				<div class="content">
-					<h2>Sign Up</h2>
-					<div class="form">
-						<div class="inputBox"><input type="text" required> <i>Username</i>
-						</div>
-						<div class="inputBox"><input type="password" required> <i>Password</i>
-						</div>
-						<div class="links" id="goToLogin"> <a href=""> </a><a href="#">Login</a>
-						</div>
-						<div class="inputBox">
-							<input type="submit" id="GoToFrontpage" value="Signup">
-						</div>
-					</div>
-				</div>
-			</form>
-		</section>
-
-		<section id="frontpage">
+	</div>
+	<!--------- main --------->
+	<main id="main" class="hide">
+		<section id="homePage">
 			<div class="categories"></div>
-			
+
 			<div id="usersDiv">
-			<button id="userBtn">Get all users</button>
+				<button id="userBtn">Get all users</button>
 			</div>
-			
+
 			<button id="postsBtn">Posts</button>
 			<div id="posters"></div>
 			<div id="commentsDiv"></div>
-
 		</section>
 	</main>
 </body>
