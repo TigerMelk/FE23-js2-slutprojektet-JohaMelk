@@ -1,9 +1,17 @@
-import { fetchData } from "./modules/fetch.ts";
+import { fetchData, fetchPerson } from "./modules/fetch.ts";
 import { displayUsers } from "./modules/displayusers.ts";
 import { displayPosts } from "./modules/displayposts.ts";
+import { displayPerson } from "./modules/displayPerson.ts";
 
+//this is an example of use of one id, the one logged in
+fetchPerson("4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a").then(displayPerson)
 
-        fetchData().then(displayUsers);
+//Button that shows all users
+const userBtn = document.querySelector('#userBtn') as HTMLButtonElement
+userBtn.addEventListener("click", () => {
+    fetchData().then(displayUsers);
+  });
+
 
         
 const loginForm = document.querySelector("#logInForm") as HTMLFormElement | null;
@@ -13,7 +21,7 @@ const registerSwitch = document.querySelector("#switchToRegister") as HTMLElemen
 const logIn = document.querySelector("#logIn") as HTMLInputElement | null; 
 const createAccount = document.querySelector("#createAccount") as HTMLInputElement | null; 
 
-
+//button that displays all posts
 const postsBtn = document.querySelector("#postsBtn") as HTMLButtonElement;
 postsBtn.addEventListener("click", () => {
   fetchData().then(displayPosts);
