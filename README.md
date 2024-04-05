@@ -77,7 +77,7 @@ Final assignment - course Javascript 2 (FE23 Grit Academy)
     
   #### getCategory(category)
     
- > Returns an array with all posts that matches post.category to the category provided in the paramater
+ > Returns an array, in chronological order, with all posts that matches post.category to the category provided in the paramater
  >
  > **json format for this is:**_{"category":"League of Legends" | "Bloodborne" | "Palworld"}_
     

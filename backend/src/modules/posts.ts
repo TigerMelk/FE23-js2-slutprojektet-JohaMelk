@@ -28,16 +28,13 @@ async function getCategory(
 			}
 		}
 	}
-	console.log(matchingPosts);
 	matchingPosts.sort((a, b) => {
 		const dateA = new Date(a.timestamp);
 		const dateB = new Date(b.timestamp);
-
 		if (dateA < dateB) return -1;
 		if (dateA > dateB) return 1;
 		return 0;
 	});
-	console.log(matchingPosts);
 	return matchingPosts;
 }
 async function addPost(userId: string, post: Post): Promise<Post> {
@@ -50,6 +47,7 @@ async function addPost(userId: string, post: Post): Promise<Post> {
 	const users = await getUsers();
 	for (const user of users) {
 		if (user.id == userId) {
+			newPost.name = user.name;
 			user.posts.push(newPost);
 			break;
 		}

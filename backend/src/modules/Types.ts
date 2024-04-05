@@ -16,6 +16,7 @@ export type UserWithoutPassword = Omit<User, "password">;
 export type Post = {
 	postId: string;
 	userId: string;
+	name: string;
 	title: string;
 	bread: string;
 	timestamp: number;
@@ -29,6 +30,7 @@ export type Comment = {
 	commentId: string;
 	postId: string;
 	userId: string;
+	name: string;
 	comment: string;
 	//   likes: number
 };
