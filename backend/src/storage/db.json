@@ -1,82 +1,40 @@
 {
-  "users": [
-    {
-      "id": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
-      "name": "johanna",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [],
-      "posts": [
-        {
-          "postId": "d587ce4a-2126-4cc3-a0e5-c6f00d82faf7",
-          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
-          "timestamp": 1712316937745,
-          "title": "post title",
-          "bread": "post content",
-          "category": "Bloodborne",
-          "comments": [],
-          "name": "johanna"
-        },
-        {
-          "postId": "0d489789-29aa-4628-83f8-d824101e8658",
-          "userId": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
-          "timestamp": 1712316945059,
-          "title": "post title",
-          "bread": "post content",
-          "category": "League of Legends",
-          "comments": [],
-          "name": "johanna"
-        }
-      ]
-    },
-    {
-      "id": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
-      "name": "javad",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [],
-      "posts": []
-    },
-    {
-      "id": "e97eeb0d-a878-445e-9206-49f2bb70185b",
-      "name": "clara",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [],
-      "posts": [
-        {
-          "postId": "bbf369bf-d80b-4ff6-9290-408fa7ee03a0",
-          "userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
-          "timestamp": 1712316909622,
-          "title": "post title",
-          "bread": "post content",
-          "category": "League of Legends",
-          "comments": [],
-          "name": "clara"
-        },
-        {
-          "postId": "f7f69c48-ae48-4538-8904-a6499e7f76ab",
-          "userId": "e97eeb0d-a878-445e-9206-49f2bb70185b",
-          "timestamp": 1712316919205,
-          "title": "post title",
-          "bread": "post content",
-          "category": "Bloodborne",
-          "comments": [],
-          "name": "clara"
-        }
-      ]
-    },
-    {
-      "id": "02f5092f-f75f-4fc5-9835-b58c8a8328fa",
-      "name": "melker",
-      "password": "testingpasswords",
-      "image": "thisprofile.jpg",
-      "admin": false,
-      "comments": [],
-      "posts": []
-    }
-  ]
+	"users": [
+		{
+			"id": "4eb0a3b0-6a1a-4d5c-b948-4b6eb3256c1a",
+			"name": "johanna",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "0fb1e1af-df69-4908-99e4-cfb088e51fb2",
+			"name": "javad",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "e97eeb0d-a878-445e-9206-49f2bb70185b",
+			"name": "clara",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "02f5092f-f75f-4fc5-9835-b58c8a8328fa",
+			"name": "melker",
+			"password": "testingpasswords",
+			"image": "thisprofile.jpg",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		}
+	]
 }
