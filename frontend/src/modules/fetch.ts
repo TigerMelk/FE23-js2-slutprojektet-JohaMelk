@@ -16,6 +16,15 @@ async function fetchData() {
         throw error;
     }
 }
+async function fetchPerson(id) {
+    
+    const url = `http://localhost:3000/api/users/${id}`
+    const res = await fetch(url);
+    const dataPerson = await res.json();
+    console.log(dataPerson);
+    return dataPerson
+}
+
 
 async function fetchUserData(userId: string, dataType: string): Promise<Comment[] | Post[] | { message: string }> {
     try {
@@ -50,7 +59,6 @@ async function fetchAddUser({ user }: { user: User; }): Promise<UserWithoutPassw
     }
 }
 
-<<<<<<< Updated upstream
 async function fetchDeleteUser(userId: string): Promise<void> {
     try {
         const response = await fetch(`${apiUrl}/${userId}`, {
@@ -65,16 +73,5 @@ async function fetchDeleteUser(userId: string): Promise<void> {
     }
 }
 
-export { fetchData, fetchUserData, fetchAddUser, fetchDeleteUser };
-=======
-async function fetchPerson(id) {
-    
-    const url = `http://localhost:3000/api/users/${id}`
-    const res = await fetch(url);
-    const dataPerson = await res.json();
-    console.log(dataPerson);
-    return dataPerson
-}
+export { fetchData, fetchUserData, fetchAddUser, fetchDeleteUser, fetchPerson };
 
-export {fetchData, fetchPerson}
->>>>>>> Stashed changes
