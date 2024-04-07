@@ -5,7 +5,87 @@
 body {
   background-color: bisque;
 }
+#profileImg {
+  width: 30px;
+}
+header {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.categoryDiv {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 57px;
+}
+#categoryDiv > button {
+  padding: 30px;
+  background-color: #22b9ff;
+  border: 2px solid black;
+  /* box-shadow: inset; */
+  border-radius: 1vh;
+}
+#userName {
+  margin-right: 20px;
+}
+.loginCreate {
+  margin-top: 20vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border: 1px solid black;
+  gap: 5px;
+  width: 30%;
+  height: 200px;
 
+  background-color: salmon;
+}
+.profileDiv {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  padding: 5px;
+}
+#mainContainer {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+.postDiv {
+  border: 1px solid black;
+  width: 250px;
+  padding: 5px;
+  clear: both;
+}
+#aside {
+  position: absolute;
+  left: 20px;
+  top: 119px;
+}
+#usersDiv {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 5px;
+}
+#usersAside {
+  padding: 5px;
+  border: none;
+  background-color: #22b9ff;
+}
+.addPost {
+  display: flex;
+  flex-flow: column;
+  background-color: #22b9ff;
+  width: 30%;
+  gap: 5px;
+  padding: 10px;
+}
 .hide {
   display: none;
 }

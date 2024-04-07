@@ -1,4 +1,6 @@
 import { getUsers, getDataType } from "./melkers.js";
+const addNewPost = document.querySelector("#addPost") as HTMLFormElement;
+
 function displayPosts(data) {
   const mainContainer = document.querySelector(
     "#mainContainer"
@@ -23,6 +25,7 @@ function displayPosts(data) {
     title.addEventListener("click", (event) => {
       event.preventDefault();
       mainContainer.innerHTML = "";
+      addNewPost.classList.add("hide");
       const postDiv = document.createElement("div");
       postDiv.classList.add("postDiv");
       const username = document.createElement("p");
@@ -34,6 +37,7 @@ function displayPosts(data) {
       username.id = post.userId;
       title.innerText = post.title;
       bread.innerText = post.bread;
+
       comments.innerText = "comments";
       // ! profileimg
       postDiv.append(username, title, bread, comments);
@@ -77,6 +81,7 @@ function displayUsers(data) {
         "#mainContainer"
       ) as HTMLDivElement;
       mainContainer.innerHTML = "";
+      addNewPost.classList.add("hide");
       getUsers(username.id).then((user) => {
         const profilePosts = document.querySelector(
           "#posts"
@@ -100,7 +105,11 @@ function displayUsers(data) {
           "#profileName"
         ) as HTMLHeadingElement;
         const profile = document.querySelector("#profileDiv") as HTMLDivElement;
+        const profileImg = document.querySelector(
+          "#profileImg"
+        ) as HTMLImageElement;
 
+        profileImg.src = user.image;
         profile.classList.remove("hide");
 
         profileName.innerText = user.name;
