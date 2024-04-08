@@ -6,7 +6,21 @@
       "password": "melker",
       "image": "images/orange-3177693_640.png",
       "admin": false,
-      "comments": [],
+      "comments": [
+        {
+          "commentId": "d52a65a0-f24f-4c06-84f2-ad7ca06deda9",
+          "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "melker"
+        },
+        {
+          "commentId": "69e028eb-ce3f-4223-92fe-f7eceafb7480",
+          "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+          "name": "melker",
+          "comment": "yo testtest"
+        }
+      ],
       "posts": []
     },
     {
@@ -24,7 +38,14 @@
           "title": "bloodborne rules",
           "bread": "thats right",
           "category": "Bloodborne",
-          "comments": [],
+          "comments": [
+            {
+              "commentId": "d52a65a0-f24f-4c06-84f2-ad7ca06deda9",
+              "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+              "name": "melker"
+            }
+          ],
           "name": "milly"
         },
         {
@@ -34,7 +55,15 @@
           "title": "ayo bitch",
           "bread": "bruh",
           "category": "Bloodborne",
-          "comments": [],
+          "comments": [
+            {
+              "commentId": "69e028eb-ce3f-4223-92fe-f7eceafb7480",
+              "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+              "name": "melker",
+              "comment": "yo testtest"
+            }
+          ],
           "name": "milly"
         }
       ]
