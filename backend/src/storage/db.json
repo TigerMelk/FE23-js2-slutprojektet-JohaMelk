@@ -8,12 +8,6 @@
       "admin": false,
       "comments": [
         {
-          "commentId": "d52a65a0-f24f-4c06-84f2-ad7ca06deda9",
-          "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "melker"
-        },
-        {
           "commentId": "69e028eb-ce3f-4223-92fe-f7eceafb7480",
           "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
           "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
@@ -40,10 +34,18 @@
           "category": "Bloodborne",
           "comments": [
             {
-              "commentId": "d52a65a0-f24f-4c06-84f2-ad7ca06deda9",
-              "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+              "commentId": "abaaae3e-fd61-4c07-bb0d-40c65a3cf821",
+              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
               "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "melker"
+              "name": "clara2",
+              "comment": "hey test"
+            },
+            {
+              "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
+              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+              "name": "clara2",
+              "comment": "hey test3"
             }
           ],
           "name": "milly"
@@ -62,6 +64,13 @@
               "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
               "name": "melker",
               "comment": "yo testtest"
+            },
+            {
+              "commentId": "e49e54ec-59ea-4443-953a-8ed8193fc16c",
+              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+              "name": "clara2",
+              "comment": "hey test"
             }
           ],
           "name": "milly"
@@ -101,7 +110,29 @@
       "password": "clara2",
       "image": "./images/orange-3177693640.png",
       "admin": false,
-      "comments": [],
+      "comments": [
+        {
+          "commentId": "e49e54ec-59ea-4443-953a-8ed8193fc16c",
+          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+          "name": "clara2",
+          "comment": "hey test"
+        },
+        {
+          "commentId": "abaaae3e-fd61-4c07-bb0d-40c65a3cf821",
+          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "clara2",
+          "comment": "hey test"
+        },
+        {
+          "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
+          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "clara2",
+          "comment": "hey test3"
+        }
+      ],
       "posts": []
     }
   ]
