@@ -6,8 +6,8 @@ router.post("/category", (req, res) => {
   getCategory(category).then((matchingCategory) => res.json(matchingCategory));
 });
 router.post("/", (req, res) => {
-  const { userId, postId } = req.body;
-  getPost(userId, postId).then((post) => res.json([post]));
+  const { postId } = req.body;
+  getPost(postId).then((post) => res.json(post));
 });
 
 router.patch("/:id", (req, res) => {

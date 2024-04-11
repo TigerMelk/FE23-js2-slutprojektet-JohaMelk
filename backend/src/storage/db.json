@@ -133,7 +133,18 @@
           "comment": "hey test3"
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "postId": "343f7e74-8e78-4099-aca5-842ea3fdcb49",
+          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+          "timestamp": 1712734565716,
+          "title": "palworld",
+          "bread": "yayaya",
+          "category": "Palworld",
+          "comments": [],
+          "name": "clara2"
+        }
+      ]
     }
   ]
 }

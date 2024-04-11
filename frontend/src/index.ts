@@ -301,26 +301,27 @@ if (userId) {
       profileImg.src = user.image;
     });
 
-    const profilePosts = document.querySelector("#posts") as HTMLButtonElement;
-    const profileComments = document.querySelector(
-      "#comments"
-    ) as HTMLButtonElement;
-    profileComments.addEventListener("click", (event) => {
-      event.preventDefault();
-      addNewPost.classList.add("hide");
+    // const profilePosts = document.querySelector("#posts") as HTMLButtonElement;
+    // const profileComments = document.querySelector(
+    //   "#comments"
+    // ) as HTMLButtonElement;
+    // profileComments.addEventListener("click", (event) => {
+    //   event.preventDefault();
+    //   addNewPost.classList.add("hide");
+    //   mainContainer.innerHTML = "";
+    //   getDataType(userId, "comments").then((userData) => {
+    //     displayComments(userData, mainContainer);
+    //   });
+    // });
 
-      getDataType(userId, "comments").then((userdata) => {
-        displayPosts(userdata, mainContainer);
-      });
-    });
-    profilePosts.addEventListener("click", (event) => {
-      event.preventDefault();
-      addNewPost.classList.add("hide");
+    // profilePosts.addEventListener("click", (event) => {
+    //   event.preventDefault();
+    //   addNewPost.classList.add("hide");
 
-      getDataType(userId, "posts").then((userdata) => {
-        displayPosts(userdata, mainContainer);
-      });
-    });
+    //   getDataType(userId, "posts").then((userdata) => {
+    //     displayPosts(userdata, mainContainer);
+    //   });
+    // });
 
     const userBtn = document.querySelector("#usersAside") as HTMLButtonElement;
     const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
