@@ -68,7 +68,7 @@ header {
   left: 20px;
   top: 119px;
 }
-#usersDiv {
+.usersDiv {
   display: flex;
   flex-flow: column wrap;
   gap: 5px;

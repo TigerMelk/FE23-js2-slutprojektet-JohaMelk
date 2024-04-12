@@ -3,7 +3,7 @@ import { getUsers, getDataType, getPost } from "./melkers.js";
 //! ///////////////////////////////////////////////////////////////////
 //! ///////////////////////////////////////////////////////////////////
 //! ///////////////////////////////////////////////////////////////////
-
+const userId = localStorage.getItem("userId") as string;
 const addNewPost = document.querySelector("#addPost") as HTMLFormElement;
 const mainContainer = document.querySelector(
   "#mainContainer"
@@ -109,6 +109,7 @@ function createCommentDiv(comment: any): HTMLDivElement {
     mainContainer.innerHTML = "";
     const userId = userName.id;
     getUsers(userId).then((user) => {
+      console.log(user);
       displayUserProfile(user);
     });
   });
@@ -140,7 +141,8 @@ function displayUserProfile(user: any) {
   profileComments.addEventListener("click", (event) => {
     event.preventDefault();
     mainContainer.innerHTML = "";
-    getDataType(user.id, "comments").then((userData) => {
+    const clickedUserId = user.id;
+    getDataType(clickedUserId, "comments").then((userData) => {
       userData.forEach((comment) => {
         const commentDiv = createCommentDiv(comment);
         mainContainer.append(commentDiv);
@@ -181,6 +183,9 @@ function displayUserProfile(user: any) {
       commentForm.classList.remove("hide");
     });
   }
+  if (user.id !== userId) {
+    logOutBtn.classList.add("hide");
+  } else logOutBtn.classList.remove("hide");
   logOutBtn.addEventListener("click", (event) => {
     event.preventDefault();
     localStorage.clear();
@@ -197,6 +202,8 @@ function clearContainer(container: HTMLElement) {
 function displayUsers(data: any) {
   const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
   usersDiv.innerHTML = "";
+  usersDiv.classList.toggle("hide");
+
   for (const user of data) {
     const username = createUserLink(user);
     usersDiv.append(username);

@@ -1,12 +1,12 @@
-# fe23-js2-slutprojekt-JaJoMe
+# fe23-js2-slutprojekt-JohaMelk
 
 Final assignment - course Javascript 2 (FE23 Grit Academy)
 
-## Group: JaJoMe
+## Group: JohaMelk
 
 - Melker Dahl
 - Johanna Östling
-- Javad Jananeh
+
 <details>
 <summary><h1>Backend functions</h1></summary>
 

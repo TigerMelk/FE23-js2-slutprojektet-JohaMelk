@@ -282,6 +282,8 @@ const loggedInUser = document.querySelector("#userName") as HTMLHeadingElement;
 const logOut = document.querySelector("#logOut") as HTMLButtonElement;
 const form = document.querySelector("#loginForm") as HTMLFormElement;
 const categoryDiv = document.querySelector("#categoryDiv") as HTMLDivElement;
+const userBtn = document.querySelector("#usersAside") as HTMLButtonElement;
+const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
 const profileName = document.querySelector(
   "#profileName"
 ) as HTMLHeadingElement;
@@ -289,61 +291,21 @@ const profileImg = document.querySelector("#profileImg") as HTMLImageElement;
 let usersDisplayed = false;
 
 if (userId) {
+  categoryDiv.classList.remove("hide");
+  aside.classList.remove("hide");
   form.classList.add("hide");
   getUsers(userId).then((user) => {
+    displayUserProfile(user);
     loggedInUser.innerText = user.name;
+    loggedInUser.id = user.id;
     loggedInUser.addEventListener("click", (event) => {
       event.preventDefault();
       mainContainer.innerHTML = "";
       addNewPost.classList.add("hide");
-      profile.classList.remove("hide");
-      profileName.innerText = user.name;
-      profileImg.src = user.image;
+      getUsers(userId).then((user) => {
+        displayUserProfile(user);
+      });
     });
-
-    // const profilePosts = document.querySelector("#posts") as HTMLButtonElement;
-    // const profileComments = document.querySelector(
-    //   "#comments"
-    // ) as HTMLButtonElement;
-    // profileComments.addEventListener("click", (event) => {
-    //   event.preventDefault();
-    //   addNewPost.classList.add("hide");
-    //   mainContainer.innerHTML = "";
-    //   getDataType(userId, "comments").then((userData) => {
-    //     displayComments(userData, mainContainer);
-    //   });
-    // });
-
-    // profilePosts.addEventListener("click", (event) => {
-    //   event.preventDefault();
-    //   addNewPost.classList.add("hide");
-
-    //   getDataType(userId, "posts").then((userdata) => {
-    //     displayPosts(userdata, mainContainer);
-    //   });
-    // });
-
-    const userBtn = document.querySelector("#usersAside") as HTMLButtonElement;
-    const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
-    userBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-      if (!usersDisplayed) {
-        getUsers("").then((data) => {
-          displayUsers(data);
-          usersDisplayed = true;
-        });
-      } else {
-        usersDiv.innerHTML = "";
-        usersDisplayed = false;
-      }
-    });
-
-    const categoryDiv = document.querySelector(
-      "#categoryDiv"
-    ) as HTMLDivElement;
-    const aside = document.querySelector("aside") as HTMLButtonElement;
-    categoryDiv.classList.remove("hide");
-    aside.classList.remove("hide");
   });
 }
 
@@ -516,17 +478,11 @@ addCommentForm.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 // ! aside
-const userBtn = document.querySelector("#usersAside") as HTMLButtonElement;
-const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
+
 userBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  if (!usersDisplayed) {
-    getUsers("").then((data) => {
-      displayUsers(data);
-      usersDisplayed = true;
-    });
-  } else {
-    usersDiv.innerHTML = "";
-    usersDisplayed = false;
-  }
+  getUsers("").then((data) => {
+    displayUsers(data);
+    usersDisplayed = true;
+  });
 });
