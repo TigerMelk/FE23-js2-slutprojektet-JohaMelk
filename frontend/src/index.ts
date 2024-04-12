@@ -483,6 +483,5 @@ userBtn.addEventListener("click", (event) => {
   event.preventDefault();
   getUsers("").then((data) => {
     displayUsers(data);
-    usersDisplayed = true;
   });
 });

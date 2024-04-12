@@ -127,7 +127,7 @@ function displayUserProfile(user: any) {
   const profileComments = document.querySelector(
     "#comments"
   ) as HTMLButtonElement;
-
+  console.log(user, user.id);
   profileName.innerText = user.name;
   profileImg.src = user.image;
   // ! logout
@@ -150,7 +150,7 @@ function displayUserProfile(user: any) {
           postId: comment.postId,
         };
         getPost(postInfo).then((post) => {
-          console.log(post);
+          // console.log(post);
           if (post && post.title) {
             const postTitle = document.createElement("h3");
             postTitle.innerText = post.title;
