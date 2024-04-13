@@ -1,4 +1,5 @@
 import { getUsers, getDataType, getPost } from "./melkers.js";
+import { deletePost, deleteComment, deleteUser } from "./melkers.js";
 
 //! ///////////////////////////////////////////////////////////////////
 //! ///////////////////////////////////////////////////////////////////
@@ -14,6 +15,7 @@ function displayPosts(data: any, container: HTMLElement) {
     const postDiv = createPostDiv(post);
     addPostEventListeners(post, postDiv, container);
     container.append(postDiv);
+
   }
 }
 function createPostDiv(post: any): HTMLDivElement {
@@ -23,6 +25,9 @@ function createPostDiv(post: any): HTMLDivElement {
   const title = document.createElement("h3");
   const bread = document.createElement("p");
   const comments = document.createElement("p");
+  if(userId === post.userId){
+    deletePostsFunction(postDiv, post)
+  }
   username.innerText = post.name;
   username.id = post.userId;
   title.innerText = post.title;
@@ -104,6 +109,10 @@ function createCommentDiv(comment: any): HTMLDivElement {
   theComment.innerText = comment.comment;
   commentDiv.id = comment.commentId;
   userName.id = comment.userId;
+  // ----------------------------------------------------------------------
+  if (userName.id === comment.userId){
+    deleteCommentFunc(commentDiv, commentId)
+  }
   userName.addEventListener("click", (event) => {
     event.preventDefault();
     mainContainer.innerHTML = "";
@@ -223,6 +232,26 @@ function createUserLink(user: any): HTMLAnchorElement {
   });
   return username;
 }
+
+function deletePostsFunction(postDiv: any, post:any): void{
+  const deletePostsBtn = document.createElement('button') as HTMLButtonElement
+    deletePostsBtn.innerText= 'X'
+    postDiv.append(deletePostsBtn)
+    deletePostsBtn.addEventListener('click', ()=>{
+    console.log('delete post func')
+    deletePost(post.userId, post.id)
+    })
+}
+function deleteCommentFunc(commentDiv:any, commentId:any ): void{
+  const deleteCommentBtn = document.createElement('button') as HTMLButtonElement
+    deleteCommentBtn.innerText= 'X'
+    commentDiv.append(deleteCommentBtn)
+    deleteCommentBtn.addEventListener('click', ()=>{
+      console.log('delete comment func')
+      deleteComment(commentId)
+      })
+}
+
 export {
   displayPosts,
   displayUsers,

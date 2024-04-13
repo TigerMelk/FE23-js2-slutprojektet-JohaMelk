@@ -145,6 +145,36 @@
           "name": "clara2"
         }
       ]
+    },
+    {
+      "id": "af9102be-fd3a-428e-9265-00ea87abe3c7",
+      "name": "jojo",
+      "password": "jojo",
+      "image": "./images/apple-3177692640.png",
+      "admin": false,
+      "comments": [],
+      "posts": [
+        {
+          "postId": "1acca48a-113d-450c-aa8d-c67333a8cfd4",
+          "userId": "af9102be-fd3a-428e-9265-00ea87abe3c7",
+          "timestamp": 1712998025801,
+          "title": "workingpost",
+          "bread": "not the best but fun",
+          "category": "League of Legends",
+          "comments": [],
+          "name": "jojo"
+        },
+        {
+          "postId": "ffea2873-e4f1-436f-9706-e9e17e9b38a0",
+          "userId": "af9102be-fd3a-428e-9265-00ea87abe3c7",
+          "timestamp": 1713012361166,
+          "title": "testing",
+          "bread": "dsda",
+          "category": "Bloodborne",
+          "comments": [],
+          "name": "jojo"
+        }
+      ]
     }
   ]
 }
