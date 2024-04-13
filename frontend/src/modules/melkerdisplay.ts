@@ -25,11 +25,13 @@ function createPostDiv(post: any): HTMLDivElement {
   const title = document.createElement("h3");
   const bread = document.createElement("p");
   const comments = document.createElement("p");
-  if(userId === post.userId){
-    deletePostsFunction(postDiv, post)
-  }
   username.innerText = post.name;
   username.id = post.userId;
+      // ----------------------------------------------------------------------
+      // ----------------------------------------------------------------------
+      if(userId === post.userId){
+        deletePostsFunction(postDiv, username.id, post.postId)
+      }
   title.innerText = post.title;
   bread.innerText = post.bread;
   comments.innerText = "comments";
@@ -110,8 +112,9 @@ function createCommentDiv(comment: any): HTMLDivElement {
   commentDiv.id = comment.commentId;
   userName.id = comment.userId;
   // ----------------------------------------------------------------------
+    // ----------------------------------------------------------------------
   if (userName.id === comment.userId){
-    deleteCommentFunc(commentDiv, commentId)
+    deleteCommentFunc(commentDiv, comment.commentId)
   }
   userName.addEventListener("click", (event) => {
     event.preventDefault();
@@ -233,13 +236,13 @@ function createUserLink(user: any): HTMLAnchorElement {
   return username;
 }
 
-function deletePostsFunction(postDiv: any, post:any): void{
+function deletePostsFunction(postDiv: any, usernameId:any, postId: any): void{
   const deletePostsBtn = document.createElement('button') as HTMLButtonElement
     deletePostsBtn.innerText= 'X'
     postDiv.append(deletePostsBtn)
     deletePostsBtn.addEventListener('click', ()=>{
     console.log('delete post func')
-    deletePost(post.userId, post.id)
+    deletePost(usernameId, postId)
     })
 }
 function deleteCommentFunc(commentDiv:any, commentId:any ): void{

@@ -64,13 +64,6 @@
               "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
               "name": "melker",
               "comment": "yo testtest"
-            },
-            {
-              "commentId": "e49e54ec-59ea-4443-953a-8ed8193fc16c",
-              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-              "name": "clara2",
-              "comment": "hey test"
             }
           ],
           "name": "milly"
@@ -112,13 +105,6 @@
       "admin": false,
       "comments": [
         {
-          "commentId": "e49e54ec-59ea-4443-953a-8ed8193fc16c",
-          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "name": "clara2",
-          "comment": "hey test"
-        },
-        {
           "commentId": "abaaae3e-fd61-4c07-bb0d-40c65a3cf821",
           "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
           "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
@@ -154,16 +140,6 @@
       "admin": false,
       "comments": [],
       "posts": [
-        {
-          "postId": "1acca48a-113d-450c-aa8d-c67333a8cfd4",
-          "userId": "af9102be-fd3a-428e-9265-00ea87abe3c7",
-          "timestamp": 1712998025801,
-          "title": "workingpost",
-          "bread": "not the best but fun",
-          "category": "League of Legends",
-          "comments": [],
-          "name": "jojo"
-        },
         {
           "postId": "ffea2873-e4f1-436f-9706-e9e17e9b38a0",
           "userId": "af9102be-fd3a-428e-9265-00ea87abe3c7",
