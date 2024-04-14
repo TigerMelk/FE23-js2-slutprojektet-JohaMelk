@@ -138,31 +138,31 @@ function displayUserProfile(user: any) {
     });
   });
 
-  profileComments.addEventListener("click", (event) => {
+  profileComments.addEventListener("click", async (event) => {
     event.preventDefault();
-    mainContainer.innerHTML = "";
+    clearContainer(mainContainer);
     const clickedUserId = user.id;
-    getDataType(clickedUserId, "comments").then((userData) => {
-      userData.forEach((comment) => {
-        const commentDiv = createCommentDiv(comment);
-        mainContainer.append(commentDiv);
-        const postInfo = {
-          postId: comment.postId,
-        };
-        getPost(postInfo).then((post) => {
-          // console.log(post);
-          if (post && post.title) {
-            const postTitle = document.createElement("h3");
-            postTitle.innerText = post.title;
-            commentDiv.prepend(postTitle);
-            postTitle.addEventListener("click", (event) => {
-              event.preventDefault();
-              displayPostDetails(post.postId);
-            });
-          }
+    const userData = await getDataType(clickedUserId, "comments");
+    console.log(userData);
+
+    for (const comment of userData) {
+      const commentDiv = createCommentDiv(comment);
+      mainContainer.append(commentDiv);
+      const postInfo = {
+        postId: comment.postId,
+      };
+      const post = await getPost(postInfo);
+      // console.log(post);
+      if (post && post.title) {
+        const postTitle = document.createElement("h3");
+        postTitle.innerText = post.title;
+        commentDiv.prepend(postTitle);
+        postTitle.addEventListener("click", (event) => {
+          event.preventDefault();
+          displayPostDetails(post.postId);
         });
-      });
-    });
+      }
+    }
   });
 
   function displayPostDetails(postId: string) {
