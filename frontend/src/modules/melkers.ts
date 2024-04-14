@@ -35,13 +35,13 @@ async function addComment(data: any) {
 	return fetchShortcut("comments/", "PATCH", data);
 }
 
-async function deleteUser(id: string){
+async function deleteUser(id: string): Promise<User[]>{
 	return fetchShortcut(`users/${id}`, "DELETE");
 }
-async function deletePost(userId: string, postId: string) {
+async function deletePost(userId: string, postId: string): Promise<Post[]> {
 	return fetchShortcut("posts/", "DELETE", { userId: userId, postId: postId });
 }
-async function deleteComment(commentId: string){
+async function deleteComment(commentId: string): Promise<Comment[]>{
 	return fetchShortcut("comments/", "DELETE", { commentId: commentId });
 }
 ///////////////////////////////////////////////////

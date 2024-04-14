@@ -34,13 +34,6 @@
           "category": "Bloodborne",
           "comments": [
             {
-              "commentId": "abaaae3e-fd61-4c07-bb0d-40c65a3cf821",
-              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "clara2",
-              "comment": "hey test"
-            },
-            {
               "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
               "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
               "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
@@ -105,13 +98,6 @@
       "admin": false,
       "comments": [
         {
-          "commentId": "abaaae3e-fd61-4c07-bb0d-40c65a3cf821",
-          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "clara2",
-          "comment": "hey test"
-        },
-        {
           "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
           "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
           "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
@@ -129,26 +115,16 @@
           "category": "Palworld",
           "comments": [],
           "name": "clara2"
-        }
-      ]
-    },
-    {
-      "id": "af9102be-fd3a-428e-9265-00ea87abe3c7",
-      "name": "jojo",
-      "password": "jojo",
-      "image": "./images/apple-3177692640.png",
-      "admin": false,
-      "comments": [],
-      "posts": [
+        },
         {
-          "postId": "ffea2873-e4f1-436f-9706-e9e17e9b38a0",
-          "userId": "af9102be-fd3a-428e-9265-00ea87abe3c7",
-          "timestamp": 1713012361166,
-          "title": "testing",
-          "bread": "dsda",
-          "category": "Bloodborne",
+          "postId": "9c508390-ad22-484d-ae76-7a89f8d01668",
+          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+          "timestamp": 1713083179195,
+          "title": "title",
+          "bread": "dfgdfgf",
+          "category": "League of Legends",
           "comments": [],
-          "name": "jojo"
+          "name": "clara2"
         }
       ]
     }

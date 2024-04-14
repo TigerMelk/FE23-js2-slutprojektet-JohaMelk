@@ -27,7 +27,7 @@ function createPostDiv(post: any): HTMLDivElement {
   const comments = document.createElement("p");
   username.innerText = post.name;
   username.id = post.userId;
-      // ----------------------------------------------------------------------
+
       // ----------------------------------------------------------------------
       if(userId === post.userId){
         deletePostsFunction(postDiv, username.id, post.postId)
@@ -111,7 +111,7 @@ function createCommentDiv(comment: any): HTMLDivElement {
   theComment.innerText = comment.comment;
   commentDiv.id = comment.commentId;
   userName.id = comment.userId;
-  // ----------------------------------------------------------------------
+  
     // ----------------------------------------------------------------------
   if (userName.id === comment.userId){
     deleteCommentFunc(commentDiv, comment.commentId)
@@ -139,6 +139,7 @@ function displayUserProfile(user: any) {
   const profileComments = document.querySelector(
     "#comments"
   ) as HTMLButtonElement;
+    const deleteUserBtn = document.querySelector('#deleteUserBtn') as HTMLButtonElement
   console.log(user, user.id);
   profileName.innerText = user.name;
   profileImg.src = user.image;
@@ -149,6 +150,12 @@ function displayUserProfile(user: any) {
       displayPosts(userData, mainContainer);
     });
   });
+
+// DeleteProfile
+  deleteUserBtn.addEventListener('click', ()=>{
+    deleteUser(user.id)
+    console.log(user.id + 'is deleted')
+  })
 
   profileComments.addEventListener("click", (event) => {
     event.preventDefault();
@@ -236,6 +243,7 @@ function createUserLink(user: any): HTMLAnchorElement {
   return username;
 }
 
+// Delete posts
 function deletePostsFunction(postDiv: any, usernameId:any, postId: any): void{
   const deletePostsBtn = document.createElement('button') as HTMLButtonElement
     deletePostsBtn.innerText= 'X'
@@ -245,6 +253,7 @@ function deletePostsFunction(postDiv: any, usernameId:any, postId: any): void{
     deletePost(usernameId, postId)
     })
 }
+//Delete comment
 function deleteCommentFunc(commentDiv:any, commentId:any ): void{
   const deleteCommentBtn = document.createElement('button') as HTMLButtonElement
     deleteCommentBtn.innerText= 'X'
