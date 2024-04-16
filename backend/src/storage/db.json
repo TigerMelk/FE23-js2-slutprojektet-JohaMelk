@@ -363,6 +363,15 @@
           "name": "clara2"
         }
       ]
+    },
+    {
+      "id": "1d097049-37ed-4b9f-a085-48fe74ea4293",
+      "name": "tiger",
+      "password": "tiger",
+      "image": "./images/strawberry-3177709640.png",
+      "admin": false,
+      "comments": [],
+      "posts": []
     }
   ]
 }

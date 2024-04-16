@@ -56,7 +56,7 @@ if (userId) {
 
 //! login
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const usernameInput = document.querySelector("#username") as HTMLInputElement;
   const passwordInput = document.querySelector("#password") as HTMLInputElement;
@@ -68,29 +68,29 @@ form.addEventListener("submit", (event) => {
     password: password,
   };
   try {
-    login(data).then((user) => {
-      localStorage.setItem("userId", user.id);
-      loggedInUser.innerText = user.name;
-      categoryDiv.classList.remove("hide");
-      aside.classList.remove("hide");
-      form.classList.add("hide");
-      console.log("logged in successfully");
-      loggedInUser.addEventListener("click", (event) => {
-        event.preventDefault();
-        mainContainer.innerHTML = "";
-        addNewPost.classList.add("hide");
-        profile.classList.remove("hide");
-        getUsers(userId).then((user) => {
-          console.log(user);
-          displayUserProfile(user);
-        });
-      });
+    const user = await login(data);
+    if (!user || !user.id) {
+      console.log("invalid username or password");
+      form.reset();
+      return;
+    }
+
+    localStorage.setItem("userId", user.id);
+    categoryDiv.classList.remove("hide");
+    aside.classList.remove("hide");
+    form.classList.add("hide");
+    console.log("logged in successfully");
+
+    getUsers(user.id).then((user) => {
+      const userName = createUserLink(user);
+      header.append(userName);
     });
-  } catch {
-    console.log("couldnt log in");
+  } catch (error) {
+    console.log("error logging in", error);
   }
   form.reset();
 });
+
 // ! logOut
 logOut.addEventListener("click", (event) => {
   event.preventDefault();

@@ -1,7 +1,6 @@
 import { getUsers, getDataType, getPost } from "./melkers.js";
 import { deletePost, deleteComment, deleteUser } from "./melkers.js";
 
-const userId = localStorage.getItem("userId") as string;
 const addNewPost = document.querySelector("#addPost") as HTMLFormElement;
 let clickedUserId;
 const commentForm = document.querySelector("#addComment") as HTMLFormElement;
@@ -27,6 +26,7 @@ function createPostDiv(post: any): HTMLDivElement {
   const comments = document.createElement("p");
   username.innerText = post.name;
   username.id = post.userId;
+  const userId = localStorage.getItem("userId") as string;
 
   // ----------------------------------------------------------------------
   if (userId === post.userId) {
@@ -191,6 +191,7 @@ function displayUserProfile(user: any) {
     profileComments.addEventListener("click", commentClickHandler);
     commentEventListenerAdded = true;
   }
+  const userId = localStorage.getItem("userId") as string;
 
   if (user.id !== userId) {
     logOutBtn.classList.add("hide");
