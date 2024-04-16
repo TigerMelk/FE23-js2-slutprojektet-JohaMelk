@@ -34,13 +34,6 @@
           "category": "Bloodborne",
           "comments": [
             {
-              "commentId": "abaaae3e-fd61-4c07-bb0d-40c65a3cf821",
-              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "clara2",
-              "comment": "hey test"
-            },
-            {
               "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
               "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
               "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
@@ -64,13 +57,6 @@
               "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
               "name": "melker",
               "comment": "yo testtest"
-            },
-            {
-              "commentId": "e49e54ec-59ea-4443-953a-8ed8193fc16c",
-              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-              "name": "clara2",
-              "comment": "hey test"
             }
           ],
           "name": "milly"
@@ -112,20 +98,6 @@
       "admin": false,
       "comments": [
         {
-          "commentId": "e49e54ec-59ea-4443-953a-8ed8193fc16c",
-          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "name": "clara2",
-          "comment": "hey test"
-        },
-        {
-          "commentId": "abaaae3e-fd61-4c07-bb0d-40c65a3cf821",
-          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "clara2",
-          "comment": "hey test"
-        },
-        {
           "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
           "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
           "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
@@ -141,6 +113,16 @@
           "title": "palworld",
           "bread": "yayaya",
           "category": "Palworld",
+          "comments": [],
+          "name": "clara2"
+        },
+        {
+          "postId": "9c508390-ad22-484d-ae76-7a89f8d01668",
+          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+          "timestamp": 1713083179195,
+          "title": "title",
+          "bread": "dfgdfgf",
+          "category": "League of Legends",
           "comments": [],
           "name": "clara2"
         }

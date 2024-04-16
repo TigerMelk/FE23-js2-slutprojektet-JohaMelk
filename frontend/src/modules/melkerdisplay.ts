@@ -1,4 +1,5 @@
 import { getUsers, getDataType, getPost } from "./melkers.js";
+import { deletePost, deleteComment, deleteUser } from "./melkers.js";
 
 //! ///////////////////////////////////////////////////////////////////
 //! ///////////////////////////////////////////////////////////////////
@@ -14,6 +15,7 @@ function displayPosts(data: any, container: HTMLElement) {
     const postDiv = createPostDiv(post);
     addPostEventListeners(post, postDiv, container);
     container.append(postDiv);
+
   }
 }
 function createPostDiv(post: any): HTMLDivElement {
@@ -25,6 +27,11 @@ function createPostDiv(post: any): HTMLDivElement {
   const comments = document.createElement("p");
   username.innerText = post.name;
   username.id = post.userId;
+
+      // ----------------------------------------------------------------------
+      if(userId === post.userId){
+        deletePostsFunction(postDiv, username.id, post.postId)
+      }
   title.innerText = post.title;
   bread.innerText = post.bread;
   comments.innerText = "comments";
@@ -104,6 +111,11 @@ function createCommentDiv(comment: any): HTMLDivElement {
   theComment.innerText = comment.comment;
   commentDiv.id = comment.commentId;
   userName.id = comment.userId;
+  
+    // ----------------------------------------------------------------------
+  if (userName.id === comment.userId){
+    deleteCommentFunc(commentDiv, comment.commentId)
+  }
   userName.addEventListener("click", (event) => {
     event.preventDefault();
     mainContainer.innerHTML = "";
@@ -127,6 +139,7 @@ function displayUserProfile(user: any) {
   const profileComments = document.querySelector(
     "#comments"
   ) as HTMLButtonElement;
+    const deleteUserBtn = document.querySelector('#deleteUserBtn') as HTMLButtonElement
   console.log(user, user.id);
   profileName.innerText = user.name;
   profileImg.src = user.image;
@@ -138,7 +151,17 @@ function displayUserProfile(user: any) {
     });
   });
 
+
+// DeleteProfile
+  deleteUserBtn.addEventListener('click', ()=>{
+    deleteUser(user.id)
+    console.log(user.id + 'is deleted')
+  })
+
+  profileComments.addEventListener("click", (event) => {
+=======
   profileComments.addEventListener("click", async (event) => {
+
     event.preventDefault();
     clearContainer(mainContainer);
     const clickedUserId = user.id;
@@ -223,6 +246,28 @@ function createUserLink(user: any): HTMLAnchorElement {
   });
   return username;
 }
+
+// Delete posts
+function deletePostsFunction(postDiv: any, usernameId:any, postId: any): void{
+  const deletePostsBtn = document.createElement('button') as HTMLButtonElement
+    deletePostsBtn.innerText= 'X'
+    postDiv.append(deletePostsBtn)
+    deletePostsBtn.addEventListener('click', ()=>{
+    console.log('delete post func')
+    deletePost(usernameId, postId)
+    })
+}
+//Delete comment
+function deleteCommentFunc(commentDiv:any, commentId:any ): void{
+  const deleteCommentBtn = document.createElement('button') as HTMLButtonElement
+    deleteCommentBtn.innerText= 'X'
+    commentDiv.append(deleteCommentBtn)
+    deleteCommentBtn.addEventListener('click', ()=>{
+      console.log('delete comment func')
+      deleteComment(commentId)
+      })
+}
+
 export {
   displayPosts,
   displayUsers,

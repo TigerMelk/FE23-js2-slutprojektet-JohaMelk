@@ -472,6 +472,7 @@ addCommentForm.addEventListener("submit", (event) => {
   };
   addComment(commentData).then(() => {
     getPost(postData).then((data) => {
+      
       displayComments(data, mainContainer);
     });
   });
@@ -485,3 +486,12 @@ userBtn.addEventListener("click", (event) => {
     displayUsers(data);
   });
 });
+
+// const deleteBtn = document.createElement('button') as HTMLButtonElement
+// deleteBtn.innerText= 'X'
+// .append(deleteBtn);
+// deleteBtn.addEventListener("click", async function (event) {
+// console.log("körs i delete");
+// }
+// };
+// }
