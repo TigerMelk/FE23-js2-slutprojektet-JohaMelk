@@ -39,6 +39,34 @@
               "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
               "name": "clara2",
               "comment": "hey test3"
+            },
+            {
+              "commentId": "c0daabb3-59c6-4e23-9223-e4e64d2f81a9",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+              "name": "joel",
+              "comment": "hahahahaha"
+            },
+            {
+              "commentId": "36388348-49e7-4bf9-ba76-ceb146a67c1e",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+              "name": "joel",
+              "comment": "hahahahahahahahaha"
+            },
+            {
+              "commentId": "c15a88dd-6280-4260-92c4-2c3b42683bab",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+              "name": "joel",
+              "comment": "hahahahahahahahaha"
+            },
+            {
+              "commentId": "71c3815c-8fa1-4104-877c-eb58263a21f3",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+              "name": "joel",
+              "comment": "asdf"
             }
           ],
           "name": "milly"
@@ -57,6 +85,20 @@
               "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
               "name": "melker",
               "comment": "yo testtest"
+            },
+            {
+              "commentId": "13a28095-61aa-4285-b13c-14da9104877a",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+              "name": "joel",
+              "comment": "yoyoyoyo"
+            },
+            {
+              "commentId": "0ffea53d-e852-43ae-81fd-7372d90ed8be",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+              "name": "joel",
+              "comment": "yoyoyoyo"
             }
           ],
           "name": "milly"
@@ -78,8 +120,175 @@
       "password": "joel",
       "image": "http://localhost:1234/orange-3177693_640.png",
       "admin": false,
-      "comments": [],
-      "posts": []
+      "comments": [
+        {
+          "commentId": "13a28095-61aa-4285-b13c-14da9104877a",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+          "name": "joel",
+          "comment": "yoyoyoyo"
+        },
+        {
+          "commentId": "0ffea53d-e852-43ae-81fd-7372d90ed8be",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+          "name": "joel",
+          "comment": "yoyoyoyo"
+        },
+        {
+          "commentId": "375a3d33-0175-4f86-bee1-dd44075af5ed",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+          "name": "joel",
+          "comment": "yoyoyoyoyo"
+        },
+        {
+          "commentId": "c0daabb3-59c6-4e23-9223-e4e64d2f81a9",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "joel",
+          "comment": "hahahahaha"
+        },
+        {
+          "commentId": "36388348-49e7-4bf9-ba76-ceb146a67c1e",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "joel",
+          "comment": "hahahahahahahahaha"
+        },
+        {
+          "commentId": "c15a88dd-6280-4260-92c4-2c3b42683bab",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "joel",
+          "comment": "hahahahahahahahaha"
+        },
+        {
+          "commentId": "f5364842-c8ea-437c-8ace-cdac5bbb595d",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+          "name": "joel",
+          "comment": "hahahahahahahahaha"
+        },
+        {
+          "commentId": "d7744985-07f6-4f02-ac06-4260f8ede04b",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+          "name": "joel",
+          "comment": "hahahahahahahahahahahaha"
+        },
+        {
+          "commentId": "54ed4ba6-502a-4cf3-8a49-2d1100229896",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+          "name": "joel",
+          "comment": "hahahahahahahahahahahaha"
+        },
+        {
+          "commentId": "7f63e1c8-463b-4261-88b3-39768c7fb5f9",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+          "name": "joel",
+          "comment": "hahahahahahahahahahahaha"
+        },
+        {
+          "commentId": "9d8c0c5a-9809-4166-9bba-638aacb9f25e",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+          "name": "joel",
+          "comment": "hahahahahahahahahahahaha"
+        },
+        {
+          "commentId": "9ba1f3bc-2be6-4267-8c69-5430263f8cae",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
+          "name": "joel",
+          "comment": "hahahahahahahahahahahaha"
+        },
+        {
+          "commentId": "71c3815c-8fa1-4104-877c-eb58263a21f3",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "joel",
+          "comment": "asdf"
+        }
+      ],
+      "posts": [
+        {
+          "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "timestamp": 1713297839363,
+          "title": "yo",
+          "bread": "testung",
+          "category": "League of Legends",
+          "comments": [
+            {
+              "commentId": "375a3d33-0175-4f86-bee1-dd44075af5ed",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+              "name": "joel",
+              "comment": "yoyoyoyoyo"
+            },
+            {
+              "commentId": "f5364842-c8ea-437c-8ace-cdac5bbb595d",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+              "name": "joel",
+              "comment": "hahahahahahahahaha"
+            }
+          ],
+          "name": "joel"
+        },
+        {
+          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "timestamp": 1713299146470,
+          "title": "hej blood",
+          "bread": "yo blud",
+          "category": "Bloodborne",
+          "comments": [
+            {
+              "commentId": "d7744985-07f6-4f02-ac06-4260f8ede04b",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+              "name": "joel",
+              "comment": "hahahahahahahahahahahaha"
+            },
+            {
+              "commentId": "54ed4ba6-502a-4cf3-8a49-2d1100229896",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+              "name": "joel",
+              "comment": "hahahahahahahahahahahaha"
+            },
+            {
+              "commentId": "7f63e1c8-463b-4261-88b3-39768c7fb5f9",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+              "name": "joel",
+              "comment": "hahahahahahahahahahahaha"
+            },
+            {
+              "commentId": "9d8c0c5a-9809-4166-9bba-638aacb9f25e",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+              "name": "joel",
+              "comment": "hahahahahahahahahahahaha"
+            }
+          ],
+          "name": "joel"
+        },
+        {
+          "postId": "8488df0f-f53c-4e0e-9b2b-e2428c96eab4",
+          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+          "timestamp": 1713299216604,
+          "title": "tjjatjaj",
+          "bread": "palboy",
+          "category": "Palworld",
+          "comments": [],
+          "name": "joel"
+        }
+      ]
     },
     {
       "id": "15de2c7f-c53b-4d80-83fd-017dfd5a0e31",
@@ -88,7 +297,26 @@
       "image": "./images/orange-3177693_640.png",
       "admin": false,
       "comments": [],
-      "posts": []
+      "posts": [
+        {
+          "postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
+          "userId": "15de2c7f-c53b-4d80-83fd-017dfd5a0e31",
+          "timestamp": 1713296381908,
+          "title": "smilly",
+          "bread": "hejhejs",
+          "category": "Palworld",
+          "comments": [
+            {
+              "commentId": "9ba1f3bc-2be6-4267-8c69-5430263f8cae",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
+              "name": "joel",
+              "comment": "hahahahahahahahahahahaha"
+            }
+          ],
+          "name": "clara"
+        }
+      ]
     },
     {
       "id": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
@@ -113,7 +341,15 @@
           "title": "palworld",
           "bread": "yayaya",
           "category": "Palworld",
-          "comments": [],
+          "comments": [
+            {
+              "commentId": "df0ff8d5-5b71-4806-a960-a36157cddce2",
+              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+              "postId": "343f7e74-8e78-4099-aca5-842ea3fdcb49",
+              "name": "joel",
+              "comment": "hahahahahahahahahahahaha"
+            }
+          ],
           "name": "clara2"
         },
         {

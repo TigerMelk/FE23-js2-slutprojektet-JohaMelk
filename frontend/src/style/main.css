@@ -86,6 +86,9 @@ header {
   gap: 5px;
   padding: 10px;
 }
+/* .addComment{
+  display: flex;
+} */
 .hide {
   display: none;
 }

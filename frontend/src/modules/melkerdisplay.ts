@@ -1,21 +1,21 @@
 import { getUsers, getDataType, getPost } from "./melkers.js";
 import { deletePost, deleteComment, deleteUser } from "./melkers.js";
 
-//! ///////////////////////////////////////////////////////////////////
-//! ///////////////////////////////////////////////////////////////////
-//! ///////////////////////////////////////////////////////////////////
 const userId = localStorage.getItem("userId") as string;
 const addNewPost = document.querySelector("#addPost") as HTMLFormElement;
+let clickedUserId;
+const commentForm = document.querySelector("#addComment") as HTMLFormElement;
 const mainContainer = document.querySelector(
   "#mainContainer"
 ) as HTMLDivElement;
-function displayPosts(data: any, container: HTMLElement) {
+const profileDiv = document.querySelector("#profileDiv") as HTMLDivElement;
+
+async function displayPosts(data: any, container: HTMLElement) {
   clearContainer(container);
   for (const post of data) {
     const postDiv = createPostDiv(post);
     addPostEventListeners(post, postDiv, container);
     container.append(postDiv);
-
   }
 }
 function createPostDiv(post: any): HTMLDivElement {
@@ -28,10 +28,10 @@ function createPostDiv(post: any): HTMLDivElement {
   username.innerText = post.name;
   username.id = post.userId;
 
-      // ----------------------------------------------------------------------
-      if(userId === post.userId){
-        deletePostsFunction(postDiv, username.id, post.postId)
-      }
+  // ----------------------------------------------------------------------
+  if (userId === post.userId) {
+    deletePostsFunction(postDiv, username.id, post.postId);
+  }
   title.innerText = post.title;
   bread.innerText = post.bread;
   comments.innerText = "comments";
@@ -54,9 +54,11 @@ function addPostEventListeners(
 ) {
   const title = postDiv.querySelector("h3");
   const comments = postDiv.querySelector("p:last-child");
-  title?.addEventListener("click", (event) => {
+  function postEvents(event: Event) {
     event.preventDefault();
+    profileDiv.classList.add("hide");
     const postId = post.postId;
+    localStorage.setItem("postId", postId);
     const postInfo = {
       postId: postId,
     };
@@ -77,23 +79,11 @@ function addPostEventListeners(
       ) as HTMLFormElement;
       commentForm.classList.remove("hide");
     });
-  });
-  comments?.addEventListener("click", (event) => {
-    event.preventDefault();
-    clearContainer(container);
-    addNewPost.classList.add("hide");
-    const newPostDiv = createPostDiv(post);
-    container.append(newPostDiv);
-    const commentForm = document.querySelector(
-      "#addComment"
-    ) as HTMLFormElement;
-    commentForm.classList.remove("hide");
-    newPostDiv.append(commentForm);
-    displayComments(post.comments, container);
-  });
+  }
+  title?.addEventListener("click", postEvents);
+  comments?.addEventListener("click", postEvents);
 }
 function displayComments(data: any, container: HTMLElement) {
-  // clearContainer(container);
   if (!data || data.length === 0) {
     return;
   }
@@ -102,6 +92,7 @@ function displayComments(data: any, container: HTMLElement) {
     container.append(commentDiv);
   }
 }
+
 function createCommentDiv(comment: any): HTMLDivElement {
   const commentDiv = document.createElement("div") as HTMLDivElement;
   commentDiv.classList.add("postDiv");
@@ -111,15 +102,15 @@ function createCommentDiv(comment: any): HTMLDivElement {
   theComment.innerText = comment.comment;
   commentDiv.id = comment.commentId;
   userName.id = comment.userId;
-  
-    // ----------------------------------------------------------------------
-  if (userName.id === comment.userId){
-    deleteCommentFunc(commentDiv, comment.commentId)
+  // ----------------------------------------------------------------------
+  if (userName.id === comment.userId) {
+    deleteCommentFunc(commentDiv, comment.commentId);
   }
   userName.addEventListener("click", (event) => {
     event.preventDefault();
     mainContainer.innerHTML = "";
     const userId = userName.id;
+    clickedUserId = userId;
     getUsers(userId).then((user) => {
       console.log(user);
       displayUserProfile(user);
@@ -128,8 +119,10 @@ function createCommentDiv(comment: any): HTMLDivElement {
   commentDiv.append(userName, theComment);
   return commentDiv;
 }
+
+let commentEventListenerAdded = false;
+let postEventListenerAdded = false;
 function displayUserProfile(user: any) {
-  const profileDiv = document.querySelector("#profileDiv") as HTMLDivElement;
   const profileName = document.querySelector(
     "#profileName"
   ) as HTMLHeadingElement;
@@ -139,76 +132,72 @@ function displayUserProfile(user: any) {
   const profileComments = document.querySelector(
     "#comments"
   ) as HTMLButtonElement;
-    const deleteUserBtn = document.querySelector('#deleteUserBtn') as HTMLButtonElement
-  console.log(user, user.id);
+  const deleteUserBtn = document.querySelector(
+    "#deleteUserBtn"
+  ) as HTMLButtonElement;
+
+  addNewPost.classList.add("hide");
+  commentForm.classList.add("hide");
   profileName.innerText = user.name;
   profileImg.src = user.image;
-  // ! logout
-  profilePosts.addEventListener("click", (event) => {
+
+  function displayUserPosts(event: Event) {
     event.preventDefault();
-    getDataType(user.id, "posts").then((userData) => {
-      displayPosts(userData, mainContainer);
-    });
-  });
-
-
-// DeleteProfile
-  deleteUserBtn.addEventListener('click', ()=>{
-    deleteUser(user.id)
-    console.log(user.id + 'is deleted')
-  })
-
-  profileComments.addEventListener("click", (event) => {
-=======
-  profileComments.addEventListener("click", async (event) => {
-
-    event.preventDefault();
-    clearContainer(mainContainer);
-    const clickedUserId = user.id;
-    const userData = await getDataType(clickedUserId, "comments");
-    console.log(userData);
-
-    for (const comment of userData) {
-      const commentDiv = createCommentDiv(comment);
-      mainContainer.append(commentDiv);
-      const postInfo = {
-        postId: comment.postId,
-      };
-      const post = await getPost(postInfo);
-      // console.log(post);
-      if (post && post.title) {
-        const postTitle = document.createElement("h3");
-        postTitle.innerText = post.title;
-        commentDiv.prepend(postTitle);
-        postTitle.addEventListener("click", (event) => {
-          event.preventDefault();
-          displayPostDetails(post.postId);
-        });
-      }
-    }
-  });
-
-  function displayPostDetails(postId: string) {
-    clearContainer(mainContainer);
-    profileDiv.classList.add("hide");
-    const postInfo = {
-      postId: postId,
-    };
-    getPost(postInfo).then((postData) => {
-      addNewPost.classList.add("hide");
-      const newPostDiv = createPostDiv(postData);
-      mainContainer.append(newPostDiv);
-      displayComments(postData.comments, mainContainer);
-
-      const commentForm = document.querySelector(
-        "#addComment"
-      ) as HTMLFormElement;
-      commentForm.classList.remove("hide");
+    getDataType(clickedUserId, "posts").then(async (userData) => {
+      await displayPosts(userData, mainContainer);
     });
   }
+  if (!postEventListenerAdded) {
+    profilePosts.addEventListener("click", displayUserPosts);
+    postEventListenerAdded = true;
+  }
+
+  // DeleteProfile
+  deleteUserBtn.addEventListener("click", () => {
+    deleteUser(user.id);
+    console.log(user.id + " is deleted");
+  });
+
+  function commentClickHandler(event: Event) {
+    event.preventDefault();
+    clearContainer(mainContainer);
+    commentForm.classList.add("hide");
+    console.log(clickedUserId);
+    if (clickedUserId !== null) {
+      getDataType(clickedUserId, "comments").then(async (userData) => {
+        console.log(userData);
+        for (const comment of userData) {
+          const commentDiv = createCommentDiv(comment);
+          mainContainer.append(commentDiv);
+          const postInfo = {
+            postId: comment.postId,
+          };
+          const post = await getPost(postInfo);
+          if (post && post.title) {
+            const postTitle = document.createElement("h3");
+            postTitle.innerText = post.title;
+            commentDiv.prepend(postTitle);
+            postTitle.addEventListener("click", (event) => {
+              event.preventDefault();
+              displayPostDetails(post.postId);
+            });
+          }
+        }
+      });
+    }
+  }
+
+  if (!commentEventListenerAdded) {
+    profileComments.addEventListener("click", commentClickHandler);
+    commentEventListenerAdded = true;
+  }
+
   if (user.id !== userId) {
     logOutBtn.classList.add("hide");
-  } else logOutBtn.classList.remove("hide");
+  } else {
+    logOutBtn.classList.remove("hide");
+  }
+
   logOutBtn.addEventListener("click", (event) => {
     event.preventDefault();
     localStorage.clear();
@@ -217,7 +206,20 @@ function displayUserProfile(user: any) {
 
   profileDiv.classList.remove("hide");
 }
-
+function displayPostDetails(postId: string) {
+  clearContainer(mainContainer);
+  profileDiv.classList.add("hide");
+  const postInfo = {
+    postId: postId,
+  };
+  getPost(postInfo).then((postData) => {
+    addNewPost.classList.add("hide");
+    const newPostDiv = createPostDiv(postData);
+    mainContainer.append(newPostDiv);
+    displayComments(postData.comments, mainContainer);
+    commentForm.classList.remove("hide");
+  });
+}
 function clearContainer(container: HTMLElement) {
   container.innerHTML = "";
 }
@@ -238,8 +240,10 @@ function createUserLink(user: any): HTMLAnchorElement {
   username.id = user.id;
   username.addEventListener("click", (event) => {
     event.preventDefault();
+    addNewPost.classList.add("hide");
     mainContainer.innerHTML = "";
     const userId = username.id;
+    clickedUserId = user.id;
     getUsers(userId).then((user) => {
       displayUserProfile(user);
     });
@@ -248,24 +252,26 @@ function createUserLink(user: any): HTMLAnchorElement {
 }
 
 // Delete posts
-function deletePostsFunction(postDiv: any, usernameId:any, postId: any): void{
-  const deletePostsBtn = document.createElement('button') as HTMLButtonElement
-    deletePostsBtn.innerText= 'X'
-    postDiv.append(deletePostsBtn)
-    deletePostsBtn.addEventListener('click', ()=>{
-    console.log('delete post func')
-    deletePost(usernameId, postId)
-    })
+function deletePostsFunction(postDiv: any, usernameId: any, postId: any): void {
+  const deletePostsBtn = document.createElement("button") as HTMLButtonElement;
+  deletePostsBtn.innerText = "X";
+  postDiv.append(deletePostsBtn);
+  deletePostsBtn.addEventListener("click", () => {
+    console.log("delete post func");
+    deletePost(usernameId, postId);
+  });
 }
 //Delete comment
-function deleteCommentFunc(commentDiv:any, commentId:any ): void{
-  const deleteCommentBtn = document.createElement('button') as HTMLButtonElement
-    deleteCommentBtn.innerText= 'X'
-    commentDiv.append(deleteCommentBtn)
-    deleteCommentBtn.addEventListener('click', ()=>{
-      console.log('delete comment func')
-      deleteComment(commentId)
-      })
+function deleteCommentFunc(commentDiv: any, commentId: any): void {
+  const deleteCommentBtn = document.createElement(
+    "button"
+  ) as HTMLButtonElement;
+  deleteCommentBtn.innerText = "X";
+  commentDiv.append(deleteCommentBtn);
+  deleteCommentBtn.addEventListener("click", () => {
+    console.log("delete comment func");
+    deleteComment(commentId);
+  });
 }
 
 export {
@@ -274,4 +280,6 @@ export {
   displayUserProfile,
   displayComments,
   createCommentDiv,
+  displayPostDetails,
+  createUserLink,
 };
