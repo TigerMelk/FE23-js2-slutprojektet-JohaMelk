@@ -67,6 +67,13 @@
               "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
               "name": "joel",
               "comment": "asdf"
+            },
+            {
+              "commentId": "ebccf1e6-071c-4540-b334-ae83ed817145",
+              "userId": "50857621-659b-4468-b763-8065095bcd0b",
+              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+              "name": "milly2",
+              "comment": "hej"
             }
           ],
           "name": "milly"
@@ -99,6 +106,20 @@
               "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
               "name": "joel",
               "comment": "yoyoyoyo"
+            },
+            {
+              "commentId": "3de36d88-6461-47dc-b6f4-2493ded4ddcd",
+              "userId": "50857621-659b-4468-b763-8065095bcd0b",
+              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+              "name": "milly2",
+              "comment": "tjo boy"
+            },
+            {
+              "commentId": "e68e7aeb-9d33-4870-9605-d1d651b1a78f",
+              "userId": "50857621-659b-4468-b763-8065095bcd0b",
+              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+              "name": "milly2",
+              "comment": "kokobaba"
             }
           ],
           "name": "milly"
@@ -371,6 +392,37 @@
       "image": "./images/strawberry-3177709640.png",
       "admin": false,
       "comments": [],
+      "posts": []
+    },
+    {
+      "id": "50857621-659b-4468-b763-8065095bcd0b",
+      "name": "milly2",
+      "password": "milly",
+      "image": "./images/strawberry-3177709640.png",
+      "admin": false,
+      "comments": [
+        {
+          "commentId": "3de36d88-6461-47dc-b6f4-2493ded4ddcd",
+          "userId": "50857621-659b-4468-b763-8065095bcd0b",
+          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+          "name": "milly2",
+          "comment": "tjo boy"
+        },
+        {
+          "commentId": "e68e7aeb-9d33-4870-9605-d1d651b1a78f",
+          "userId": "50857621-659b-4468-b763-8065095bcd0b",
+          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+          "name": "milly2",
+          "comment": "kokobaba"
+        },
+        {
+          "commentId": "ebccf1e6-071c-4540-b334-ae83ed817145",
+          "userId": "50857621-659b-4468-b763-8065095bcd0b",
+          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+          "name": "milly2",
+          "comment": "hej"
+        }
+      ],
       "posts": []
     }
   ]

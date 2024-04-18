@@ -84,6 +84,7 @@ form.addEventListener("submit", async (event) => {
     getUsers(user.id).then((user) => {
       const userName = createUserLink(user);
       header.append(userName);
+      location.reload();
     });
   } catch (error) {
     console.log("error logging in", error);
