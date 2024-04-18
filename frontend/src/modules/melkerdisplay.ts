@@ -156,6 +156,8 @@ function displayUserProfile(user: any) {
   deleteUserBtn.addEventListener("click", () => {
     deleteUser(user.id);
     console.log(user.id + " is deleted");
+    localStorage.clear()
+    location.reload();
   });
 
   function commentClickHandler(event: Event) {
