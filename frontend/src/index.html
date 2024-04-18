@@ -19,7 +19,6 @@
         </button>
         <button id="category3" value="Palworld">Palworld</button>
       </div>
-      <h3 id="userName"></h3>
     </header>
     <!-- loginform -->
     <form id="loginForm" class="loginCreate">
@@ -65,33 +64,36 @@
         placeholder="confirm password"
         required
       />
-      <label for="bild">
+      <div class="flex">
         <input
           type="radio"
           name="bild"
           id="bild1"
           value="./images/apple-3177692640.png"
+          checked
         />
-        <!-- <img src="./images/apple-3177692_640.png" alt="apple" /> -->
-      </label>
-      <label for="bild">
+        <label for="bild1">
+          <img src="./images/apple-3177692640.png" alt="apple" />
+        </label>
         <input
           type="radio"
           name="bild"
           id="bild2"
           value="./images/orange-3177693640.png"
         />
-        <!-- <img src="./images/orange-3177693_640.png" alt="orange" /> -->
-      </label>
-      <label for="bild">
+        <label for="bild2">
+          <img src="./images/orange-3177693640.png" alt="orange" />
+        </label>
         <input
           type="radio"
           name="bild"
           id="bild3"
           value="./images/strawberry-3177709640.png"
         />
-        <!-- <img src="./images/strawberry-3177709_640.png" alt="strawberry" /> -->
-      </label>
+        <label for="bild3">
+          <img src="./images/strawberry-3177709640.png" alt="strawberry" />
+        </label>
+      </div>
 
       <label for="loginBtns">
         <button id="loginBtn" name="loginBtns">Login</button>
@@ -127,7 +129,10 @@
 
     <aside id="aside" class="hide">
       <button id="usersAside">Users</button>
-      <div id="usersDiv" class="usersDiv"></div>
+      <div id="usersDiv" class="usersDiv hide"></div>
     </aside>
+    <div class="error hide">
+      <p id="errorMessage"></p>
+    </div>
   </body>
 </html>

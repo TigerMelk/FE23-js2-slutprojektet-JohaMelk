@@ -26,6 +26,10 @@ const mainContainer = document.querySelector(
 ) as HTMLDivElement;
 const userId = localStorage.getItem("userId") as string;
 const aside = document.querySelector("aside") as HTMLButtonElement;
+const errorDiv = document.querySelector(".error") as HTMLDivElement;
+const errorMessage = document.querySelector(
+  "#errorMessage"
+) as HTMLParagraphElement;
 const addNewPost = document.querySelector("#addPost") as HTMLFormElement;
 const loggedInUser = document.querySelector("#userName") as HTMLHeadingElement;
 const logOut = document.querySelector("#logOut") as HTMLButtonElement;
@@ -49,7 +53,6 @@ if (userId) {
     header.append(userName);
     userName.addEventListener("click", (event) => {
       event.preventDefault();
-      // mainContainer.innerHTML = ''
     });
   });
 }
@@ -71,7 +74,13 @@ form.addEventListener("submit", async (event) => {
     const user = await login(data);
     if (!user || !user.id) {
       console.log("invalid username or password");
+      errorDiv.classList.remove("hide");
+      errorMessage.innerText = "Invalid username or password";
       form.reset();
+      setTimeout(() => {
+        errorDiv.classList.add("hide");
+        errorMessage.innerText = "";
+      }, 5000);
       return;
     }
 
@@ -87,7 +96,14 @@ form.addEventListener("submit", async (event) => {
       location.reload();
     });
   } catch (error) {
-    console.log("error logging in", error);
+    errorDiv.classList.remove("hide");
+    console.log("Could not log in", error);
+    (errorMessage.innerText = "Could not log in"), error;
+    form.reset();
+    setTimeout(() => {
+      errorDiv.classList.add("hide");
+      errorMessage.innerText = "";
+    }, 5000);
   }
   form.reset();
 });
@@ -138,11 +154,29 @@ createForm.addEventListener("submit", (event) => {
       password: password,
       image: imgSrc,
     };
-    addUser(data).then((newUser) => {
-      console.log(newUser);
-      createForm.classList.add("hide");
-      form.classList.remove("hide");
+    addUser(data).then((response) => {
+      if ("message" in response) {
+        errorDiv.classList.remove("hide");
+        errorMessage.innerText = response.message;
+        form.reset();
+        setTimeout(() => {
+          errorDiv.classList.add("hide");
+          errorMessage.innerText = "";
+        }, 5000);
+      } else {
+        console.log(response);
+        createForm.classList.add("hide");
+        form.classList.remove("hide");
+      }
     });
+  } else {
+    errorDiv.classList.remove("hide");
+    errorMessage.innerText = "Passwords don't match";
+    form.reset();
+    setTimeout(() => {
+      errorDiv.classList.add("hide");
+      errorMessage.innerText = "";
+    }, 5000);
   }
   createForm.reset();
 });

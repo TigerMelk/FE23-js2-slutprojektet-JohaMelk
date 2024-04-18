@@ -424,6 +424,53 @@
         }
       ],
       "posts": []
+    },
+    {
+      "id": "b806c265-0135-4e6a-9c57-033b5d332d6e",
+      "name": "johanna",
+      "password": "f",
+      "image": "./images/orange-3177693640.png",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "c4df215e-7756-4750-8eb5-76109b52d372",
+      "name": "melker2",
+      "password": "melker2",
+      "image": "./images/orange-3177693640.png",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "1d2253d1-666e-4bb5-8de8-b089f5345d6a",
+      "name": "yo",
+      "password": "yo",
+      "image": "./images/orange-3177693640.png",
+      "admin": false,
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "a5683be9-0c22-43b9-bc5f-44905f208730",
+      "name": "mjau",
+      "password": "mjau",
+      "image": "./images/strawberry-3177709640.png",
+      "admin": false,
+      "comments": [],
+      "posts": [
+        {
+          "postId": "368f4c3c-3606-4e61-bbd6-b339737734aa",
+          "userId": "a5683be9-0c22-43b9-bc5f-44905f208730",
+          "timestamp": 1713449198543,
+          "title": "ayo",
+          "bread": "lmao",
+          "category": "Bloodborne",
+          "comments": [],
+          "name": "mjau"
+        }
+      ]
     }
   ]
 }

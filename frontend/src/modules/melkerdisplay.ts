@@ -8,7 +8,10 @@ const mainContainer = document.querySelector(
   "#mainContainer"
 ) as HTMLDivElement;
 const profileDiv = document.querySelector("#profileDiv") as HTMLDivElement;
-
+const errorDiv = document.querySelector(".error") as HTMLDivElement;
+const errorMessage = document.querySelector(
+  "#errorMessage"
+) as HTMLParagraphElement;
 async function displayPosts(data: any, container: HTMLElement) {
   clearContainer(container);
   for (const post of data) {
@@ -144,7 +147,16 @@ function displayUserProfile(user: any) {
   function displayUserPosts(event: Event) {
     event.preventDefault();
     getDataType(clickedUserId, "posts").then(async (userData) => {
-      await displayPosts(userData, mainContainer);
+      if (userData.length === 0) {
+        errorDiv.classList.remove("hide");
+        errorMessage.innerText = "No posts found";
+        setTimeout(() => {
+          errorDiv.classList.add("hide");
+          errorMessage.innerText = "";
+        }, 5000);
+      } else {
+        await displayPosts(userData, mainContainer);
+      }
     });
   }
   if (!postEventListenerAdded) {
@@ -166,21 +178,30 @@ function displayUserProfile(user: any) {
     if (clickedUserId !== null) {
       getDataType(clickedUserId, "comments").then(async (userData) => {
         console.log(userData);
-        for (const comment of userData) {
-          const commentDiv = createCommentDiv(comment);
-          mainContainer.append(commentDiv);
-          const postInfo = {
-            postId: comment.postId,
-          };
-          const post = await getPost(postInfo);
-          if (post && post.title) {
-            const postTitle = document.createElement("h3");
-            postTitle.innerText = post.title;
-            commentDiv.prepend(postTitle);
-            postTitle.addEventListener("click", (event) => {
-              event.preventDefault();
-              displayPostDetails(post.postId);
-            });
+        if (userData.length === 0) {
+          errorDiv.classList.remove("hide");
+          errorMessage.innerText = "No comments found";
+          setTimeout(() => {
+            errorDiv.classList.add("hide");
+            errorMessage.innerText = "";
+          }, 5000);
+        } else {
+          for (const comment of userData) {
+            const commentDiv = createCommentDiv(comment);
+            mainContainer.append(commentDiv);
+            const postInfo = {
+              postId: comment.postId,
+            };
+            const post = await getPost(postInfo);
+            if (post && post.title) {
+              const postTitle = document.createElement("h3");
+              postTitle.innerText = post.title;
+              commentDiv.prepend(postTitle);
+              postTitle.addEventListener("click", (event) => {
+                event.preventDefault();
+                displayPostDetails(post.postId);
+              });
+            }
           }
         }
       });

@@ -57,7 +57,9 @@ async function getUserData(
   }
 }
 
-async function addUser(user: User): Promise<UserWithoutPassword> {
+async function addUser(
+  user: User
+): Promise<UserWithoutPassword | { message: string }> {
   const users = await getUsers();
 
   const existingName = users.find(
@@ -65,7 +67,7 @@ async function addUser(user: User): Promise<UserWithoutPassword> {
       existingName.name.toLowerCase() === user.name.toLowerCase()
   );
   if (existingName) {
-    throw new Error("User with that name already exists");
+    return { message: "user with that name already exists" };
   }
 
   const id = crypto.randomUUID();
