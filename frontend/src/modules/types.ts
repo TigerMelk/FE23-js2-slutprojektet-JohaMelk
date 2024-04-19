@@ -21,4 +21,10 @@ export type Post = {
     bread: string;
     category: ["League of Legends", "Bloodborne", "Palworld"];
     comments: Array<Comment>;
+    name: string;
   };
+
+export type Logindata = {
+  name: string
+  password: String
+}
