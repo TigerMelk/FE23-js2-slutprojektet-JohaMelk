@@ -1,5 +1,6 @@
 import { getUsers, getDataType, getPost } from "./melkers.js";
 import { deletePost, deleteComment, deleteUser } from "./melkers.js";
+import { Post, User, Comment } from "./types.js";
 
 const addNewPost = document.querySelector("#addPost") as HTMLFormElement;
 let clickedUserId;
@@ -12,7 +13,8 @@ const errorDiv = document.querySelector(".error") as HTMLDivElement;
 const errorMessage = document.querySelector(
 	"#errorMessage"
 ) as HTMLParagraphElement;
-async function displayPosts(data: any, container: HTMLElement) {
+//--------------------------------------------------------------------------
+async function displayPosts(data: Post[], container: HTMLElement) {
 	clearContainer(container);
 	for (const post of data) {
 		const postDiv = createPostDiv(post);
@@ -20,7 +22,7 @@ async function displayPosts(data: any, container: HTMLElement) {
 		container.append(postDiv);
 	}
 }
-function createPostDiv(post: any): HTMLDivElement {
+function createPostDiv(post: Post): HTMLDivElement {
 	const postDiv = document.createElement("div");
 	postDiv.classList.add("postDiv");
 	const username = document.createElement("h4");
@@ -51,7 +53,7 @@ function createPostDiv(post: any): HTMLDivElement {
 	return postDiv;
 }
 function addPostEventListeners(
-	post: any,
+	post: Post,
 	postDiv: HTMLDivElement,
 	container: HTMLElement
 ) {
@@ -86,7 +88,7 @@ function addPostEventListeners(
 	title?.addEventListener("click", postEvents);
 	comments?.addEventListener("click", postEvents);
 }
-function displayComments(data: any, container: HTMLElement) {
+function displayComments(data: Array<Comment>, container: HTMLElement) {
 	if (!data || data.length === 0) {
 		return;
 	}
@@ -96,7 +98,7 @@ function displayComments(data: any, container: HTMLElement) {
 	}
 }
 
-function createCommentDiv(comment: any): HTMLDivElement {
+function createCommentDiv(comment: Comment): HTMLDivElement {
 	const commentDiv = document.createElement("div") as HTMLDivElement;
 	commentDiv.classList.add("postDiv");
 	const userName = document.createElement("h4");
@@ -105,10 +107,8 @@ function createCommentDiv(comment: any): HTMLDivElement {
 	theComment.innerText = comment.comment;
 	commentDiv.id = comment.commentId;
 	userName.id = comment.userId;
-	// ----------------------------------------------------------------------
-	if (userName.id === comment.userId) {
-		deleteCommentFunc(commentDiv, comment.commentId);
-	}
+	const userId = localStorage.getItem("userId") as string;
+
 	userName.addEventListener("click", (event) => {
 		event.preventDefault();
 		mainContainer.innerHTML = "";
@@ -117,19 +117,25 @@ function createCommentDiv(comment: any): HTMLDivElement {
 		getUsers(userId).then((user) => {
 			console.log(user);
 			displayUserProfile(user);
+
 		});
-	});
+
+	});			
+	// ----------------------------------------------------------------------
+	if (userId === comment.userId) {
+		deleteCommentFunc(commentDiv, comment.commentId);
+	}
 	commentDiv.append(userName, theComment);
 	return commentDiv;
 }
 
 let commentEventListenerAdded = false;
 let postEventListenerAdded = false;
-function displayUserProfile(user: any) {
+function displayUserProfile(user: User) {
 	const profileName = document.querySelector(
 		"#profileName"
 	) as HTMLHeadingElement;
-	const profileImg = document.querySelector("#profileImg") as any;
+	const profileImg = document.querySelector("#profileImg") as HTMLImageElement; //OBS Se över detta, samma bild på alla anv?
 	const logOutBtn = document.querySelector("#logOut") as HTMLButtonElement;
 	const profilePosts = document.querySelector("#posts") as HTMLButtonElement;
 	const profileComments = document.querySelector(
@@ -272,7 +278,7 @@ function clearContainer(container: HTMLElement) {
 	container.innerHTML = "";
 }
 
-function displayUsers(data: any) {
+function displayUsers(data: User[]) {
 	const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
 	usersDiv.innerHTML = "";
 	usersDiv.classList.toggle("hide");
@@ -282,7 +288,7 @@ function displayUsers(data: any) {
 		usersDiv.append(username);
 	}
 }
-function createUserLink(user: any): HTMLAnchorElement {
+function createUserLink(user: User): HTMLAnchorElement {
 	const username = document.createElement("a");
 	username.innerText = user.name;
 	username.id = user.id;
@@ -319,6 +325,7 @@ function deleteCommentFunc(commentDiv: HTMLDivElement, commentId: string): void 
 	deleteCommentBtn.addEventListener("click", () => {
 		console.log("delete comment func");
 		deleteComment(commentId);
+		location.reload();
 	});
 }
 

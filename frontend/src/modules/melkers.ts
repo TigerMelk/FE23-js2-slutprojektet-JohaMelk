@@ -1,6 +1,6 @@
-import { User, Comment, Post } from "./types.ts";
+import { User, Comment, Post, Logindata } from "./types.ts";
 
-async function login(data: any) {
+async function login(data: Logindata) {
 	return fetchShortcut("users/login", "POST", data);
 }
 async function getUsers(id: string) {
@@ -21,17 +21,26 @@ async function getDataType(userId: string, dataType: string) {
 		dataType: dataType,
 	});
 }
-async function getPost(data: any): Promise<Post> {
+async function getPost(data: { postId: string }): Promise<Post> {
 	return fetchShortcut("posts/", "POST", data);
 }
-async function addUser(data: any) {
+async function addUser(data: {name: string, password: string, image: string}) {
 	return fetchShortcut("users/", "POST", data);
 }
-async function addPost(id: string, data: any): Promise<Post> {
+async function addPost(id: string, data: {
+    title: Post['title'],
+    bread: Post['bread'],
+    category: string,
+    comments: never[],
+  }): Promise<Post> {
 	return fetchShortcut(`posts/${id}`, "PATCH", data);
 }
 
-async function addComment(data: any) {
+async function addComment(data: {
+    userId: Post['userId'],
+    postId: Post['postId']| null,
+    commentText: Comment['comment'],
+  }) {
 	return fetchShortcut("comments/", "PATCH", data);
 }
 
@@ -50,11 +59,24 @@ async function fetchShortcut(
 	path: string,
 	method: string,
 	data:
+		| Logindata
 		| { category: string }
 		| { userId: string; dataType: string }
 		| { postId: string }
 		| { commentId: string }
+		| {
+			title: Post['title'],
+			bread: Post['bread'],
+			category: string,
+			comments: [],
+		  }
+		| {
+			userId: Post['userId'],
+			postId: Post['postId']| null,
+			commentText: Comment['comment'],
+		  }
 		| null = null
+		
 ) {
 	let url = `http://localhost:3000/api/${path}`;
 	const options = {
