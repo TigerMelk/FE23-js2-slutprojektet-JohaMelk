@@ -300,7 +300,7 @@ function createUserLink(user: any): HTMLAnchorElement {
 }
 
 // Delete posts
-function deletePostsFunction(postDiv: any, usernameId: string, postId: string): void {
+function deletePostsFunction(postDiv: HTMLDivElement, usernameId: string, postId: string): void {
 	const deletePostsBtn = document.createElement("button") as HTMLButtonElement;
 	deletePostsBtn.innerText = "X";
 	postDiv.append(deletePostsBtn);
@@ -310,7 +310,7 @@ function deletePostsFunction(postDiv: any, usernameId: string, postId: string): 
 	});
 }
 //Delete comment
-function deleteCommentFunc(commentDiv: any, commentId: string): void {
+function deleteCommentFunc(commentDiv: HTMLDivElement, commentId: string): void {
 	const deleteCommentBtn = document.createElement(
 		"button"
 	) as HTMLButtonElement;
