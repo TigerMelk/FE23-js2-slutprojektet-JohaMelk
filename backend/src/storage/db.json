@@ -1,429 +1,511 @@
 {
-  "users": [
-    {
-      "id": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
-      "name": "melker",
-      "password": "melker",
-      "image": "images/orange-3177693_640.png",
-      "admin": false,
-      "comments": [
-        {
-          "commentId": "69e028eb-ce3f-4223-92fe-f7eceafb7480",
-          "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "name": "melker",
-          "comment": "yo testtest"
-        }
-      ],
-      "posts": []
-    },
-    {
-      "id": "9adda9b1-18ce-4e65-b54b-66d2254ccf90",
-      "name": "milly",
-      "password": "milly",
-      "image": "images/strawberry-3177709_640.png",
-      "admin": false,
-      "comments": [],
-      "posts": [
-        {
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "userId": "9adda9b1-18ce-4e65-b54b-66d2254ccf90",
-          "timestamp": 1712493862956,
-          "title": "bloodborne rules",
-          "bread": "thats right",
-          "category": "Bloodborne",
-          "comments": [
-            {
-              "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
-              "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "clara2",
-              "comment": "hey test3"
-            },
-            {
-              "commentId": "c0daabb3-59c6-4e23-9223-e4e64d2f81a9",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "joel",
-              "comment": "hahahahaha"
-            },
-            {
-              "commentId": "36388348-49e7-4bf9-ba76-ceb146a67c1e",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "joel",
-              "comment": "hahahahahahahahaha"
-            },
-            {
-              "commentId": "c15a88dd-6280-4260-92c4-2c3b42683bab",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "joel",
-              "comment": "hahahahahahahahaha"
-            },
-            {
-              "commentId": "71c3815c-8fa1-4104-877c-eb58263a21f3",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "joel",
-              "comment": "asdf"
-            },
-            {
-              "commentId": "ebccf1e6-071c-4540-b334-ae83ed817145",
-              "userId": "50857621-659b-4468-b763-8065095bcd0b",
-              "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-              "name": "milly2",
-              "comment": "hej"
-            }
-          ],
-          "name": "milly"
-        },
-        {
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "userId": "9adda9b1-18ce-4e65-b54b-66d2254ccf90",
-          "timestamp": 1712493883330,
-          "title": "ayo bitch",
-          "bread": "bruh",
-          "category": "Bloodborne",
-          "comments": [
-            {
-              "commentId": "69e028eb-ce3f-4223-92fe-f7eceafb7480",
-              "userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
-              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-              "name": "melker",
-              "comment": "yo testtest"
-            },
-            {
-              "commentId": "13a28095-61aa-4285-b13c-14da9104877a",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-              "name": "joel",
-              "comment": "yoyoyoyo"
-            },
-            {
-              "commentId": "0ffea53d-e852-43ae-81fd-7372d90ed8be",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-              "name": "joel",
-              "comment": "yoyoyoyo"
-            },
-            {
-              "commentId": "3de36d88-6461-47dc-b6f4-2493ded4ddcd",
-              "userId": "50857621-659b-4468-b763-8065095bcd0b",
-              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-              "name": "milly2",
-              "comment": "tjo boy"
-            },
-            {
-              "commentId": "e68e7aeb-9d33-4870-9605-d1d651b1a78f",
-              "userId": "50857621-659b-4468-b763-8065095bcd0b",
-              "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-              "name": "milly2",
-              "comment": "kokobaba"
-            }
-          ],
-          "name": "milly"
-        }
-      ]
-    },
-    {
-      "id": "08ee9dd3-9136-4717-a3cc-0f195a44000e",
-      "name": "affe",
-      "password": "affe",
-      "image": "http://localhost:1234/images/orange-3177693_640.png",
-      "admin": false,
-      "comments": [],
-      "posts": []
-    },
-    {
-      "id": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-      "name": "joel",
-      "password": "joel",
-      "image": "http://localhost:1234/orange-3177693_640.png",
-      "admin": false,
-      "comments": [
-        {
-          "commentId": "13a28095-61aa-4285-b13c-14da9104877a",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "name": "joel",
-          "comment": "yoyoyoyo"
-        },
-        {
-          "commentId": "0ffea53d-e852-43ae-81fd-7372d90ed8be",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "name": "joel",
-          "comment": "yoyoyoyo"
-        },
-        {
-          "commentId": "375a3d33-0175-4f86-bee1-dd44075af5ed",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
-          "name": "joel",
-          "comment": "yoyoyoyoyo"
-        },
-        {
-          "commentId": "c0daabb3-59c6-4e23-9223-e4e64d2f81a9",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "joel",
-          "comment": "hahahahaha"
-        },
-        {
-          "commentId": "36388348-49e7-4bf9-ba76-ceb146a67c1e",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "joel",
-          "comment": "hahahahahahahahaha"
-        },
-        {
-          "commentId": "c15a88dd-6280-4260-92c4-2c3b42683bab",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "joel",
-          "comment": "hahahahahahahahaha"
-        },
-        {
-          "commentId": "f5364842-c8ea-437c-8ace-cdac5bbb595d",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
-          "name": "joel",
-          "comment": "hahahahahahahahaha"
-        },
-        {
-          "commentId": "d7744985-07f6-4f02-ac06-4260f8ede04b",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-          "name": "joel",
-          "comment": "hahahahahahahahahahahaha"
-        },
-        {
-          "commentId": "54ed4ba6-502a-4cf3-8a49-2d1100229896",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-          "name": "joel",
-          "comment": "hahahahahahahahahahahaha"
-        },
-        {
-          "commentId": "7f63e1c8-463b-4261-88b3-39768c7fb5f9",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-          "name": "joel",
-          "comment": "hahahahahahahahahahahaha"
-        },
-        {
-          "commentId": "9d8c0c5a-9809-4166-9bba-638aacb9f25e",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-          "name": "joel",
-          "comment": "hahahahahahahahahahahaha"
-        },
-        {
-          "commentId": "9ba1f3bc-2be6-4267-8c69-5430263f8cae",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
-          "name": "joel",
-          "comment": "hahahahahahahahahahahaha"
-        },
-        {
-          "commentId": "71c3815c-8fa1-4104-877c-eb58263a21f3",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "joel",
-          "comment": "asdf"
-        }
-      ],
-      "posts": [
-        {
-          "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "timestamp": 1713297839363,
-          "title": "yo",
-          "bread": "testung",
-          "category": "League of Legends",
-          "comments": [
-            {
-              "commentId": "375a3d33-0175-4f86-bee1-dd44075af5ed",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
-              "name": "joel",
-              "comment": "yoyoyoyoyo"
-            },
-            {
-              "commentId": "f5364842-c8ea-437c-8ace-cdac5bbb595d",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "975039d6-ea37-4027-afea-06e2a1224c27",
-              "name": "joel",
-              "comment": "hahahahahahahahaha"
-            }
-          ],
-          "name": "joel"
-        },
-        {
-          "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "timestamp": 1713299146470,
-          "title": "hej blood",
-          "bread": "yo blud",
-          "category": "Bloodborne",
-          "comments": [
-            {
-              "commentId": "d7744985-07f6-4f02-ac06-4260f8ede04b",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-              "name": "joel",
-              "comment": "hahahahahahahahahahahaha"
-            },
-            {
-              "commentId": "54ed4ba6-502a-4cf3-8a49-2d1100229896",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-              "name": "joel",
-              "comment": "hahahahahahahahahahahaha"
-            },
-            {
-              "commentId": "7f63e1c8-463b-4261-88b3-39768c7fb5f9",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-              "name": "joel",
-              "comment": "hahahahahahahahahahahaha"
-            },
-            {
-              "commentId": "9d8c0c5a-9809-4166-9bba-638aacb9f25e",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
-              "name": "joel",
-              "comment": "hahahahahahahahahahahaha"
-            }
-          ],
-          "name": "joel"
-        },
-        {
-          "postId": "8488df0f-f53c-4e0e-9b2b-e2428c96eab4",
-          "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-          "timestamp": 1713299216604,
-          "title": "tjjatjaj",
-          "bread": "palboy",
-          "category": "Palworld",
-          "comments": [],
-          "name": "joel"
-        }
-      ]
-    },
-    {
-      "id": "15de2c7f-c53b-4d80-83fd-017dfd5a0e31",
-      "name": "clara",
-      "password": "clara",
-      "image": "./images/orange-3177693_640.png",
-      "admin": false,
-      "comments": [],
-      "posts": [
-        {
-          "postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
-          "userId": "15de2c7f-c53b-4d80-83fd-017dfd5a0e31",
-          "timestamp": 1713296381908,
-          "title": "smilly",
-          "bread": "hejhejs",
-          "category": "Palworld",
-          "comments": [
-            {
-              "commentId": "9ba1f3bc-2be6-4267-8c69-5430263f8cae",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
-              "name": "joel",
-              "comment": "hahahahahahahahahahahaha"
-            }
-          ],
-          "name": "clara"
-        }
-      ]
-    },
-    {
-      "id": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-      "name": "clara2",
-      "password": "clara2",
-      "image": "./images/orange-3177693640.png",
-      "admin": false,
-      "comments": [
-        {
-          "commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
-          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "clara2",
-          "comment": "hey test3"
-        }
-      ],
-      "posts": [
-        {
-          "postId": "343f7e74-8e78-4099-aca5-842ea3fdcb49",
-          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-          "timestamp": 1712734565716,
-          "title": "palworld",
-          "bread": "yayaya",
-          "category": "Palworld",
-          "comments": [
-            {
-              "commentId": "df0ff8d5-5b71-4806-a960-a36157cddce2",
-              "userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
-              "postId": "343f7e74-8e78-4099-aca5-842ea3fdcb49",
-              "name": "joel",
-              "comment": "hahahahahahahahahahahaha"
-            }
-          ],
-          "name": "clara2"
-        },
-        {
-          "postId": "9c508390-ad22-484d-ae76-7a89f8d01668",
-          "userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
-          "timestamp": 1713083179195,
-          "title": "title",
-          "bread": "dfgdfgf",
-          "category": "League of Legends",
-          "comments": [],
-          "name": "clara2"
-        }
-      ]
-    },
-    {
-      "id": "1d097049-37ed-4b9f-a085-48fe74ea4293",
-      "name": "tiger",
-      "password": "tiger",
-      "image": "./images/strawberry-3177709640.png",
-      "admin": false,
-      "comments": [],
-      "posts": []
-    },
-    {
-      "id": "50857621-659b-4468-b763-8065095bcd0b",
-      "name": "milly2",
-      "password": "milly",
-      "image": "./images/strawberry-3177709640.png",
-      "admin": false,
-      "comments": [
-        {
-          "commentId": "3de36d88-6461-47dc-b6f4-2493ded4ddcd",
-          "userId": "50857621-659b-4468-b763-8065095bcd0b",
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "name": "milly2",
-          "comment": "tjo boy"
-        },
-        {
-          "commentId": "e68e7aeb-9d33-4870-9605-d1d651b1a78f",
-          "userId": "50857621-659b-4468-b763-8065095bcd0b",
-          "postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
-          "name": "milly2",
-          "comment": "kokobaba"
-        },
-        {
-          "commentId": "ebccf1e6-071c-4540-b334-ae83ed817145",
-          "userId": "50857621-659b-4468-b763-8065095bcd0b",
-          "postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
-          "name": "milly2",
-          "comment": "hej"
-        }
-      ],
-      "posts": []
-    }
-  ]
+	"users": [
+		{
+			"id": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+			"name": "melker",
+			"password": "melker",
+			"image": "images/orange-3177693_640.png",
+			"admin": false,
+			"comments": [
+				{
+					"commentId": "69e028eb-ce3f-4223-92fe-f7eceafb7480",
+					"userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+					"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+					"name": "melker",
+					"comment": "yo testtest"
+				},
+				{
+					"commentId": "c890b9fb-88c2-45a4-9942-35b65781f2ad",
+					"userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+					"postId": "ec800ebe-224d-4776-b81c-8f350a15d6f1",
+					"name": "melker",
+					"comment": "try this"
+				}
+			],
+			"posts": [
+				{
+					"postId": "ec800ebe-224d-4776-b81c-8f350a15d6f1",
+					"userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+					"timestamp": 1713514580295,
+					"title": "yo",
+					"bread": "ayo",
+					"category": "League of Legends",
+					"comments": [
+						{
+							"commentId": "c890b9fb-88c2-45a4-9942-35b65781f2ad",
+							"userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+							"postId": "ec800ebe-224d-4776-b81c-8f350a15d6f1",
+							"name": "melker",
+							"comment": "try this"
+						}
+					],
+					"name": "melker"
+				}
+			]
+		},
+		{
+			"id": "9adda9b1-18ce-4e65-b54b-66d2254ccf90",
+			"name": "milly",
+			"password": "milly",
+			"image": "images/strawberry-3177709_640.png",
+			"admin": false,
+			"comments": [],
+			"posts": [
+				{
+					"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+					"userId": "9adda9b1-18ce-4e65-b54b-66d2254ccf90",
+					"timestamp": 1712493862956,
+					"title": "bloodborne rules",
+					"bread": "thats right",
+					"category": "Bloodborne",
+					"comments": [
+						{
+							"commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
+							"userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+							"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+							"name": "clara2",
+							"comment": "hey test3"
+						},
+						{
+							"commentId": "c0daabb3-59c6-4e23-9223-e4e64d2f81a9",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+							"name": "joel",
+							"comment": "hahahahaha"
+						},
+						{
+							"commentId": "36388348-49e7-4bf9-ba76-ceb146a67c1e",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+							"name": "joel",
+							"comment": "hahahahahahahahaha"
+						},
+						{
+							"commentId": "c15a88dd-6280-4260-92c4-2c3b42683bab",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+							"name": "joel",
+							"comment": "hahahahahahahahaha"
+						},
+						{
+							"commentId": "71c3815c-8fa1-4104-877c-eb58263a21f3",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+							"name": "joel",
+							"comment": "asdf"
+						},
+						{
+							"commentId": "ebccf1e6-071c-4540-b334-ae83ed817145",
+							"userId": "50857621-659b-4468-b763-8065095bcd0b",
+							"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+							"name": "milly2",
+							"comment": "hej"
+						}
+					],
+					"name": "milly"
+				},
+				{
+					"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+					"userId": "9adda9b1-18ce-4e65-b54b-66d2254ccf90",
+					"timestamp": 1712493883330,
+					"title": "ayo bitch",
+					"bread": "bruh",
+					"category": "Bloodborne",
+					"comments": [
+						{
+							"commentId": "69e028eb-ce3f-4223-92fe-f7eceafb7480",
+							"userId": "45dab9de-f349-4c3e-8064-c3b6311f0e3d",
+							"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+							"name": "melker",
+							"comment": "yo testtest"
+						},
+						{
+							"commentId": "13a28095-61aa-4285-b13c-14da9104877a",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+							"name": "joel",
+							"comment": "yoyoyoyo"
+						},
+						{
+							"commentId": "0ffea53d-e852-43ae-81fd-7372d90ed8be",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+							"name": "joel",
+							"comment": "yoyoyoyo"
+						},
+						{
+							"commentId": "3de36d88-6461-47dc-b6f4-2493ded4ddcd",
+							"userId": "50857621-659b-4468-b763-8065095bcd0b",
+							"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+							"name": "milly2",
+							"comment": "tjo boy"
+						},
+						{
+							"commentId": "e68e7aeb-9d33-4870-9605-d1d651b1a78f",
+							"userId": "50857621-659b-4468-b763-8065095bcd0b",
+							"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+							"name": "milly2",
+							"comment": "kokobaba"
+						}
+					],
+					"name": "milly"
+				}
+			]
+		},
+		{
+			"id": "08ee9dd3-9136-4717-a3cc-0f195a44000e",
+			"name": "affe",
+			"password": "affe",
+			"image": "http://localhost:1234/images/orange-3177693_640.png",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+			"name": "joel",
+			"password": "joel",
+			"image": "http://localhost:1234/orange-3177693_640.png",
+			"admin": false,
+			"comments": [
+				{
+					"commentId": "13a28095-61aa-4285-b13c-14da9104877a",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+					"name": "joel",
+					"comment": "yoyoyoyo"
+				},
+				{
+					"commentId": "0ffea53d-e852-43ae-81fd-7372d90ed8be",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+					"name": "joel",
+					"comment": "yoyoyoyo"
+				},
+				{
+					"commentId": "375a3d33-0175-4f86-bee1-dd44075af5ed",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+					"name": "joel",
+					"comment": "yoyoyoyoyo"
+				},
+				{
+					"commentId": "c0daabb3-59c6-4e23-9223-e4e64d2f81a9",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+					"name": "joel",
+					"comment": "hahahahaha"
+				},
+				{
+					"commentId": "36388348-49e7-4bf9-ba76-ceb146a67c1e",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+					"name": "joel",
+					"comment": "hahahahahahahahaha"
+				},
+				{
+					"commentId": "c15a88dd-6280-4260-92c4-2c3b42683bab",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+					"name": "joel",
+					"comment": "hahahahahahahahaha"
+				},
+				{
+					"commentId": "f5364842-c8ea-437c-8ace-cdac5bbb595d",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+					"name": "joel",
+					"comment": "hahahahahahahahaha"
+				},
+				{
+					"commentId": "d7744985-07f6-4f02-ac06-4260f8ede04b",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+					"name": "joel",
+					"comment": "hahahahahahahahahahahaha"
+				},
+				{
+					"commentId": "54ed4ba6-502a-4cf3-8a49-2d1100229896",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+					"name": "joel",
+					"comment": "hahahahahahahahahahahaha"
+				},
+				{
+					"commentId": "7f63e1c8-463b-4261-88b3-39768c7fb5f9",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+					"name": "joel",
+					"comment": "hahahahahahahahahahahaha"
+				},
+				{
+					"commentId": "9d8c0c5a-9809-4166-9bba-638aacb9f25e",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+					"name": "joel",
+					"comment": "hahahahahahahahahahahaha"
+				},
+				{
+					"commentId": "9ba1f3bc-2be6-4267-8c69-5430263f8cae",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
+					"name": "joel",
+					"comment": "hahahahahahahahahahahaha"
+				},
+				{
+					"commentId": "71c3815c-8fa1-4104-877c-eb58263a21f3",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+					"name": "joel",
+					"comment": "asdf"
+				}
+			],
+			"posts": [
+				{
+					"postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"timestamp": 1713297839363,
+					"title": "yo",
+					"bread": "testung",
+					"category": "League of Legends",
+					"comments": [
+						{
+							"commentId": "375a3d33-0175-4f86-bee1-dd44075af5ed",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+							"name": "joel",
+							"comment": "yoyoyoyoyo"
+						},
+						{
+							"commentId": "f5364842-c8ea-437c-8ace-cdac5bbb595d",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "975039d6-ea37-4027-afea-06e2a1224c27",
+							"name": "joel",
+							"comment": "hahahahahahahahaha"
+						}
+					],
+					"name": "joel"
+				},
+				{
+					"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"timestamp": 1713299146470,
+					"title": "hej blood",
+					"bread": "yo blud",
+					"category": "Bloodborne",
+					"comments": [
+						{
+							"commentId": "d7744985-07f6-4f02-ac06-4260f8ede04b",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+							"name": "joel",
+							"comment": "hahahahahahahahahahahaha"
+						},
+						{
+							"commentId": "54ed4ba6-502a-4cf3-8a49-2d1100229896",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+							"name": "joel",
+							"comment": "hahahahahahahahahahahaha"
+						},
+						{
+							"commentId": "7f63e1c8-463b-4261-88b3-39768c7fb5f9",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+							"name": "joel",
+							"comment": "hahahahahahahahahahahaha"
+						},
+						{
+							"commentId": "9d8c0c5a-9809-4166-9bba-638aacb9f25e",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "11f09ce8-f6da-4179-a918-38181b27e1d6",
+							"name": "joel",
+							"comment": "hahahahahahahahahahahaha"
+						}
+					],
+					"name": "joel"
+				},
+				{
+					"postId": "8488df0f-f53c-4e0e-9b2b-e2428c96eab4",
+					"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+					"timestamp": 1713299216604,
+					"title": "tjjatjaj",
+					"bread": "palboy",
+					"category": "Palworld",
+					"comments": [],
+					"name": "joel"
+				}
+			]
+		},
+		{
+			"id": "15de2c7f-c53b-4d80-83fd-017dfd5a0e31",
+			"name": "clara",
+			"password": "clara",
+			"image": "./images/orange-3177693_640.png",
+			"admin": false,
+			"comments": [],
+			"posts": [
+				{
+					"postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
+					"userId": "15de2c7f-c53b-4d80-83fd-017dfd5a0e31",
+					"timestamp": 1713296381908,
+					"title": "smilly",
+					"bread": "hejhejs",
+					"category": "Palworld",
+					"comments": [
+						{
+							"commentId": "9ba1f3bc-2be6-4267-8c69-5430263f8cae",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "4200da0f-aa4a-42cb-896e-e83ccd8bf0f6",
+							"name": "joel",
+							"comment": "hahahahahahahahahahahaha"
+						}
+					],
+					"name": "clara"
+				}
+			]
+		},
+		{
+			"id": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+			"name": "clara2",
+			"password": "clara2",
+			"image": "./images/orange-3177693640.png",
+			"admin": false,
+			"comments": [
+				{
+					"commentId": "0591417a-4e58-4991-ba67-cdf4aa8adbdf",
+					"userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+					"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+					"name": "clara2",
+					"comment": "hey test3"
+				}
+			],
+			"posts": [
+				{
+					"postId": "343f7e74-8e78-4099-aca5-842ea3fdcb49",
+					"userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+					"timestamp": 1712734565716,
+					"title": "palworld",
+					"bread": "yayaya",
+					"category": "Palworld",
+					"comments": [
+						{
+							"commentId": "df0ff8d5-5b71-4806-a960-a36157cddce2",
+							"userId": "cfcec9e9-c047-40ba-9bb1-48651aa5a7ae",
+							"postId": "343f7e74-8e78-4099-aca5-842ea3fdcb49",
+							"name": "joel",
+							"comment": "hahahahahahahahahahahaha"
+						}
+					],
+					"name": "clara2"
+				},
+				{
+					"postId": "9c508390-ad22-484d-ae76-7a89f8d01668",
+					"userId": "3477765a-96cf-4f5b-b8f4-1b8a138d0363",
+					"timestamp": 1713083179195,
+					"title": "title",
+					"bread": "dfgdfgf",
+					"category": "League of Legends",
+					"comments": [],
+					"name": "clara2"
+				}
+			]
+		},
+		{
+			"id": "1d097049-37ed-4b9f-a085-48fe74ea4293",
+			"name": "tiger",
+			"password": "tiger",
+			"image": "./images/strawberry-3177709640.png",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "50857621-659b-4468-b763-8065095bcd0b",
+			"name": "milly2",
+			"password": "milly",
+			"image": "./images/strawberry-3177709640.png",
+			"admin": false,
+			"comments": [
+				{
+					"commentId": "3de36d88-6461-47dc-b6f4-2493ded4ddcd",
+					"userId": "50857621-659b-4468-b763-8065095bcd0b",
+					"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+					"name": "milly2",
+					"comment": "tjo boy"
+				},
+				{
+					"commentId": "e68e7aeb-9d33-4870-9605-d1d651b1a78f",
+					"userId": "50857621-659b-4468-b763-8065095bcd0b",
+					"postId": "9f5d0939-14fb-4493-8040-b2b5b988fe6c",
+					"name": "milly2",
+					"comment": "kokobaba"
+				},
+				{
+					"commentId": "ebccf1e6-071c-4540-b334-ae83ed817145",
+					"userId": "50857621-659b-4468-b763-8065095bcd0b",
+					"postId": "92cde049-78b9-4829-b6d3-78c2f84bc274",
+					"name": "milly2",
+					"comment": "hej"
+				}
+			],
+			"posts": []
+		},
+		{
+			"id": "b806c265-0135-4e6a-9c57-033b5d332d6e",
+			"name": "johanna",
+			"password": "f",
+			"image": "./images/orange-3177693640.png",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "c4df215e-7756-4750-8eb5-76109b52d372",
+			"name": "melker2",
+			"password": "melker2",
+			"image": "./images/orange-3177693640.png",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "1d2253d1-666e-4bb5-8de8-b089f5345d6a",
+			"name": "yo",
+			"password": "yo",
+			"image": "./images/orange-3177693640.png",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		},
+		{
+			"id": "a5683be9-0c22-43b9-bc5f-44905f208730",
+			"name": "mjau",
+			"password": "mjau",
+			"image": "./images/strawberry-3177709640.png",
+			"admin": false,
+			"comments": [],
+			"posts": [
+				{
+					"postId": "368f4c3c-3606-4e61-bbd6-b339737734aa",
+					"userId": "a5683be9-0c22-43b9-bc5f-44905f208730",
+					"timestamp": 1713449198543,
+					"title": "ayo",
+					"bread": "lmao",
+					"category": "Bloodborne",
+					"comments": [],
+					"name": "mjau"
+				}
+			]
+		},
+		{
+			"id": "89e60b72-009f-4e36-a377-2cb4ed813c7d",
+			"name": "stoffe",
+			"password": "stoffe",
+			"image": "orange",
+			"admin": false,
+			"comments": [],
+			"posts": []
+		}
+	]
 }

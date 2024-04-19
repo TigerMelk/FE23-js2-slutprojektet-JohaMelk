@@ -41,7 +41,7 @@ router.get("/:id?", (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   const { name, password, image } = req.body;
   const newUser = {
     id: "",
@@ -52,7 +52,16 @@ router.post("/", (req, res) => {
     comments: [],
     posts: [],
   };
-  const addedUser = addUser(newUser).then(() => res.json(addedUser));
+  try {
+    const addedUser = await addUser(newUser);
+    if ("message" in addedUser) {
+      return res.json({ message: addedUser.message });
+    }
+    res.json(addedUser);
+  } catch (error) {
+    console.error("error adding new user", error);
+    res.status(404).json({ message: "Error adding user" });
+  }
 });
 
 router.delete("/:id", (req, res) => {
