@@ -21,13 +21,13 @@ async function getDataType(userId: string, dataType: string) {
 		dataType: dataType,
 	});
 }
-async function getPost(data: any) {
+async function getPost(data: any): Promise<Post> {
 	return fetchShortcut("posts/", "POST", data);
 }
 async function addUser(data: any) {
 	return fetchShortcut("users/", "POST", data);
 }
-async function addPost(id: string, data: any) {
+async function addPost(id: string, data: any): Promise<Post> {
 	return fetchShortcut(`posts/${id}`, "PATCH", data);
 }
 

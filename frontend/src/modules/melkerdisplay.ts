@@ -135,9 +135,7 @@ function displayUserProfile(user: any) {
 	const profileComments = document.querySelector(
 		"#comments"
 	) as HTMLButtonElement;
-	const deleteUserBtn = document.querySelector(
-		"#deleteUserBtn"
-	) as HTMLButtonElement;
+	const deleteUserBtn = document.querySelector("#deleteUserBtn") as HTMLButtonElement;
 
 	addNewPost.classList.add("hide");
 	commentForm.classList.add("hide");
@@ -186,11 +184,6 @@ function displayUserProfile(user: any) {
 		postEventListenerAdded = true;
 	}
 
-	// DeleteProfile
-	deleteUserBtn.addEventListener("click", () => {
-		deleteUser(user.id);
-		console.log(user.id + " is deleted");
-	});
 
 	function commentClickHandler(event: Event) {
 		event.preventDefault();
@@ -239,8 +232,18 @@ function displayUserProfile(user: any) {
 
 	if (user.id !== userId) {
 		logOutBtn.classList.add("hide");
+		deleteUserBtn.classList.add("hide")
+
 	} else {
 		logOutBtn.classList.remove("hide");
+		deleteUserBtn.classList.remove("hide");
+		  // DeleteProfile
+		  deleteUserBtn.addEventListener("click", () => {
+			deleteUser(user.id);
+			console.log(user.id + " is deleted");
+			localStorage.clear()
+			location.reload();
+		  });
 	}
 
 	logOutBtn.addEventListener("click", (event) => {
@@ -297,7 +300,7 @@ function createUserLink(user: any): HTMLAnchorElement {
 }
 
 // Delete posts
-function deletePostsFunction(postDiv: any, usernameId: any, postId: any): void {
+function deletePostsFunction(postDiv: HTMLDivElement, usernameId: string, postId: string): void {
 	const deletePostsBtn = document.createElement("button") as HTMLButtonElement;
 	deletePostsBtn.innerText = "X";
 	postDiv.append(deletePostsBtn);
@@ -307,7 +310,7 @@ function deletePostsFunction(postDiv: any, usernameId: any, postId: any): void {
 	});
 }
 //Delete comment
-function deleteCommentFunc(commentDiv: any, commentId: any): void {
+function deleteCommentFunc(commentDiv: HTMLDivElement, commentId: string): void {
 	const deleteCommentBtn = document.createElement(
 		"button"
 	) as HTMLButtonElement;
