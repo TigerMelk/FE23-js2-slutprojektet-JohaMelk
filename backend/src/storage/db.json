@@ -22,63 +22,86 @@
           "comment": "yes sir, trash"
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "postId": "1ed24c4f-d5be-4a1e-bfda-924e8cfe42b2",
+          "userId": "74524da7-3562-4088-9ffb-ee3fee23839c",
+          "timestamp": 1713604003550,
+          "title": "such a toxic game",
+          "bread": "uninstall!",
+          "category": "League of Legends",
+          "comments": [
+            {
+              "commentId": "e0334cf3-812c-4e99-889f-5aedd62d01e1",
+              "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
+              "postId": "1ed24c4f-d5be-4a1e-bfda-924e8cfe42b2",
+              "name": "melker",
+              "comment": "haha true"
+            }
+          ],
+          "name": "johanna"
+        }
+      ]
     },
     {
-      "id": "d470b122-7097-4645-81d2-6c4e3c0bf97d",
+      "id": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
       "name": "melker",
       "password": "melker",
       "image": "orange",
       "admin": false,
-      "comments": [],
+      "comments": [
+        {
+          "commentId": "3de72acc-037d-4592-81e8-542585006fd3",
+          "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
+          "postId": "f26b0d12-319d-42cd-b7dd-03a90b8692dc",
+          "name": "melker",
+          "comment": "yeah"
+        },
+        {
+          "commentId": "e0334cf3-812c-4e99-889f-5aedd62d01e1",
+          "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
+          "postId": "1ed24c4f-d5be-4a1e-bfda-924e8cfe42b2",
+          "name": "melker",
+          "comment": "haha true"
+        }
+      ],
       "posts": [
         {
-          "postId": "fb3c483c-fe71-402c-b95d-57739dcb244c",
-          "userId": "d470b122-7097-4645-81d2-6c4e3c0bf97d",
-          "timestamp": 1713600794556,
+          "postId": "b951439f-a579-4a6c-a1cf-c6ce2c3cd710",
+          "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
+          "timestamp": 1713604238693,
           "title": "bloodborne rules",
-          "bread": "yuh",
+          "bread": "yeah blud",
           "category": "Bloodborne",
           "comments": [
             {
-              "commentId": "5fffe1e0-2524-4392-a18f-a38300f56a06",
-              "userId": "74524da7-3562-4088-9ffb-ee3fee23839c",
-              "postId": "fb3c483c-fe71-402c-b95d-57739dcb244c",
-              "name": "johanna",
-              "comment": "man i love this game"
+              "commentId": "23c85ead-70b2-4e38-9e7d-732a6eefc867",
+              "userId": "cc9756af-35dc-4ca9-9f75-18c4f0af27c5",
+              "postId": "b951439f-a579-4a6c-a1cf-c6ce2c3cd710",
+              "name": "martin",
+              "comment": "haha blud"
             }
           ],
-          "name": "melker"
-        },
-        {
-          "postId": "7c6a3994-c7c2-4658-a1e9-925854ccc7ba",
-          "userId": "d470b122-7097-4645-81d2-6c4e3c0bf97d",
-          "timestamp": 1713600837805,
-          "title": "such a toxic game",
-          "bread": "uninstall",
-          "category": "League of Legends",
-          "comments": [
-            {
-              "commentId": "c2842791-f9af-4795-96db-4ba86e52538b",
-              "userId": "74524da7-3562-4088-9ffb-ee3fee23839c",
-              "postId": "7c6a3994-c7c2-4658-a1e9-925854ccc7ba",
-              "name": "johanna",
-              "comment": "yes sir, trash"
-            }
-          ],
-          "name": "melker"
-        },
-        {
-          "postId": "a6eecaa4-70b3-47ab-8686-6e1b9d450afd",
-          "userId": "d470b122-7097-4645-81d2-6c4e3c0bf97d",
-          "timestamp": 1713600846130,
-          "title": "dead game?",
-          "bread": "maybe",
-          "category": "Palworld",
-          "comments": [],
           "name": "melker"
         }
       ]
+    },
+    {
+      "id": "cc9756af-35dc-4ca9-9f75-18c4f0af27c5",
+      "name": "martin",
+      "password": "martin",
+      "image": "apple",
+      "admin": false,
+      "comments": [
+        {
+          "commentId": "23c85ead-70b2-4e38-9e7d-732a6eefc867",
+          "userId": "cc9756af-35dc-4ca9-9f75-18c4f0af27c5",
+          "postId": "b951439f-a579-4a6c-a1cf-c6ce2c3cd710",
+          "name": "martin",
+          "comment": "haha blud"
+        }
+      ],
+      "posts": []
     }
   ]
 }

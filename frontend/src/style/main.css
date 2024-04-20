@@ -1,6 +1,7 @@
 * {
   margin: 0 auto;
   scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif;
 }
 :root {
   --primary-color: #e6ebe0;
@@ -43,6 +44,7 @@ header {
 }
 header > a {
   margin-right: 20px;
+  text-transform: uppercase;
 }
 a {
   cursor: pointer;
@@ -55,7 +57,7 @@ button {
   background-color: var(--third-color);
   padding: 3px;
   border-radius: 3px;
-  border: none;
+  border: 0.5px solid var(--secondary-color);
 }
 button:hover {
   outline: 1.5px solid var(--secondary-color);
@@ -68,19 +70,19 @@ input[type="radio"] {
   visibility: hidden;
 }
 input[type="radio"]:checked + label img {
-  border: 2px solid black;
+  border: 2px solid var(--secondary-color);
 }
 .loginCreate {
   margin-top: 20vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid var(--secondary-color);
   gap: 5px;
   width: 30%;
   height: 200px;
 
-  background-color: salmon;
+  background-color: var(--third-color);
 }
 .profileDiv {
   display: flex;
@@ -111,9 +113,13 @@ input[type="radio"]:checked + label img {
 }
 .postDiv h4:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 .postDiv p + p:hover {
   cursor: pointer;
+}
+.postDiv button {
+  float: right;
 }
 #aside {
   position: absolute;
@@ -153,7 +159,9 @@ input[type="radio"]:checked + label img {
   align-items: center;
   flex-flow: row, wrap;
 }
-
+#deletedPost {
+  opacity: 0.5;
+}
 .hide {
   display: none;
 }

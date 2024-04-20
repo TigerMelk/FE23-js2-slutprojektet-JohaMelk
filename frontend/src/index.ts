@@ -168,6 +168,13 @@ createForm.addEventListener("submit", (event) => {
         console.log(response);
         createForm.classList.add("hide");
         form.classList.remove("hide");
+        mainContainer.innerHTML = "";
+        errorDiv.classList.remove("hide");
+        errorMessage.innerText = "Account successfully created";
+        setTimeout(() => {
+          errorDiv.classList.add("hide");
+          errorMessage.innerText = "";
+        }, 5000);
       }
     });
   } else {
