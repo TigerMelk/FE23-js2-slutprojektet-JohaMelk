@@ -147,7 +147,8 @@ createForm.addEventListener("submit", (event) => {
   const selectedImage = document.querySelector(
     "input[name='bild']:checked"
   ) as HTMLInputElement;
-  const imgSrc = selectedImage.value;
+  const imgSrc = selectedImage.getAttribute("value") as string;
+  console.log(imgSrc, selectedImage);
   if (password === confirm) {
     const data = {
       name: username,
