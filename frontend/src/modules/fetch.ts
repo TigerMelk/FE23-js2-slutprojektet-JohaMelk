@@ -1,3 +1,6 @@
+// * fetch functions. all are using the fetchShortcut function at the bottom
+//
+//
 import {
   User,
   SingleUser,

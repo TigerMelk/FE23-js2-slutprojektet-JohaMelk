@@ -1,3 +1,6 @@
+// * error handling function and delete post and comment function
+//
+//
 import { deletePost, deleteComment } from "../modules/fetch.js";
 import { Message } from "../modules/types.js";
 function deletePostsFunction(

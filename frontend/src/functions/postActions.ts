@@ -1,3 +1,6 @@
+// * Functions for post creation and also category buttons
+//
+//
 import { Post, User, SingleUser } from "../modules/types.js";
 import { deletePostsFunction, clearContainer } from "./utility.js";
 import { getUsers, getPost, getCategories } from "../modules/fetch.js";

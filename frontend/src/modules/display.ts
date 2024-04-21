@@ -1,3 +1,6 @@
+// * Main display functions, for user profile, the all user aside and comments creation.
+//
+//
 import { getUsers, getDataType, getPost } from "./fetch.js";
 import { deleteUser } from "./fetch.js";
 import { Post, User, Comment, SingleUser, Message } from "./types.js";

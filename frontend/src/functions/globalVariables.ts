@@ -1,3 +1,6 @@
+// * Global scope variables
+//
+//
 export const mainContainer = document.querySelector(
   "#mainContainer"
 ) as HTMLDivElement;
