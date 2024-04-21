@@ -66,7 +66,7 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", (req, res) => {
   const userId = req.params.id;
-  deleteUser(userId).then(() => res.json({ message: "User Deleted" }));
+  deleteUser(userId).then(() => res.json({ message: " has been Deleted" }));
 });
 
 export default router;

@@ -37,6 +37,13 @@
               "postId": "1ed24c4f-d5be-4a1e-bfda-924e8cfe42b2",
               "name": "melker",
               "comment": "haha true"
+            },
+            {
+              "commentId": "7f3b8d42-eb06-4bb0-87f1-d2b41dc5fb21",
+              "userId": "02f0bafb-0b6e-483a-b6e6-6697e7d2eabc",
+              "postId": "1ed24c4f-d5be-4a1e-bfda-924e8cfe42b2",
+              "name": "milly",
+              "comment": "where are you"
             }
           ],
           "name": "johanna"
@@ -67,19 +74,26 @@
       ],
       "posts": [
         {
-          "postId": "b951439f-a579-4a6c-a1cf-c6ce2c3cd710",
+          "postId": "007466bc-56f3-4c17-b3bf-009b73cd5afb",
           "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
-          "timestamp": 1713604238693,
+          "timestamp": 1713690427176,
           "title": "bloodborne rules",
-          "bread": "yeah blud",
+          "bread": "hejblud",
           "category": "Bloodborne",
           "comments": [
             {
-              "commentId": "23c85ead-70b2-4e38-9e7d-732a6eefc867",
-              "userId": "cc9756af-35dc-4ca9-9f75-18c4f0af27c5",
-              "postId": "b951439f-a579-4a6c-a1cf-c6ce2c3cd710",
-              "name": "martin",
-              "comment": "haha blud"
+              "commentId": "b9309ab3-dbfb-4309-a9e7-a6907b0d811e",
+              "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
+              "postId": "007466bc-56f3-4c17-b3bf-009b73cd5afb",
+              "name": "melker",
+              "comment": "haha yeah"
+            },
+            {
+              "commentId": "437b4a65-a0c5-4995-aea3-00cbfd8c45d7",
+              "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
+              "postId": "007466bc-56f3-4c17-b3bf-009b73cd5afb",
+              "name": "melker",
+              "comment": "yeah man"
             }
           ],
           "name": "melker"
@@ -92,15 +106,16 @@
       "password": "martin",
       "image": "apple",
       "admin": false,
-      "comments": [
-        {
-          "commentId": "23c85ead-70b2-4e38-9e7d-732a6eefc867",
-          "userId": "cc9756af-35dc-4ca9-9f75-18c4f0af27c5",
-          "postId": "b951439f-a579-4a6c-a1cf-c6ce2c3cd710",
-          "name": "martin",
-          "comment": "haha blud"
-        }
-      ],
+      "comments": [],
+      "posts": []
+    },
+    {
+      "id": "74d2cb0c-44ec-4683-91e1-31ab0a158b4b",
+      "name": "milly",
+      "password": "mil",
+      "image": "orange",
+      "admin": false,
+      "comments": [],
       "posts": []
     }
   ]

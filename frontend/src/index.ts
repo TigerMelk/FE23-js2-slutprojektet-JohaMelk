@@ -1,135 +1,115 @@
-//! ////////////////////////////////////////
-//! ////////////////////////////////////////
-//! ////////////////////////////////////////
-import { Logindata } from "./modules/types.js";
+import { Logindata, SingleUser, User } from "./modules/types.js";
 import {
   displayPosts,
-  displayUserProfile,
-  displayComments,
   displayUsers,
   displayPostDetails,
+  errorMessageFunc,
   createUserLink,
-} from "./modules/melkerdisplay.js";
+} from "./modules/display.js";
 import {
   login,
   getUsers,
   getCategories,
-  getPost,
   addUser,
-  getDataType,
   addPost,
   addComment,
-} from "./modules/melkers";
+} from "./modules/fetch.js";
+import {
+  mainContainer,
+  aside,
+  categoryDiv,
+  header,
+  logOut,
+  addNewPost,
+  userBtn,
+  usersDiv,
+  addCommentForm,
+  bloodborne,
+  league,
+  palworld,
+  createForm,
+  createAccountBtn,
+  loginBtn,
+  LogInForm,
+} from "./functions/globalVariables.js";
+import { clearContainer } from "./functions/utility.js";
+import { categoryBtn } from "./functions/postActions.js";
 
-const mainContainer = document.querySelector(
-  "#mainContainer"
-) as HTMLDivElement;
-const userId = localStorage.getItem("userId") as string;
-const aside = document.querySelector("aside") as HTMLButtonElement;
-const errorDiv = document.querySelector(".error") as HTMLDivElement;
-const errorMessage = document.querySelector(
-  "#errorMessage"
-) as HTMLParagraphElement;
-const addNewPost = document.querySelector("#addPost") as HTMLFormElement;
-const loggedInUser = document.querySelector("#userName") as HTMLHeadingElement;
-const logOut = document.querySelector("#logOut") as HTMLButtonElement;
-const form = document.querySelector("#loginForm") as HTMLFormElement;
-const categoryDiv = document.querySelector("#categoryDiv") as HTMLDivElement;
-const userBtn = document.querySelector("#usersAside") as HTMLButtonElement;
-const usersDiv = document.querySelector("#usersDiv") as HTMLDivElement;
-const profileName = document.querySelector(
-  "#profileName"
-) as HTMLHeadingElement;
-const header = document.querySelector("header") as HTMLDivElement;
-const profileImg = document.querySelector("#profileImg") as HTMLImageElement;
-let usersDisplayed = false;
+const userId: string = localStorage.getItem("userId") as string;
 
+// If user is already logged in
 if (userId) {
   categoryDiv.classList.remove("hide");
   aside.classList.remove("hide");
-  form.classList.add("hide");
-  getUsers(userId).then((user) => {
-    const userName = createUserLink(user);
+  LogInForm.classList.add("hide");
+  getUsers(userId).then((user: User[] | SingleUser | User) => {
+    const userName = createUserLink(user as User);
     header.append(userName);
-    userName.addEventListener("click", (event) => {
+    userName.addEventListener("click", (event: Event) => {
       event.preventDefault();
     });
   });
 }
 
-//! login
-
-form.addEventListener("submit", async (event) => {
+// Log in event
+LogInForm.addEventListener("submit", async (event: Event) => {
   event.preventDefault();
   const usernameInput = document.querySelector("#username") as HTMLInputElement;
   const passwordInput = document.querySelector("#password") as HTMLInputElement;
-
-  const username = usernameInput.value;
-  const password = passwordInput.value;
-  const data = {
+  const username: string = usernameInput.value;
+  const password: string = passwordInput.value;
+  const data: Logindata = {
     name: username,
     password: password,
   };
   try {
-    const user = await login(data);
+    const user: User = await login(data);
     if (!user || !user.id) {
       console.log("invalid username or password");
-      errorDiv.classList.remove("hide");
-      errorMessage.innerText = "Invalid username or password";
-      form.reset();
-      setTimeout(() => {
-        errorDiv.classList.add("hide");
-        errorMessage.innerText = "";
-      }, 5000);
+      errorMessageFunc("Invalid username or password");
+      LogInForm.reset();
       return;
     }
 
     localStorage.setItem("userId", user.id);
     categoryDiv.classList.remove("hide");
     aside.classList.remove("hide");
-    form.classList.add("hide");
+    LogInForm.classList.add("hide");
     console.log("logged in successfully");
 
     getUsers(user.id).then((user) => {
-      const userName = createUserLink(user);
+      const userName: HTMLAnchorElement = createUserLink(user as User);
       header.append(userName);
       location.reload();
     });
   } catch (error) {
-    errorDiv.classList.remove("hide");
-    console.log("Could not log in", error);
-    (errorMessage.innerText = "Could not log in"), error;
-    form.reset();
-    setTimeout(() => {
-      errorDiv.classList.add("hide");
-      errorMessage.innerText = "";
-    }, 5000);
+    errorMessageFunc("Could not log in");
+    LogInForm.reset();
   }
-  form.reset();
+  LogInForm.reset();
 });
 
-// ! logOut
-logOut.addEventListener("click", (event) => {
+// Log out event
+logOut.addEventListener("click", (event: Event) => {
   event.preventDefault();
   localStorage.clear();
   categoryDiv.classList.add("hide");
   location.reload();
 });
-//! create account
-const createForm = document.querySelector("#newUser") as HTMLFormElement;
-const createAccount = document.querySelector("#createBtn") as HTMLButtonElement;
-const profile = document.querySelector("#profileDiv") as HTMLDivElement;
-const loginBtn = document.querySelector("#loginBtn") as HTMLButtonElement;
-createAccount.addEventListener("click", (event) => {
+
+// display create form
+createAccountBtn.addEventListener("click", (event: Event) => {
   event.preventDefault();
-  form.classList.add("hide");
+  LogInForm.classList.add("hide");
   createForm.classList.remove("hide");
-  loginBtn.addEventListener("click", (event) => {
+  loginBtn.addEventListener("click", (event: Event) => {
     event.preventDefault();
-    form.classList.remove("hide");
+    LogInForm.classList.remove("hide");
     createForm.classList.add("hide");
   });
 });
+
+// create new account form
 createForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const usernameInput = document.querySelector(
@@ -138,17 +118,16 @@ createForm.addEventListener("submit", (event) => {
   const passwordInput = document.querySelector(
     "#createPassword"
   ) as HTMLInputElement;
-  const username = usernameInput.value;
-  const password = passwordInput.value;
+  const username: string = usernameInput.value;
+  const password: string = passwordInput.value;
   const confirmInput = document.querySelector(
     "#confirmPassword"
   ) as HTMLInputElement;
-  const confirm = confirmInput.value;
+  const confirm: string = confirmInput.value;
   const selectedImage = document.querySelector(
     "input[name='bild']:checked"
   ) as HTMLInputElement;
   const imgSrc = selectedImage.getAttribute("value") as string;
-  console.log(imgSrc, selectedImage);
   if (password === confirm) {
     const data = {
       name: username,
@@ -157,77 +136,43 @@ createForm.addEventListener("submit", (event) => {
     };
     addUser(data).then((response) => {
       if ("message" in response) {
-        errorDiv.classList.remove("hide");
-        errorMessage.innerText = response.message;
-        form.reset();
-        setTimeout(() => {
-          errorDiv.classList.add("hide");
-          errorMessage.innerText = "";
-        }, 5000);
+        errorMessageFunc(response.message as string);
+        LogInForm.reset();
       } else {
-        console.log(response);
         createForm.classList.add("hide");
-        form.classList.remove("hide");
-        mainContainer.innerHTML = "";
-        errorDiv.classList.remove("hide");
-        errorMessage.innerText = "Account successfully created";
-        setTimeout(() => {
-          errorDiv.classList.add("hide");
-          errorMessage.innerText = "";
-        }, 5000);
+        LogInForm.classList.remove("hide");
+        clearContainer(mainContainer);
+        errorMessageFunc("Account successfully created");
       }
     });
   } else {
-    errorDiv.classList.remove("hide");
-    errorMessage.innerText = "Passwords don't match";
-    form.reset();
-    setTimeout(() => {
-      errorDiv.classList.add("hide");
-      errorMessage.innerText = "";
-    }, 5000);
+    errorMessageFunc("Passwords don't match");
   }
   createForm.reset();
 });
 
-//! categories
-const bloodborne = document.querySelector("#category1") as HTMLButtonElement;
-const league = document.querySelector("#category2") as HTMLButtonElement;
-const palworld = document.querySelector("#category3") as HTMLButtonElement;
-
-bloodborne.addEventListener("click", (event) => {
+// categories
+bloodborne.addEventListener("click", (event: Event) => {
   event.preventDefault();
   categoryBtn(bloodborne);
 });
-league.addEventListener("click", (event) => {
+league.addEventListener("click", (event: Event) => {
   event.preventDefault();
   categoryBtn(league);
 });
-
-palworld.addEventListener("click", (event) => {
+palworld.addEventListener("click", (event: Event) => {
   event.preventDefault();
   categoryBtn(palworld);
 });
-function categoryBtn(btn) {
-  mainContainer.innerHTML = "";
-  profile.classList.add("hide");
-  addNewPost.classList.remove("hide");
-  addCommentForm.classList.add("hide");
-  localStorage.removeItem("category");
-  localStorage.setItem("category", btn.value);
-  getCategories(btn.value).then((matchingPosts) => {
-    displayPosts(matchingPosts, mainContainer);
-    console.log("jek");
-  });
-}
-// ! addpost
-addNewPost.addEventListener("submit", (event) => {
+
+// addpost
+addNewPost.addEventListener("submit", (event: Event) => {
   event.preventDefault();
   const titleInput = document.querySelector("#title") as HTMLInputElement;
   const breadInput = document.querySelector("#bread") as HTMLInputElement;
-  const title = titleInput.value;
-  const bread = breadInput.value;
-  const categoryForPost = localStorage.getItem("category") as string;
-  console.log(categoryForPost);
+  const title: string = titleInput.value;
+  const bread: string = breadInput.value;
+  const categoryForPost: string = localStorage.getItem("category") as string;
   const data = {
     title: title,
     bread: bread,
@@ -237,20 +182,19 @@ addNewPost.addEventListener("submit", (event) => {
   addPost(userId, data).then(() => {
     getCategories(categoryForPost).then((matchingPosts) => {
       displayPosts(matchingPosts, mainContainer);
-      console.log("yeaha");
     });
   });
   addNewPost.reset();
 });
-// ! addComment
-const addCommentForm = document.querySelector("#addComment") as HTMLFormElement;
-addCommentForm.addEventListener("submit", (event) => {
+
+// addComment
+addCommentForm.addEventListener("submit", (event: Event) => {
   event.preventDefault();
-  const postId = localStorage.getItem("postId");
+  const postId: string | null = localStorage.getItem("postId") as string;
   const theCommentInput = document.querySelector(
     "#commentBread"
   ) as HTMLInputElement;
-  const theComment = theCommentInput.value;
+  const theComment: string = theCommentInput.value;
   const commentData = {
     userId: userId,
     postId: postId,
@@ -261,12 +205,12 @@ addCommentForm.addEventListener("submit", (event) => {
   });
   addCommentForm.reset();
 });
-// ! aside
 
-userBtn.addEventListener("click", (event) => {
+// all users aside
+userBtn.addEventListener("click", (event: Event) => {
   event.preventDefault();
-  getUsers("").then((data) => {
-    usersDiv.innerHTML = "";
-    displayUsers(data);
+  getUsers("").then((data: User[] | SingleUser) => {
+    clearContainer(usersDiv);
+    displayUsers(data as User[]);
   });
 });
