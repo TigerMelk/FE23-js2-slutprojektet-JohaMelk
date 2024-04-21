@@ -24,8 +24,6 @@ function createPostDiv(post: Post): HTMLDivElement {
   username.innerText = post.name;
   username.id = post.userId;
   const userId: string | null = localStorage.getItem("userId") as string;
-
-  // ----------------------------------------------------------------------
   if (userId === post.userId) {
     deletePostsFunction(postDiv, username.id, post.postId);
   }
@@ -37,7 +35,6 @@ function createPostDiv(post: Post): HTMLDivElement {
   username.addEventListener("click", (event: Event) => {
     event.preventDefault();
     clearContainer(mainContainer);
-
     const userId: string = username.id;
     getUsers(userId).then((user: User[] | SingleUser) => {
       displayUserProfile(user as SingleUser);

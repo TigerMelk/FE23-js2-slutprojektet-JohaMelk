@@ -35,14 +35,14 @@ import {
 import { clearContainer } from "./functions/utility.js";
 import { categoryBtn } from "./functions/postActions.js";
 
-const userId: string = localStorage.getItem("userId") as string;
-
+// Check if user is logged in
+const currentUserId: string = localStorage.getItem("userId") as string;
 // If user is already logged in
-if (userId) {
+if (currentUserId) {
   categoryDiv.classList.remove("hide");
   aside.classList.remove("hide");
   LogInForm.classList.add("hide");
-  getUsers(userId).then((user: User[] | SingleUser | User) => {
+  getUsers(currentUserId).then((user: User[] | SingleUser | User) => {
     const userName = createUserLink(user as User);
     header.append(userName);
     userName.addEventListener("click", (event: Event) => {
@@ -179,7 +179,7 @@ addNewPost.addEventListener("submit", (event: Event) => {
     category: categoryForPost,
     comments: [],
   };
-  addPost(userId, data).then(() => {
+  addPost(currentUserId, data).then(() => {
     getCategories(categoryForPost).then((matchingPosts) => {
       displayPosts(matchingPosts, mainContainer);
     });
@@ -196,7 +196,7 @@ addCommentForm.addEventListener("submit", (event: Event) => {
   ) as HTMLInputElement;
   const theComment: string = theCommentInput.value;
   const commentData = {
-    userId: userId,
+    userId: currentUserId,
     postId: postId,
     commentText: theComment,
   };

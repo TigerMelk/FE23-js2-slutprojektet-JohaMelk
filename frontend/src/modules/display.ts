@@ -27,11 +27,8 @@ let clickedUserId: string | null;
 let commentEventListenerAdded: boolean = false;
 let postEventListenerAdded: boolean = false;
 
-//--------------------------------------------------------------------------
-
 function displayUserProfile(user: SingleUser): void {
   profileDiv.classList.remove("hide");
-
   addNewPost.classList.add("hide");
   commentForm.classList.add("hide");
   profileName.innerText = user.name;
@@ -56,60 +53,17 @@ function displayUserProfile(user: SingleUser): void {
       ).toString();
       break;
   }
-
   if (!postEventListenerAdded) {
-    profilePosts.addEventListener("click", displayUserPosts);
+    profilePosts.addEventListener("click", postsClickHandler);
     postEventListenerAdded = true;
   }
-
-  function commentClickHandler(event: Event): void {
-    event.preventDefault();
-    clearContainer(mainContainer);
-    commentForm.classList.add("hide");
-    if (clickedUserId !== null) {
-      getDataType(clickedUserId, "comments").then(async (userData) => {
-        if (userData.length === 0) {
-          clearContainer(mainContainer);
-
-          errorMessageFunc("No comments found");
-        } else {
-          for (const comment of userData) {
-            const commentDiv = createCommentDiv(comment as Comment);
-            mainContainer.append(commentDiv);
-            const postInfo = {
-              postId: comment.postId,
-            };
-            const post: Post | { message: string } = await getPost(postInfo);
-            if ("message" in post) {
-              const deletedPost: HTMLHeadingElement =
-                document.createElement("h3");
-              deletedPost.id = "deletedPost";
-              deletedPost.innerText = "Post has been deleted";
-              commentDiv.prepend(deletedPost);
-            }
-            if (post && post.title) {
-              const postTitle: HTMLHeadingElement =
-                document.createElement("h3");
-              postTitle.innerText = post.title;
-              commentDiv.prepend(postTitle);
-              postTitle.addEventListener("click", (event) => {
-                event.preventDefault();
-                displayPostDetails(post.postId);
-              });
-            }
-          }
-        }
-      });
-    }
-  }
-
   if (!commentEventListenerAdded) {
     profileComments.addEventListener("click", commentClickHandler);
     commentEventListenerAdded = true;
   }
-  const userId: string | null = localStorage.getItem("userId");
 
-  if (user.id !== userId) {
+  const currentUserId: string | null = localStorage.getItem("userId");
+  if (user.id !== currentUserId) {
     logOutBtn.classList.add("hide");
     deleteUserBtn.classList.add("hide");
   } else {
@@ -134,7 +88,13 @@ function displayUserProfile(user: SingleUser): void {
       });
     });
   }
+  // Deleted user Error
+  if ("message" in user) {
+    profileDiv.classList.add("hide");
+    errorMessageFunc("User has been deleted");
+  }
 }
+// for multiple posts
 function displayPosts(data: Post[], container: HTMLElement): void {
   clearContainer(container);
   for (const post of data) {
@@ -144,45 +104,7 @@ function displayPosts(data: Post[], container: HTMLElement): void {
   }
 }
 
-function createCommentDiv(comment: Comment): HTMLDivElement {
-  const commentDiv: HTMLDivElement = document.createElement("div");
-  commentDiv.classList.add("postDiv");
-  const userName: HTMLHeadingElement = document.createElement("h4");
-  userName.innerText = comment.name;
-  const theComment: HTMLParagraphElement = document.createElement("p");
-  theComment.innerText = comment.comment;
-  commentDiv.id = comment.commentId;
-  userName.id = comment.userId;
-  const userId: string | null = localStorage.getItem("userId");
-
-  userName.addEventListener("click", (event: Event) => {
-    event.preventDefault();
-    clearContainer(mainContainer);
-    const userId: string = userName.id;
-    clickedUserId = userId;
-    getUsers(userId).then((user: User[] | SingleUser) => {
-      displayUserProfile(user as SingleUser);
-    });
-  });
-  // ----------------------------------------------------------------------
-  if (userId === comment.userId) {
-    deleteCommentFunc(commentDiv, comment.commentId);
-  }
-  commentDiv.append(userName, theComment);
-  return commentDiv;
-}
-
-function displayUserPosts(event: Event): void {
-  event.preventDefault();
-  getDataType(clickedUserId as string, "posts").then((userData) => {
-    if (userData.length === 0) {
-      clearContainer(mainContainer);
-      errorMessageFunc("No posts found");
-    } else {
-      displayPosts(userData as Post[], mainContainer);
-    }
-  });
-}
+// for singular post
 function displayPostDetails(postId: string): void {
   clearContainer(mainContainer);
   profileDiv.classList.add("hide");
@@ -197,14 +119,55 @@ function displayPostDetails(postId: string): void {
     commentForm.classList.remove("hide");
   });
 }
-
-function displayUsers(data: User[]): void {
-  usersDiv.innerHTML = "";
-  usersDiv.classList.toggle("hide");
-
-  for (const user of data) {
-    const username: HTMLAnchorElement = createUserLink(user);
-    usersDiv.append(username);
+// for user profile Posts button
+function postsClickHandler(event: Event): void {
+  event.preventDefault();
+  getDataType(clickedUserId as string, "posts").then((userData) => {
+    if (userData.length === 0) {
+      clearContainer(mainContainer);
+      errorMessageFunc("No posts found");
+    } else {
+      displayPosts(userData as Post[], mainContainer);
+    }
+  });
+}
+// for user profile Comments button
+function commentClickHandler(event: Event): void {
+  event.preventDefault();
+  clearContainer(mainContainer);
+  commentForm.classList.add("hide");
+  if (clickedUserId !== null) {
+    getDataType(clickedUserId, "comments").then(async (userData) => {
+      if (userData.length === 0) {
+        clearContainer(mainContainer);
+        errorMessageFunc("No comments found");
+      } else {
+        for (const comment of userData) {
+          const commentDiv = createCommentDiv(comment as Comment);
+          mainContainer.append(commentDiv);
+          const postInfo = {
+            postId: comment.postId,
+          };
+          const post: Post | { message: string } = await getPost(postInfo);
+          if ("message" in post) {
+            const deletedPost: HTMLHeadingElement =
+              document.createElement("h3");
+            deletedPost.id = "deletedPost";
+            deletedPost.innerText = "Post has been deleted";
+            commentDiv.prepend(deletedPost);
+          }
+          if (post && post.title) {
+            const postTitle: HTMLHeadingElement = document.createElement("h3");
+            postTitle.innerText = post.title;
+            commentDiv.prepend(postTitle);
+            postTitle.addEventListener("click", (event) => {
+              event.preventDefault();
+              displayPostDetails(post.postId);
+            });
+          }
+        }
+      }
+    });
   }
 }
 function displayComments(data: Array<Comment>, container: HTMLElement): void {
@@ -214,6 +177,42 @@ function displayComments(data: Array<Comment>, container: HTMLElement): void {
   for (const comment of data) {
     const commentDiv: HTMLDivElement = createCommentDiv(comment);
     container.append(commentDiv);
+  }
+}
+function createCommentDiv(comment: Comment): HTMLDivElement {
+  const commentDiv: HTMLDivElement = document.createElement("div");
+  commentDiv.classList.add("postDiv");
+  const userName: HTMLHeadingElement = document.createElement("h4");
+  userName.innerText = comment.name;
+  userName.id = comment.userId;
+  userName.addEventListener("click", (event: Event) => {
+    event.preventDefault();
+    clearContainer(mainContainer);
+    const userId: string = userName.id;
+    clickedUserId = userId;
+    getUsers(userId).then((user: User[] | SingleUser) => {
+      displayUserProfile(user as SingleUser);
+    });
+  });
+  const theComment: HTMLParagraphElement = document.createElement("p");
+  theComment.innerText = comment.comment;
+  commentDiv.id = comment.commentId;
+  const currentUserId: string | null = localStorage.getItem("userId");
+  if (currentUserId === comment.userId) {
+    deleteCommentFunc(commentDiv, comment.commentId);
+  }
+  commentDiv.append(userName, theComment);
+  return commentDiv;
+}
+
+// for aside to show all users
+function displayUsers(data: User[]): void {
+  clearContainer(usersDiv);
+  usersDiv.classList.toggle("hide");
+
+  for (const user of data) {
+    const username: HTMLAnchorElement = createUserLink(user);
+    usersDiv.append(username);
   }
 }
 

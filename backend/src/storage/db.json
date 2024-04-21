@@ -37,13 +37,6 @@
               "postId": "1ed24c4f-d5be-4a1e-bfda-924e8cfe42b2",
               "name": "melker",
               "comment": "haha true"
-            },
-            {
-              "commentId": "7f3b8d42-eb06-4bb0-87f1-d2b41dc5fb21",
-              "userId": "02f0bafb-0b6e-483a-b6e6-6697e7d2eabc",
-              "postId": "1ed24c4f-d5be-4a1e-bfda-924e8cfe42b2",
-              "name": "milly",
-              "comment": "where are you"
             }
           ],
           "name": "johanna"
@@ -89,11 +82,11 @@
               "comment": "haha yeah"
             },
             {
-              "commentId": "437b4a65-a0c5-4995-aea3-00cbfd8c45d7",
-              "userId": "1e1a8b8b-bbe7-475b-80b5-ea6dedb87e9b",
+              "commentId": "09fc581d-7f3f-4155-ac5c-29af0253484c",
+              "userId": "74d2cb0c-44ec-4683-91e1-31ab0a158b4b",
               "postId": "007466bc-56f3-4c17-b3bf-009b73cd5afb",
-              "name": "melker",
-              "comment": "yeah man"
+              "name": "milly",
+              "comment": "haha yeh"
             }
           ],
           "name": "melker"
@@ -105,15 +98,6 @@
       "name": "martin",
       "password": "martin",
       "image": "apple",
-      "admin": false,
-      "comments": [],
-      "posts": []
-    },
-    {
-      "id": "74d2cb0c-44ec-4683-91e1-31ab0a158b4b",
-      "name": "milly",
-      "password": "mil",
-      "image": "orange",
       "admin": false,
       "comments": [],
       "posts": []
